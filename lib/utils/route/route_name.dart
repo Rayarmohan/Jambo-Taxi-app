@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 class AppRoute {
   static String onboard = '/OnBoardScreen';
   static String login = '/LoginScreen';
@@ -13,4 +15,7 @@ class AppRoute {
   static String notification = '/NotificationScreen';
   static String bookingcompletescreen = '/BookingComplete';
   static String prebookingcompletescreen = '/PrebookingComplete';
+  static String home = '/Home';
+  static String bottom_nav = '/BottomNavigation';
+  static String ride_request = '/RideRequest';
 }

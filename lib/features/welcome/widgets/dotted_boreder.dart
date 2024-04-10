@@ -27,14 +27,18 @@ class DottedBorderContainer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.file_upload_rounded,color: AppColors.grey,size: 40,),
+                  icon: const Icon(
+                    Icons.file_upload_rounded,
+                    color: AppColors.grey,
+                    size: 40,
+                  ),
                   onPressed: onUploadPressed,
                 ),
-        
-                Text("Upload Documents",style:  Theme.of(context)
-                    .textTheme
-                    .labelMedium!
-                    .copyWith(height: 1.7, color: AppColors.grey))
+                Text("Upload Documents",
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelMedium!
+                        .copyWith(height: 1.7, color: AppColors.grey))
               ],
             ),
           ),
