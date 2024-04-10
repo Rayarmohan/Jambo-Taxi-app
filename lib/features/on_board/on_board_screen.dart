@@ -12,7 +12,7 @@ class OnBoardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final PageController _pageController = PageController(initialPage: 0);
+    final PageController pageController = PageController(initialPage: 0);
 
     final OnBoardingController controller = Get.put(OnBoardingController());
     return Scaffold(
@@ -21,7 +21,7 @@ class OnBoardScreen extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: <Widget>[
             PageView(
-              controller: _pageController,
+              controller: pageController,
               onPageChanged: (int page) {
                 controller.changePage(page);
               },
@@ -57,7 +57,7 @@ class OnBoardScreen extends StatelessWidget {
                   if (controller.currentPage.value == 2) {
                     Get.toNamed(AppRoute.login);
                   }
-                  _pageController.nextPage(
+                  pageController.nextPage(
                     duration: const Duration(milliseconds: 400),
                     curve: Curves.easeInOut,
                   );
