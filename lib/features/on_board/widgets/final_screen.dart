@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
 class FinalScreen extends StatelessWidget {
