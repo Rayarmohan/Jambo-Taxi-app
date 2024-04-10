@@ -5,5 +5,4 @@ class AppRoute {
   static String helpcenter = '/HelpCenter';
   static String privacy = '/PrivacyScreen';
   static String updatedocument = '/UpdateDocument';
-
 }
