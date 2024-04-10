@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'jambotaxiapp',
-        initialRoute: AppRoute.bottom_nav,
+        initialRoute: AppRoute.onboard,
         getPages: appRoutes(),
       ),
     );
