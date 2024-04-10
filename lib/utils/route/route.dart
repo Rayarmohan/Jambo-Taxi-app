@@ -4,6 +4,7 @@ import 'package:jambotaxi/features/login/login_screen.dart';
 import 'package:jambotaxi/features/on_board/on_board_screen.dart';
 import 'package:jambotaxi/features/otp_verify/otp_verify_screen.dart';
 import 'package:jambotaxi/features/registration/registration_screen.dart';
+import 'package:jambotaxi/features/welcome/nested_screens/profilepicture_screen.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
 
 appRoutes() => [
@@ -13,4 +14,8 @@ appRoutes() => [
       GetPage(
           name: AppRoute.registrationScreen,
           page: () => const RegistartionScreen()),
+
+          GetPage(
+          name: AppRoute.profilePictureScreen,
+          page: () => const ProfilePictureScreen()),
     ];

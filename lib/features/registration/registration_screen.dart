@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +21,7 @@ class RegistartionScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
+        padding: EdgeInsets.only(top: 20.h, left: 20.h, right: 20.h, bottom: 20.h),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -50,7 +52,7 @@ class RegistartionScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Phone Number",
+                    Text("Name",
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium!
@@ -92,8 +94,8 @@ class RegistartionScreen extends StatelessWidget {
                       children: [
                         Obx(
                           () => Container(
-                            height: 48,
-                            width: 80,
+                            height: 48.h,
+                            width: 80.h,
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                                 border: Border.all(
@@ -136,8 +138,8 @@ class RegistartionScreen extends StatelessWidget {
                     ),
                     Obx(
                       () => Container(
-                        height: 48,
-                        width: 500,
+                        height: 48.h,
+                        width: 500.h,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             border:
@@ -182,8 +184,8 @@ class RegistartionScreen extends StatelessWidget {
                     ),
                     Obx(
                       () => Container(
-                        height: 48,
-                        width: 500,
+                        height: 48.h,
+                        width: 500.h,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             border:
@@ -275,12 +277,12 @@ class RegistartionScreen extends StatelessWidget {
                       height: 35.h,
                     ),
                     CustomButton(
-                      height: 44,
+                      height: 44.h,
                       width: 1.sw,
                       onPressed: () {
                         print("clicked");
 
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomeScreen()));
+                        Get.to(WelcomeScreen());
                       },
                       text: "Continue",
                     ),
