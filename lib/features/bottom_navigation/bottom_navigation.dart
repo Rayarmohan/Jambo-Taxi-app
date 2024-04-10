@@ -1,5 +1,8 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jambotaxi/features/Ride/ride_request.dart';
 import 'package:jambotaxi/features/bottom_navigation/bottom_navigation_controller.dart';
 import 'package:jambotaxi/features/home/home.dart';
 import 'package:jambotaxi/features/login/login.dart';
@@ -24,7 +27,7 @@ class Bottom_Navigation extends StatelessWidget {
             index: bottomNavigationController.tabIndex.value,
             children: const [
               Home(),
-              LoginScreen(),
+              Ride_Request(),
               Home(),
               LoginScreen(),
             ],

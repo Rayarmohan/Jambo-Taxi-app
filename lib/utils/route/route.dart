@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:jambotaxi/features/Ride/ride_request.dart';
 import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
 import 'package:jambotaxi/features/home/home.dart';
 
@@ -13,4 +14,5 @@ appRoutes() => [
       GetPage(name: AppRoute.otpscreen, page: () => const OTPScreen()),
       GetPage(name: AppRoute.home, page: () => const Home()),
       GetPage(name: AppRoute.bottom_nav, page: () =>  const Bottom_Navigation()),
+      GetPage(name: AppRoute.ride_request, page: () =>  const Ride_Request()),
     ];
