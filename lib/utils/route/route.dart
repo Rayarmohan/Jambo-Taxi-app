@@ -8,6 +8,8 @@ import 'package:jambotaxi/features/privacy_policy/privacy_screen.dart';
 import 'package:jambotaxi/features/update_document/update_document_screen.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
 
+import '../../features/booking_pages/booking_tab.dart';
+
 appRoutes() => [
       GetPage(name: AppRoute.onboard, page: () => OnBoardScreen()),
       GetPage(name: AppRoute.login, page: () => const LoginScreen()),
