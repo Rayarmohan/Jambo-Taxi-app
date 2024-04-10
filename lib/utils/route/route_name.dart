@@ -5,4 +5,12 @@ class AppRoute {
   static String helpcenter = '/HelpCenter';
   static String privacy = '/PrivacyScreen';
   static String updatedocument = '/UpdateDocument';
+  static String registrationScreen = '/Registration';
+  static String profilrePictureScreen = '/ProfilePictureScreen';
+  static String rating = '/RatingScreen';
+  static String collectcash = '/CollectCash';
+  static String chatscreen = '/ChatScreen';
+  static String notification = '/NotificationScreen';
+  static String bookingcompletescreen = '/BookingComplete';
+  static String prebookingcompletescreen = '/PrebookingComplete';
 }

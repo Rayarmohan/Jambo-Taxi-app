@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
-import 'package:jambotaxi/widgets/custom_button.dart';
+
 import 'package:jambotaxi/widgets/custom_images.dart';
 
 class UpdateDocument extends StatelessWidget {
@@ -62,111 +61,109 @@ class UpdateDocument extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
+                height: 50,
+                width: 500,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: AppColors.grey,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Profile Picture",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            height: 1.7,
+                            color: AppColors.black,
                           ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Profile Picture",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.black,
-                                  ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.black,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                height: 50,
+                width: 500,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: AppColors.grey,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Driving Details",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            height: 1.7,
+                            color: AppColors.black,
+                          ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.black,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: () {
+                  _showBottomSheet(context);
+                },
+                child: Container(
+                  height: 50,
+                  width: 500,
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 1,
+                      color: AppColors.grey,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Government ID",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              height: 1.7,
+                              color: AppColors.black,
                             ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.black,
-                            ),
-                          ],
-                        ),
                       ),
-                      SizedBox(height: 30,),
-                      Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Driving Details",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.black,
-                                  ),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.black,
-                            ),
-                          ],
-                        ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.black,
                       ),
-                      SizedBox(height: 30,),
-                      GestureDetector(
-                        onTap: () {
-                          _showBottomSheet(context);
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 500,
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 1,
-                              color: AppColors.grey,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Government ID",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                      height: 1.7,
-                                      color: AppColors.black,
-                                    ),
-                              ),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                color: Colors.black,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       )),
     );
   }
-void _showBottomSheet(BuildContext context) {
+
+  void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
       useSafeArea: true,
       context: context,
@@ -187,59 +184,53 @@ void _showBottomSheet(BuildContext context) {
                   ),
                 ),
               ),
-              Divider(height: 2,color: Colors.black,),
+              Divider(
+                height: 2,
+                color: Colors.black,
+              ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Center(
                   child: Text(
                     'Are you sure you want to log out ?',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey
-                    ),
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(12),
                 child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                SizedBox(
-                  width: 165,
-                  height: 50,
-                  child: ElevatedButton(
-                          onPressed: () {
-                           
-                          },
-                          child: Text('Cancel'),
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                borderRadius:
-                    BorderRadius.zero, 
-                            ),
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: 165,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text('Cancel'),
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
                           ),
-                  ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 165,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text('Yes, Logout'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  width: 165,
-                  height: 50,
-                  child: ElevatedButton(
-                          onPressed: () {
-                            
-                          },
-                          child: Text('Yes, Logout'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.green,
-                            shape: RoundedRectangleBorder(
-                borderRadius:
-                    BorderRadius.zero, 
-                            ),
-                          ),
-                  ),
-                ),
-                            ],
-                          ),
               ),
             ],
           ),
@@ -248,6 +239,3 @@ void _showBottomSheet(BuildContext context) {
     );
   }
 }
- 
-
-
