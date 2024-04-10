@@ -1,0 +1,310 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/widgets/custom_images.dart';
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        const SizedBox(
+          width: double.infinity,
+          height: double.infinity,
+          child: CustomPngImage(
+            imageName: 'assets/images/map.png',
+            boxFit: BoxFit.cover,
+          ),
+        ),
+        _buildContentColumn(context),
+        Padding(
+          padding: const EdgeInsets.only(left: 15.0, bottom: 20),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: _listview(),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _listview() {
+    return Container(
+      height: 130,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 3,
+          itemBuilder: ((context, index) {
+            return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(width: 1.0, color: Colors.black)),
+                      height: 130,
+                      width: 200,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 25.0, top: 5, bottom: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  child: CustomPngImage(
+                                    height: 40,
+                                    width: 50,
+                                    imageName: 'assets/images/car.png',),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              border: Border(
+                                top: BorderSide(
+                                    width: 1.0,
+                                    color: Colors.black,
+                                    style: BorderStyle.solid),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 5.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text("Swift",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge!
+                                              .copyWith(
+                                                  fontSize: 20,
+                                                  color: AppColors.primeryColor)),
+                                      Text("Rs 104.0",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge!
+                                              .copyWith(
+                                                  fontSize: 20,
+                                                  color: AppColors.primeryColor)),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 25.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text("4 Seats Capacity",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium!
+                                              .copyWith(
+                                                  height: 1.7,
+                                                  color:
+                                                      AppColors.primeryColor)),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Positioned(
+                      top: 1,
+                      right: 1,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors
+                              .white, 
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.check_circle,
+                          color: AppColors.primeryColor,
+                          size: 24,
+                        ),
+                      ),
+                    ),
+                  ],
+                ));
+          })),
+    );
+  }
+
+  Widget _buildContentColumn(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    color: Colors.white,
+                    width: 220,
+                    height: 40,
+                    child: const Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 10.0),
+                          child: Icon(
+                            size: 25,
+                            Icons.person,
+                            color: AppColors.primeryColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 40,
+                    height: 40,
+                    color: Colors.grey,
+                    child: Center(
+                      child: Text("OFF",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(
+                                  fontSize: 15,
+                                  height: 1.7,
+                                  color: AppColors.white)),
+                    ),
+                  ),
+                  Container(
+                    width: 40,
+                    height: 40,
+                    color: Color.fromARGB(255, 92, 204, 94),
+                    child: Center(
+                      child: Text("ON",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(
+                                  fontSize: 15,
+                                  height: 1.7,
+                                  color: AppColors.white)),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      height: 80,
+                      width: 145,
+                      color: AppColors.white,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const CircleAvatar(
+                            radius: 20,
+                            backgroundColor: AppColors.primeryColor,
+                            child: Icon(
+                              Icons.calendar_month,
+                              color: AppColors.white,
+                            ),
+                          ),
+                          Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Pre Booked",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge!
+                                        .copyWith(
+                                            fontSize: 16,
+                                            color: AppColors.primeryColor)),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text("10",
+                                    textAlign: TextAlign.left,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge!
+                                        .copyWith(
+                                            fontSize: 15,
+                                            color: AppColors.primeryColor)),
+                              ],
+                            ),
+                          )
+                        ],
+                      )),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                      height: 80,
+                      width: 150,
+                      color: AppColors.white,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundColor: AppColors.primeryColor,
+                            child: Icon(
+                              Icons.currency_rupee,
+                              color: AppColors.white,
+                            ),
+                          ),
+                          Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Total Earned",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge!
+                                        .copyWith(
+                                            fontSize: 16,
+                                            color: AppColors.primeryColor)),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text("754.00",
+                                    textAlign: TextAlign.left,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge!
+                                        .copyWith(
+                                            fontSize: 15,
+                                            color: AppColors.primeryColor)),
+                              ],
+                            ),
+                          )
+                        ],
+                      ))
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

@@ -87,7 +87,7 @@ class OTPScreen extends StatelessWidget {
   }
 
   Widget _buildOTPBox(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 60,
       child: TextFormField(
         textAlign: TextAlign.center,
