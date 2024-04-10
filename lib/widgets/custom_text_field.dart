@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
   final bool addBorder;
   final bool onlyEnglish;
   final double height;
+  final Icon? suffixIcon;
 
   final String? Function(String?)? validator;
   final void Function(String?)? onchaged;
@@ -34,7 +35,8 @@ class CustomTextField extends StatelessWidget {
     this.addBorder = true,
     this.height = 1,
     this.validator,
-    this.onchaged,
+    this.onchaged, 
+     this.suffixIcon,
   });
 
   @override
@@ -56,6 +58,7 @@ class CustomTextField extends StatelessWidget {
       cursorColor: Colors.black,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
+        suffixIcon: suffixIcon,
         enabled: true,
         enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(2.0)),
