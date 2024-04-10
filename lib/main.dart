@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'jambotaxiapp',
-        initialRoute: AppRoute.collectcash,
+        initialRoute: AppRoute.chatscreen,
         getPages: appRoutes(),
       ),
     );
