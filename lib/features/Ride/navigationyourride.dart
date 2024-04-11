@@ -5,8 +5,8 @@ import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
-class NavigationYouRide extends StatelessWidget {
-  const NavigationYouRide({super.key});
+class NavigationYourRide extends StatelessWidget {
+  const NavigationYourRide({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,20 +16,25 @@ class NavigationYouRide extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Container(
               height: 20,
               width: 20,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: Icon(
-                Icons.arrow_back,
-                color: AppColors.primeryColor,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    color: AppColors.primeryColor,
+                  ),
+                ),
               )),
         ),
         centerTitle: true,
-        title: Text('Arrived at Destination',
+        title: Text('Navigate Ride',
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge!
@@ -109,7 +114,7 @@ class NavigationYouRide extends StatelessWidget {
   Widget bottomSheet(BuildContext context) {
     return Container(
       color: Colors.white,
-      height: 140,
+      height: 130,
       child: Column(
         children: [
           ListTile(

@@ -59,19 +59,19 @@ class Home extends StatelessWidget {
                           color: Colors.white,
                           border: Border.all(width: 1.0, color: Colors.black)),
                       height: 130,
-                      width: 200,
+                      width: 180,
                       child: Column(
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                                left: 25.0, top: 5, bottom: 5),
+                                left: 20.0, top: 10, bottom: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Container(
                                   child: const CustomPngImage(
-                                    height: 40,
-                                    width: 50,
+                                    height: 26,
+                                    width: 54.6,
                                     imageName: 'assets/images/car.png',),
                                 ),
                               ],
@@ -89,30 +89,33 @@ class Home extends StatelessWidget {
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 5.0),
+                                  padding: const EdgeInsets.only(top: 5.0,left: 20),
                                   child: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
+                                        MainAxisAlignment.start,
                                     children: [
                                       Text("Swift",
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodyLarge!
                                               .copyWith(
-                                                  fontSize: 20,
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w500,
                                                   color: AppColors.primeryColor)),
+                                                  SizedBox(width: 41,),
                                       Text("Rs 104.0",
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodyLarge!
                                               .copyWith(
-                                                  fontSize: 20,
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w700,
                                                   color: AppColors.primeryColor)),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 25.0),
+                                  padding: const EdgeInsets.only(left: 20.0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -121,7 +124,9 @@ class Home extends StatelessWidget {
                                               .textTheme
                                               .bodyMedium!
                                               .copyWith(
-                                                  height: 1.7,
+                                                height: 1.7,
+                                                 fontSize: 12,
+                                                 fontWeight: FontWeight.w400,
                                                   color:
                                                       AppColors.primeryColor)),
                                     ],
@@ -167,8 +172,8 @@ class Home extends StatelessWidget {
                 children: [
                   Container(
                     color: Colors.white,
-                    width: 220,
-                    height: 48,
+                    width: 225,
+                    height: 44,
                     child: const Row(
                       children: [
                         Padding(
@@ -184,7 +189,7 @@ class Home extends StatelessWidget {
                   ),
                   Container(
                     width: 40,
-                    height: 48,
+                    height: 44,
                     color: Colors.grey,
                     child: Center(
                       child: Text("OFF",
@@ -199,7 +204,7 @@ class Home extends StatelessWidget {
                   ),
                   Container(
                     width: 40,
-                    height: 48,
+                    height: 44,
                     color: const Color.fromARGB(255, 92, 204, 94),
                     child: Center(
                       child: Text("ON",
@@ -221,8 +226,8 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                      height: 70,
-                      width: 145,
+                      height: 75,
+                      width: 150,
                       color: AppColors.white,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -246,7 +251,8 @@ class Home extends StatelessWidget {
                                         .textTheme
                                         .bodyLarge!
                                         .copyWith(
-                                            fontSize: 16,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w500,
                                             color: AppColors.primeryColor)),
                                 const SizedBox(
                                   height: 5,
@@ -265,10 +271,10 @@ class Home extends StatelessWidget {
                         ],
                       )),
                   const SizedBox(
-                    width: 10,
+                    width: 6,
                   ),
                   Container(
-                      height: 70,
+                      height: 75,
                       width: 150,
                       color: AppColors.white,
                       child: Row(
@@ -293,7 +299,8 @@ class Home extends StatelessWidget {
                                         .textTheme
                                         .bodyLarge!
                                         .copyWith(
-                                            fontSize: 16,
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w500,
                                             color: AppColors.primeryColor)),
                                 const SizedBox(
                                   height: 5,

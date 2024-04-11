@@ -18,16 +18,21 @@ class Arrived_Userlocation extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Container(
               height: 20,
               width: 20,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: Icon(
-                Icons.arrow_back,
-                color: AppColors.primeryColor,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    color: AppColors.primeryColor,
+                  ),
+                ),
               )),
         ),
         centerTitle: true,
@@ -95,7 +100,7 @@ class Arrived_Userlocation extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
       ),
-      height: 230,
+      height: 220,
       child: Column(
         children: [
           const SizedBox(
@@ -107,12 +112,13 @@ class Arrived_Userlocation extends StatelessWidget {
               Text(
                 "Customer Location",
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontSize: 20,
                     fontWeight: FontWeight.w400, color: AppColors.primeryColor),
               ),
               Text(
                 "5 min away",
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w400,
                     color: AppColors.primeryColor),
               ),
@@ -139,10 +145,10 @@ class Arrived_Userlocation extends StatelessWidget {
                       Row(
                         children: [
                           const CircleAvatar(
-                            radius: 30,
+                            radius: 25,
                             child: CustomPngImage(
-                              height: 70,
-                              width: 70,
+                              height: 59,
+                              width: 59,
                               imageName: 'assets/images/circleimage.png',
                             ),
                           ),
@@ -158,6 +164,7 @@ class Arrived_Userlocation extends StatelessWidget {
                                     .textTheme
                                     .bodyLarge!
                                     .copyWith(
+                                      fontSize: 17,
                                         fontWeight: FontWeight.w600,
                                         color: AppColors.primeryColor),
                               ),
@@ -167,6 +174,7 @@ class Arrived_Userlocation extends StatelessWidget {
                                     .textTheme
                                     .bodyMedium!
                                     .copyWith(
+                                      fontSize: 14,
                                         fontWeight: FontWeight.w400,
                                         color: AppColors.primeryColor),
                               ),

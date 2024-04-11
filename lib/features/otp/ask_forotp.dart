@@ -14,16 +14,21 @@ class AskForOtp extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Container(
               height: 20,
               width: 20,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: Icon(
-                Icons.arrow_back,
-                color: AppColors.primeryColor,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    color: AppColors.primeryColor,
+                  ),
+                ),
               )),
         ),
         centerTitle: true,
@@ -103,7 +108,7 @@ class AskForOtp extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
       ),
-      height: 230,
+      height: 220,
       child: Column(
         children: [
           const SizedBox(
@@ -129,14 +134,17 @@ class AskForOtp extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge!
-                        .copyWith(color: AppColors.primeryColor)),
+                        .copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.primeryColor)),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
                   "KwaZulu-Natal, Cape Town ",
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: AppColors.primeryColor),
                 ),

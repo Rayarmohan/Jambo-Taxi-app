@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/widgets/custom_Progress_Indicator.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
@@ -53,10 +54,7 @@ class Ride_Request extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(60)),
         color: Colors.white,
-        border: Border.all(
-          color: AppColors.primeryColor,
-          width: 4, // Adjust the width of the border
-        ),
+      
       ),
       height: 90,
       width: 90,
@@ -84,11 +82,11 @@ class Ride_Request extends StatelessWidget {
               ],
             ),
           ),
-          const CircularProgressIndicator(
-            value: null,
-            backgroundColor: Colors.transparent,
-            valueColor: AlwaysStoppedAnimation<Color>(AppColors.primeryColor),
-            strokeWidth: 1, // Adjust the thickness of the progress indicator
+          const   CustomCircularProgressIndicator(
+            progress: 0.7, // Set progress to 70%
+            backgroundColor: Colors.grey, // Background color
+            progressColor: AppColors.primeryColor, // Progress color
+            strokeWidth: 4.0, // Thickness of the progress indicator
           ),
         ],
       ),
@@ -112,12 +110,13 @@ class Ride_Request extends StatelessWidget {
               Text(
                 "Ride Request",
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontSize: 20,
                     fontWeight: FontWeight.w400, color: AppColors.primeryColor),
               ),
               Text(
                 "5 min away",
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w400,
                     color: AppColors.primeryColor),
               ),
@@ -148,13 +147,14 @@ class Ride_Request extends StatelessWidget {
                   title: Text(
                     "Jessica ",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                      fontSize: 17,
+                        fontWeight: FontWeight.w700,
                         color: AppColors.primeryColor),
                   ),
                   subtitle: Text(
                     "Cash payment ",
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: AppColors.primeryColor),
                   ),
@@ -193,7 +193,7 @@ class Ride_Request extends StatelessWidget {
                               .bodyLarge!
                               .copyWith(
                                   fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.primeryColor),
                         ),
                         Row(
@@ -229,7 +229,7 @@ class Ride_Request extends StatelessWidget {
                               .bodyLarge!
                               .copyWith(
                                   fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.primeryColor),
                         )
                       ],
@@ -287,8 +287,8 @@ class Ride_Request extends StatelessWidget {
         children: [
           Container(
             color: Colors.white,
-            width: 220,
-            height: 48,
+            width: 225,
+            height: 44,
             child: const Row(
               children: [
                 Padding(
@@ -304,7 +304,7 @@ class Ride_Request extends StatelessWidget {
           ),
           Container(
             width: 40,
-            height: 48,
+            height: 44,
             color: Colors.grey,
             child: Center(
               child: Text("OFF",
@@ -314,7 +314,7 @@ class Ride_Request extends StatelessWidget {
           ),
           Container(
             width: 40,
-            height: 48,
+            height: 44,
             color: const Color.fromARGB(255, 92, 204, 94),
             child: Center(
               child: Text("ON",
