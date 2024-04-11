@@ -4,6 +4,7 @@ import 'package:jambotaxi/features/Ride/ride_request.dart';
 import 'package:jambotaxi/features/booking_pages/booking_tab.dart';
 import 'package:jambotaxi/features/booking_pages/prebooking_tab.dart';
 import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
+import 'package:jambotaxi/features/cars/cars_screen.dart';
 import 'package:jambotaxi/features/chat/chat_screen.dart';
 import 'package:jambotaxi/features/collect_cash/collect_cash.dart';
 import 'package:jambotaxi/features/help_center/help_center_screen.dart';
@@ -48,4 +49,5 @@ appRoutes() => [
       GetPage(name: AppRoute.home, page: () => const Home()),
       GetPage(name: AppRoute.bottom_nav, page: () => const Bottom_Navigation()),
       GetPage(name: AppRoute.ride_request, page: () => const Ride_Request()),
+      GetPage(name: AppRoute.cars_screen, page: () => const CarsScreen()),
     ];
