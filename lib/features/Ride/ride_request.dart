@@ -112,13 +112,13 @@ class Ride_Request extends StatelessWidget {
               Text(
                 "Ride Request",
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontWeight: FontWeight.w500, color: AppColors.primeryColor),
+                    fontWeight: FontWeight.w400, color: AppColors.primeryColor),
               ),
               Text(
                 "5 min away",
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     fontSize: 15,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                     color: AppColors.primeryColor),
               ),
             ],
@@ -138,7 +138,7 @@ class Ride_Request extends StatelessWidget {
               children: [
                 ListTile(
                   leading: const CircleAvatar(
-                    radius: 30,
+                    radius: 25,
                     child: CustomPngImage(
                       height: 70,
                       width: 70,
@@ -148,6 +148,7 @@ class Ride_Request extends StatelessWidget {
                   title: Text(
                     "Jessica ",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primeryColor),
                   ),
@@ -168,17 +169,17 @@ class Ride_Request extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.radio_button_checked_rounded,
-                          size: 19,
+                          size: 16,
                         ),
                         SizedBox(
-                            height: 30,
+                            height: 25,
                             child: VerticalDivider(
                               thickness: 0.5,
                               color: Colors.black,
                             )),
                         Icon(
                           Icons.location_on,
-                          size: 19,
+                          size: 16,
                         )
                       ],
                     ),
@@ -191,8 +192,8 @@ class Ride_Request extends StatelessWidget {
                               .textTheme
                               .bodyLarge!
                               .copyWith(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
                                   color: AppColors.primeryColor),
                         ),
                         Row(
@@ -204,7 +205,7 @@ class Ride_Request extends StatelessWidget {
                                   color: Colors.black,
                                 )),
                             Container(
-                                height: 25,
+                                height: 20,
                                 color: AppColors.primeryColor,
                                 child: Padding(
                                   padding: const EdgeInsets.all(5.0),
@@ -214,7 +215,7 @@ class Ride_Request extends StatelessWidget {
                                         .textTheme
                                         .bodySmall!
                                         .copyWith(
-                                            fontSize: 12,
+                                            fontSize: 10,
                                             fontWeight: FontWeight.w400,
                                             color: AppColors.white),
                                   ),
@@ -227,8 +228,8 @@ class Ride_Request extends StatelessWidget {
                               .textTheme
                               .bodyLarge!
                               .copyWith(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
                                   color: AppColors.primeryColor),
                         )
                       ],

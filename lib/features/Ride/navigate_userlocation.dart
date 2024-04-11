@@ -10,74 +10,99 @@ class NavigateUserLocation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: CustomPngImage(
-            imageName: 'assets/images/map.png',
-            boxFit: BoxFit.cover,
-          ),
-        ),
-        Align(
-          alignment: Alignment.center,
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 120, right: 150.0),
-                child: CustomPngImage(
-                  height: 30,
-                  width: 15,
-                  imageName: 'assets/images/pointer.png',
-                  boxFit: BoxFit.cover,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 65.0),
-                child: CustomPngImage(
-                  height: 200,
-                  width: 85,
-                  imageName: 'assets/images/mappath.png',
-                  boxFit: BoxFit.cover,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 60, right: 120.0),
-                child: CustomPngImage(
-                  imageName: 'assets/images/location.png',
-                  boxFit: BoxFit.cover,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: bottomSheet(context),
-        ),
-        Align(
-          alignment: Alignment.bottomRight,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 150.0,right: 16),
-            child: Container(
-              height: 45,
-              width: 45,
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+              height: 20,
+              width: 20,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                color: Colors.white
-              ),
-              child:  Center(
-                child: CustomPngImage(
-                  width: 20,
-                  height: 20,
-                  imageName: 'assets/images/target_icon2.png',
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(30))),
+              child: Icon(
+                Icons.arrow_back,
+                color: AppColors.primeryColor,
+              )),
+        ),
+        centerTitle: true,
+        title: Text('Arrived at Destination',
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(color: AppColors.primeryColor)),
+      ),
+      body: Stack(
+        children: [
+          const SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: CustomPngImage(
+              imageName: 'assets/images/map.png',
+              boxFit: BoxFit.cover,
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 120, right: 150.0),
+                  child: CustomPngImage(
+                    height: 30,
+                    width: 15,
+                    imageName: 'assets/images/pointer.png',
+                    boxFit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 65.0),
+                  child: CustomPngImage(
+                    height: 200,
+                    width: 85,
+                    imageName: 'assets/images/mappath.png',
+                    boxFit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 60, right: 120.0),
+                  child: CustomPngImage(
+                    imageName: 'assets/images/location.png',
+                    boxFit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: bottomSheet(context),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 150.0, right: 16),
+              child: Container(
+                height: 45,
+                width: 45,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    color: Colors.white),
+                child: Center(
+                  child: CustomPngImage(
+                    width: 20,
+                    height: 25,
+                    imageName: 'assets/images/target_icon2.png',
+                  ),
                 ),
               ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 

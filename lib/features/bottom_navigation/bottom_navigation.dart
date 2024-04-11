@@ -10,6 +10,7 @@ import 'package:jambotaxi/features/bottom_navigation/bottom_navigation_controlle
 import 'package:jambotaxi/features/home/home.dart';
 import 'package:jambotaxi/features/login/login.dart';
 import 'package:jambotaxi/features/login/login_screen.dart';
+import 'package:jambotaxi/features/otp/ask_forotp.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 
 class Bottom_Navigation extends StatelessWidget {
@@ -33,6 +34,7 @@ class Bottom_Navigation extends StatelessWidget {
               Ride_Request(),
               NavigateUserLocation(),
               Arrived_Userlocation(),
+              AskForOtp()
             ],
           )),
     ));
