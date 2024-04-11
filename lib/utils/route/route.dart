@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/chat/chat_screen.dart';
 import 'package:jambotaxi/features/collect_cash/collect_cash.dart';
+import 'package:jambotaxi/features/enable_location/enable_location.dart';
 
 import 'package:jambotaxi/features/login/login_screen.dart';
 import 'package:jambotaxi/features/notification/notification_screen.dart';
@@ -17,6 +18,7 @@ appRoutes() => [
       GetPage(name: AppRoute.collectcash,page: () =>   const CollectCash()),
       GetPage(name: AppRoute.chatscreen,page: () =>   const ChatScreen()),
       GetPage(name: AppRoute.notification,page: () =>   const NotificationScreen()),
+      GetPage(name: AppRoute.enablelocation,page: () =>   const EnableLocationScreen()),
       
 
     ];

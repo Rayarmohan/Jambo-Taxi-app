@@ -6,4 +6,5 @@ class AppRoute {
   static String collectcash = '/CollectCash';
   static String chatscreen = '/ChatScreen';
   static String notification = '/NotificationScreen';
+  static String enablelocation = '/EnableLocationScreen';
 }
