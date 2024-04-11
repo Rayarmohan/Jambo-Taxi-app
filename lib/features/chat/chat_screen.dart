@@ -88,7 +88,7 @@ class ChatScreen extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: AppColors.primeryColor,
                 child: IconButton(
-                  icon: const Icon(Icons.send, color: Colors.white),
+                  icon: const Icon(Icons.arrow_forward_ios, color: Colors.white),
                   onPressed: () {},
                 ),
               )
