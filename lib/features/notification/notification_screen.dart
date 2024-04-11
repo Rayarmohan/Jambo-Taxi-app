@@ -28,14 +28,14 @@ class NotificationScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              width: 50,
+              width: 58 ,
               color: AppColors.primeryColor,
               child: Center(
                 child: Text(
                   '2 NEW',
                   style: Theme.of(context)
                       .textTheme
-                      .titleMedium!
+                      .titleSmall!
                       .copyWith(height: 1.7, color: AppColors.white),
                 ),
               ),
