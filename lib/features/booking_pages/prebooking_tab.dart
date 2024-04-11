@@ -21,7 +21,7 @@ class PrebookingComplete extends StatelessWidget {
                     .headlineMedium!
                     .copyWith(height: 1.7, color: AppColors.primeryColor)),
             leading: const Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.only(left: 34),
               child: CustomPngImage(
                 imageName: "assets/images/arrow_back.png",
                 height: 30,
@@ -57,12 +57,25 @@ class PrebookingComplete extends StatelessWidget {
                         padding: EdgeInsets.all(20),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(4.0),
-                          child: Image.asset(
-                            "assets/images/map.png",
-                            fit: BoxFit.cover,
+                          child: Stack(
+                            alignment: Alignment.center, // Align the top image to the center of the map image
+                            children: [
+                              Image.asset(
+                                "assets/images/map.png",
+                                fit: BoxFit.cover,
+                                width: double.infinity, // Ensure the map image fills the container
+                                height: double.infinity,
+                              ),
+                              Image.asset(
+                                "assets/images/Vector.png", // Replace with the path of your top image
+                                width: 100, // Set the width of the top image
+                                height: 100, // Set the height of the top image
+                              ),
+                            ],
                           ),
                         ),
                       ),
+
 
 
                       const SizedBox(
