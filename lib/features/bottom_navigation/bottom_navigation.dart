@@ -1,7 +1,10 @@
 // ignore_for_file: camel_case_types
 
+import 'package:bottom_navbar_with_indicator/bottom_navbar_with_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jambotaxi/features/Ride/arrived_userlocation.dart';
+import 'package:jambotaxi/features/Ride/navigate_userlocation.dart';
 import 'package:jambotaxi/features/Ride/ride_request.dart';
 import 'package:jambotaxi/features/bottom_navigation/bottom_navigation_controller.dart';
 import 'package:jambotaxi/features/home/home.dart';
@@ -28,69 +31,48 @@ class Bottom_Navigation extends StatelessWidget {
             children: const [
               Home(),
               Ride_Request(),
-              Home(),
-              LoginScreen(),
+              NavigateUserLocation(),
+              Arrived_Userlocation(),
             ],
           )),
     ));
   }
     buildBottomNavigationMenu(context, bottomNavigationController) {
     return Obx(() => 
-          BottomNavigationBar(
-          showUnselectedLabels: true,
-          showSelectedLabels: true,
-          onTap: bottomNavigationController.changeTabIndex,
-          currentIndex: bottomNavigationController.tabIndex.value,
-          selectedLabelStyle: selectedLabelStyle,
-          selectedItemColor: AppColors.primeryColor, // Change this to your desired color
-          unselectedItemColor: Colors.grey,
-          items: [
-            BottomNavigationBarItem(
-              icon: Container(
-                margin: const EdgeInsets.only(bottom: 7),
-                child: const Icon(
-                  Icons.home
+    CustomLineIndicatorBottomNavbar(
+                    selectedColor: AppColors.primeryColor,
+                    unSelectedColor: Colors.grey,
+                    backgroundColor: Colors.white,
+                    currentIndex: bottomNavigationController.tabIndex.value,
+                    onTap: bottomNavigationController.changeTabIndex,
+                    enableLineIndicator: true,
+                    lineIndicatorWidth: 3,
+                    indicatorType: IndicatorType.bottom,
+                    // gradient: LinearGradient(
+                    //   colors: kGradients,
+                    // ),
+
+                    customBottomBarItems: [
+                    CustomBottomBarItems(
+                        label: 'Home',
+                        icon: Icons.home,
+                    ),
+                    CustomBottomBarItems(
+                        label: 'Earnings',
+                        icon: Icons.bar_chart_outlined,
+                    ),
+                    CustomBottomBarItems(
+                        label: 'History', icon: Icons.history_outlined),
+                    CustomBottomBarItems(
+                        label: 'Notification',
+                        icon: Icons.notifications,
+                    ),
+                    CustomBottomBarItems(
+                        label: 'Profile',
+                        icon: Icons.person,
+                    ),
+                    ],
                 ),
-              ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Container(
-                margin: const EdgeInsets.only(bottom: 7),
-                child: const Icon(
-                  Icons.bar_chart_outlined,
-                ),
-              ),
-              label: 'Earnings',
-            ),
-            BottomNavigationBarItem(
-              icon: Container(
-                margin: const EdgeInsets.only(bottom: 7),
-                child: const Icon(
-                  Icons.history_outlined,
-                ),
-              ),
-              label: 'History',
-            ),
-            BottomNavigationBarItem(
-              icon: Container(
-                margin: const EdgeInsets.only(bottom: 7),
-                child: const Icon(
-                  Icons.notifications,
-                ),
-              ),
-              label: 'Notification',
-            ),
-            BottomNavigationBarItem(
-              icon: Container(
-                margin: const EdgeInsets.only(bottom: 7),
-                child: const Icon(
-                  Icons.person,
-                ),
-              ),
-              label: 'Profile',
-            ),
-          ],
-        ));
+                );
   }
 }

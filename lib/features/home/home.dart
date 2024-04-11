@@ -221,7 +221,7 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                      height: 80,
+                      height: 70,
                       width: 145,
                       color: AppColors.white,
                       child: Row(
@@ -268,7 +268,7 @@ class Home extends StatelessWidget {
                     width: 10,
                   ),
                   Container(
-                      height: 80,
+                      height: 70,
                       width: 150,
                       color: AppColors.white,
                       child: Row(
