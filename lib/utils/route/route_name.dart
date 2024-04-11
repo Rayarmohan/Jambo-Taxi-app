@@ -8,6 +8,8 @@ class AppRoute {
   static String helpcenter = '/HelpCenter';
   static String privacy = '/PrivacyScreen';
   static String updatedocument = '/UpdateDocument';
+  static String settings = '/Settings';
+  
   static String registrationScreen = '/Registration';
   static String profilrePictureScreen = '/ProfilePictureScreen';
   static String rating = '/RatingScreen';

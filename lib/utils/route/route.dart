@@ -15,6 +15,8 @@ import 'package:jambotaxi/features/notification/notification_screen.dart';
 import 'package:jambotaxi/features/on_board/on_board_screen.dart';
 import 'package:jambotaxi/features/otp_verify/otp_verify_screen.dart';
 import 'package:jambotaxi/features/privacy_policy/privacy_screen.dart';
+import 'package:jambotaxi/features/profile/profile_screen.dart';
+import 'package:jambotaxi/features/profilesettings/profilesettings_screen.dart';
 import 'package:jambotaxi/features/rating/rating_screen.dart';
 import 'package:jambotaxi/features/update_document/update_document_screen.dart';
 import 'package:jambotaxi/features/welcome/nested_screens/profilepicture_screen.dart';
@@ -27,6 +29,9 @@ appRoutes() => [
       GetPage(name: AppRoute.otpscreen, page: () => const OTPScreen()),
       GetPage(name: AppRoute.helpcenter, page: () => const HelpCenter()),
       GetPage(name: AppRoute.privacy, page: () => const PrivacyScreen()),
+      GetPage(
+          name: AppRoute.updatedocument, page: () => const UpdateDocument()),
+      GetPage(name: AppRoute.settings, page: () => const Settings()),
       GetPage(
           name: AppRoute.updatedocument, page: () => const UpdateDocument()),
       GetPage(
