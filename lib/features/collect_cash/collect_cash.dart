@@ -58,20 +58,26 @@ class CollectCash extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(Icons.fiber_manual_record,
-                            size: 20.0), // Use an appropriate icon
-                        SizedBox(
-                          height: 40,
-                          child: VerticalDivider(width: 1),
-                        ),
-                        Icon(Icons.location_on,
-                            size:
-                                15.0), // Smaller icon for the destination point
-                      ],
-                    ),
+                     Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: <Widget>[
+    Icon(Icons.radio_button_checked, size: 20.0), // Use an appropriate icon
+    ...List.generate(
+      7, // Number of dots
+      (index) => Container(
+        width: 2, // Dot width
+        height: 2, // Dot height
+        margin: EdgeInsets.symmetric(vertical: 2), // Space between the dots
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.black,
+        ),
+      ),
+    ),
+    Icon(Icons.location_on, size: 15.0), // Smaller icon for the destination point
+  ],
+)
+,
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8.0),
