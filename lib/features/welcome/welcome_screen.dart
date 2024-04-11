@@ -32,95 +32,97 @@ class WelcomeScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Welcome,",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(height: 1.7, color: AppColors.grey),
-              ),
-              Text(
-                textAlign: TextAlign.center,
-                "Jenny Wilson",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium!
-                    .copyWith(height: 1.7, color: AppColors.primeryColor),
-              ),
-              SizedBox(
-                height: 30.h,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Required Steps",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(height: 1.7, color: AppColors.grey)),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  CustomWelcomeScreenButton(
-                    title: "Profile Picture",
-                    onTap: () {
-                      Get.toNamed(AppRoute.profilrePictureScreen);
-                    },
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  CustomWelcomeScreenButton(
-                    title: "Bank Account Details",
-                    onTap: () {
-                      Get.to(BankDetailsScreen());
-                    },
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  CustomWelcomeScreenButton(
-                    title: "Driving Details",
-                    onTap: () {
-                      Get.to(DrivingLicenseScreen());
-                    },
-                  ),
-                  SizedBox(
-                    height: 40.h,
-                  ),
-                  Text("Submitted Steps",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(height: 1.7, color: AppColors.grey)),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  CustomWelcomeScreenButton(
-                    title: "Government ID",
-                    onTap: () {
-                      Get.to(const GovernmentIDScreen());
-                    },
-                  ),
-                  SizedBox(
-                    height: 180.h,
-                  ),
-                  CustomButton(
-                    height: 44,
-                    width: 1.sw,
-                    onPressed: () {
-                      print("clicked");
-                      showVerificationPopup(context);
-                    },
-                    text: "Continue",
-                    color: AppColors.primeryColor,
-                  )
-                ],
-              )
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Welcome,",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(height: 1.7, color: AppColors.grey),
+                ),
+                Text(
+                  textAlign: TextAlign.center,
+                  "Jenny Wilson",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineMedium!
+                      .copyWith(height: 1.7, color: AppColors.primeryColor),
+                ),
+                SizedBox(
+                  height: 30.h,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Required Steps",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(height: 1.7, color: AppColors.grey)),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    CustomWelcomeScreenButton(
+                      title: "Profile Picture",
+                      onTap: () {
+                        Get.toNamed(AppRoute.profilrePictureScreen);
+                      },
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    CustomWelcomeScreenButton(
+                      title: "Bank Account Details",
+                      onTap: () {
+                        Get.to(BankDetailsScreen());
+                      },
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    CustomWelcomeScreenButton(
+                      title: "Driving Details",
+                      onTap: () {
+                        Get.to(DrivingLicenseScreen());
+                      },
+                    ),
+                    SizedBox(
+                      height: 40.h,
+                    ),
+                    Text("Submitted Steps",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(height: 1.7, color: AppColors.grey)),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    CustomWelcomeScreenButton(
+                      title: "Government ID",
+                      onTap: () {
+                        Get.to(const GovernmentIDScreen());
+                      },
+                    ),
+                    SizedBox(
+                      height: 180.h,
+                    ),
+                    CustomButton(
+                      height: 44,
+                      width: 1.sw,
+                      onPressed: () {
+                        print("clicked");
+                        showVerificationPopup(context);
+                      },
+                      text: "Continue",
+                      color: AppColors.primeryColor,
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -167,7 +169,7 @@ class WelcomeScreen extends StatelessWidget {
                 onPressed: () {
                   Get.back();
                 },
-                text: "Continue",
+                text: "Got it",
                 color: AppColors.primeryColor,
               )
             ],
