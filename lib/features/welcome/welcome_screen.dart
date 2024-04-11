@@ -137,7 +137,7 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Icon(
+              const Icon(
                 Icons.check_circle_outline,
                 size: 60, // Adjust the size as needed
                 color: AppColors.primeryColor, // Adjust the color as needed
