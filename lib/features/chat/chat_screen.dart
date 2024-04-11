@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:jambotaxi/features/chat/chat_controller.dart';
 import 'package:jambotaxi/features/chat/widget/message_row.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
+import 'package:jambotaxi/widgets/custom_text_field.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final ChatController controller = Get.put(ChatController());
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -73,15 +77,11 @@ class ChatScreen extends StatelessWidget {
                 child: SizedBox(
                   height: 50,
                   width: MediaQuery.of(context).size.width - 70,
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      hintText: "Type message",
-                      border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.zero, // Set the border radius to zero
-                      ),
-                    ),
-                  ),
+                  child: CustomTextFieldInt(
+                    keyboardType: TextInputType.multiline,
+                            controller: controller.chatController,
+                            hint: 'Type message',
+                          ),
                 ),
               ),
               const SizedBox(width: 5,),
