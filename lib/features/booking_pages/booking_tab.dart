@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jambotaxi/features/on_board/widgets/booking_card.dart';
+import 'package:jambotaxi/features/booking_pages/widgets/booking_card.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 
@@ -47,59 +47,65 @@ class BookingComplete extends StatelessWidget {
             Expanded(
               child: TabBarView(
                 children: [
-                  Column(
-                    children: [
-                      BookingCard(statusText: 'Ongoing'),
-                      Container(
-                        width: 400,
-                        height: 300,
-                        padding: EdgeInsets.all(20.0),
-                        child: const CustomPngImage(
-                          imageName: "assets/images/map.png",
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SizedBox(
-                            width: 165,
-                            height: 50,
-                            child: CustomButton(
-                              onPressed: () {
-                                // Handle button 1 press
-                              },
-                              child: Text('Cancel',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(color: AppColors.white),
-                            ),
-
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        BookingCard(statusText: 'Ongoing'),
+                        Container(
+                          width: 400,
+                          height: 300,
+                          padding: EdgeInsets.all(20),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(4.0),
+                            child: Image.asset(
+                              "assets/images/map.png",
+                              fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(
-                            width: 165,
-                            height: 50,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Handle button 2 press
-                              },
-                              child: Text('Track Ride'),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.green,
-                                shape: const RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.zero, // No border radius
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SizedBox(
+                              width: 165,
+                              height: 50,
+                              child: CustomButton(
+                                onPressed: () {
+                                  // Handle button 1 press
+                                },
+                                child: Text(
+                                  'Cancel',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(color: AppColors.white),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                            SizedBox(
+                              width: 165,
+                              height: 50,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  // Handle button 2 press
+                                },
+                                child: Text('Track Ride'),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.green,
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.zero, // No border radius
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   ListView.builder(
                     itemCount: 5, // Number of items in the list
