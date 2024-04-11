@@ -18,4 +18,7 @@ class AppRoute {
   static String home = '/Home';
   static String bottom_nav = '/BottomNavigation';
   static String ride_request = '/RideRequest';
+  static String otp_verification = '/OtpVerification';
+  static String cancel_ride = '/cancelRide';
+  static String cancel_success = '/cancelSuccess';
 }
