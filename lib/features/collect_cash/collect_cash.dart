@@ -108,15 +108,18 @@ class CollectCash extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 25.0),
+                      padding: const EdgeInsets.only(top: 20.0),
                       child: Container(
                         color: AppColors.primeryColor,
-                        child: Text(
-                          '10 min trip',
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(height: 1.7, color: AppColors.white),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            '10 min trip',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(height: 1.7, color: AppColors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -173,8 +176,7 @@ class CollectCash extends StatelessWidget {
                                   .textTheme
                                   .displayMedium!
                                   .copyWith(
-                                    color: AppColors.white,
-                                    fontSize: 18,
+                                    color: AppColors.white,fontWeight: FontWeight.w300
                                   ),
                             ),
                           ],
@@ -214,7 +216,7 @@ class CollectCash extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .displayMedium!
-                              .copyWith(height: 1.7, color: AppColors.white)),
+                              .copyWith(height: 1.7, color: AppColors.white,fontWeight: FontWeight.w300)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 10.0),
@@ -222,7 +224,7 @@ class CollectCash extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .displayMedium!
-                              .copyWith(height: 1.7, color: AppColors.white)),
+                              .copyWith(height: 1.7, color: AppColors.white,fontWeight: FontWeight.w300)),
                     ),
                   ],
                 ),
