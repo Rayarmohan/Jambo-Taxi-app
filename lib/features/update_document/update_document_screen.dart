@@ -7,6 +7,10 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
+
+import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/widgets/custom_app_bar.dart';
+
 import 'package:jambotaxi/widgets/custom_images.dart';
 
 class UpdateDocument extends StatelessWidget {
@@ -70,7 +74,7 @@ class UpdateDocument extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 30,
               ),
               Container(

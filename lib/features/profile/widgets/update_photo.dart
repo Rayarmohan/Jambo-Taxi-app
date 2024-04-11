@@ -14,26 +14,24 @@ class ProfileUpdate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      clipBehavior:
-          Clip.none,
+      clipBehavior: Clip.none,
       children: [
-        
         Container(
           width: 116.h,
           height: 116.h,
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
-        
             borderRadius: BorderRadius.circular(100),
           ),
           child: Image.asset(
             imagePath,
             fit: BoxFit.cover,
+            height: 50,
+            width: 50,
           ),
         ),
-        
         Positioned(
-          bottom: 10, 
+          bottom: 10,
           right: -2,
           child: InkWell(
             onTap: onUpdate,
