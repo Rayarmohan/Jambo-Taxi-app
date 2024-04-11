@@ -5,4 +5,6 @@ class AppRoute {
   static String helpcenter = '/HelpCenter';
   static String privacy = '/PrivacyScreen';
   static String updatedocument = '/UpdateDocument';
+  static String settings = '/Settings';
+  static String profile = '/ProfileScreen';
 }
