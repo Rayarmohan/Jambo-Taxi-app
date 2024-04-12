@@ -55,14 +55,17 @@ class ProfileScreen extends StatelessWidget {
                     
                   }),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Center(
                   child: Text("Eric Selvick",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.normal,
-                      ))),
+                       style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),)),
               SizedBox(
                 height: 30,
               ),
@@ -76,11 +79,11 @@ class ProfileScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
-                      color: Colors.black
+                      color: AppColors.primeryColor
                     )),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Colors.black,
+                  color: AppColors.primeryColor,
                   size: 15,
                 ),
               ),
@@ -98,11 +101,11 @@ class ProfileScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
-                      color: Colors.black
+                      color: AppColors.primeryColor
                     )),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Colors.black,
+                  color: AppColors.primeryColor,
                   size: 15,
                 ),
               ),
@@ -120,11 +123,11 @@ class ProfileScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
-                      color: Colors.black
+                      color: AppColors.primeryColor
                     )),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Colors.black,
+                  color: AppColors.primeryColor,
                   size: 15,
                 ),
               ),
@@ -146,11 +149,11 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
-                        color: Colors.black
+                        color: AppColors.primeryColor
                       )),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.black,
+                    color: AppColors.primeryColor,
                     size: 15,
                   ),
                 ),
@@ -169,11 +172,11 @@ class ProfileScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
-                      color: Colors.black
+                      color: AppColors.primeryColor
                     )),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Colors.black,
+                  color: AppColors.primeryColor,
                   size: 15,
                 ),
               ),
@@ -197,11 +200,11 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
-                        color: Colors.black
+                        color: AppColors.primeryColor
                       )),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.black,
+                    color: AppColors.primeryColor,
                     size: 15,
                   ),
                 ),
@@ -224,11 +227,11 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
-                        color: Colors.black
+                        color: AppColors.primeryColor
                       )),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.black,
+                    color: AppColors.primeryColor,
                     size: 15,
                   ),
                 ),
@@ -252,11 +255,11 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
-                        color: Colors.black
+                        color: AppColors.primeryColor
                       )),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.black,
+                    color: AppColors.primeryColor,
                     size: 15,
                   ),
                 ),
@@ -280,14 +283,17 @@ class ProfileScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const ListTile(
+              ListTile(
                 title: Center(
                   child: Text(
                     'Log Out',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal,
-                    ),
+                     style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),
                   ),
                 ),
               ),

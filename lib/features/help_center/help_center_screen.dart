@@ -54,7 +54,7 @@ class _HelpCenterState extends State<HelpCenter> {
                 CustomTextField(
                   controller: controller.helpController,
                   hint: "Search",
-                  suffixIcon: const Icon(Icons.search, color: Colors.black),
+                  suffixIcon: const Icon(Icons.search, color: Colors.black,size: 25,),
                 ),
                 const SizedBox(height: 30),
                 const Text(
@@ -62,7 +62,7 @@ class _HelpCenterState extends State<HelpCenter> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppColors.primeryColor,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -91,12 +91,13 @@ class _HelpCenterState extends State<HelpCenter> {
                                   .bodyMedium!
                                   .copyWith(
                                     height: 1.7,
-                                    color: AppColors.black,
+                                    color: AppColors.primeryColor,
                                   ),
                             ),
                             const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.black,
+                              size: 15
                             ),
                           ],
                         ),
@@ -136,14 +137,15 @@ class _HelpCenterState extends State<HelpCenter> {
                                     .bodyMedium!
                                     .copyWith(
                                       height: 1.7,
-                                      color: AppColors.black,
+                                      color:AppColors.primeryColor,
                                     ),
-                              ),
+                              ), 
                               Icon(
                                 _isWhatsAppInfoVisible
                                     ? Icons.arrow_drop_down
                                     : Icons.arrow_forward_ios,
                                 color: Colors.black,
+                                size: 15
                               ),
                             ],
                           ),
@@ -179,12 +181,13 @@ class _HelpCenterState extends State<HelpCenter> {
                                   .bodyMedium!
                                   .copyWith(
                                     height: 1.7,
-                                    color: AppColors.black,
+                                    color: AppColors.primeryColor,
                                   ),
                             ),
                             const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.black,
+                              size: 15
                             ),
                           ],
                         ),
@@ -218,12 +221,13 @@ class _HelpCenterState extends State<HelpCenter> {
                                   .bodyMedium!
                                   .copyWith(
                                     height: 1.7,
-                                    color: AppColors.black,
+                                    color: AppColors.primeryColor,
                                   ),
                             ),
                             const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.black,
+                              size: 15
                             ),
                           ],
                         ),
@@ -257,12 +261,13 @@ class _HelpCenterState extends State<HelpCenter> {
                                   .bodyMedium!
                                   .copyWith(
                                     height: 1.7,
-                                    color: AppColors.black,
+                                    color: AppColors.primeryColor,
                                   ),
                             ),
                             const Icon(
                               Icons.arrow_forward_ios,
-                              color: Colors.black,
+                              color: AppColors.primeryColor,
+                              size: 15
                             ),
                           ],
                         ),
@@ -285,12 +290,24 @@ class _HelpCenterState extends State<HelpCenter> {
       decoration: BoxDecoration(
         border: Border.all(width: 1, color: AppColors.grey),
       ),
-      child: const Text(
-        "(+234) 8946788",
-        style: TextStyle(
-          fontSize: 14,
-          color: AppColors.black,
-        ),
+      child: Row(
+        children: const [
+          Icon(
+            Icons.circle,
+            size: 10,
+            color: AppColors.primeryColor,
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          Text(
+            "(+234) 8946788",
+            style: TextStyle(
+              fontSize: 14,
+              color: AppColors.black,
+            ),
+          ),
+        ],
       ),
     );
   }

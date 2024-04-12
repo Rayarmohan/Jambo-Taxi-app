@@ -60,12 +60,13 @@ class Settings extends StatelessWidget {
                                   .bodyMedium!
                                   .copyWith(
                                     height: 1.7,
-                                    color: AppColors.black,
+                                    color: AppColors.primeryColor,
                                   ),
                             ),
                             const Icon(
                               Icons.arrow_forward_ios,
-                              color: Colors.black,
+                              color: AppColors.primeryColor,
+                              size: 15
                             ),
                           ],
                         ),
@@ -91,12 +92,13 @@ class Settings extends StatelessWidget {
                                   .bodyMedium!
                                   .copyWith(
                                     height: 1.7,
-                                    color: AppColors.black,
+                                    color: AppColors.primeryColor,
                                   ),
                             ),
                             const Icon(
                               Icons.arrow_forward_ios,
-                              color: Colors.black,
+                              color: AppColors.primeryColor,
+                              size: 15
                             ),
                           ],
                         ),
