@@ -15,6 +15,7 @@ import 'package:jambotaxi/features/home/home.dart';
 import 'package:jambotaxi/features/login/login_screen.dart';
 import 'package:jambotaxi/features/notification/notification_screen.dart';
 import 'package:jambotaxi/features/on_board/on_board_screen.dart';
+import 'package:jambotaxi/features/otp_verification/otp_verification.dart';
 import 'package:jambotaxi/features/otp_verify/otp_verify_screen.dart';
 import 'package:jambotaxi/features/privacy_policy/privacy_screen.dart';
 import 'package:jambotaxi/features/profile/profile_screen.dart';
