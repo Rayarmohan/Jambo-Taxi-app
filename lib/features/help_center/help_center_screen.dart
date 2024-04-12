@@ -1,4 +1,8 @@
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:jambotaxi/features/help_center/help_center_controller.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
@@ -6,7 +10,7 @@ import 'package:jambotaxi/widgets/custom_images.dart';
 import 'package:jambotaxi/widgets/custom_text_field.dart';
 
 class HelpCenter extends StatefulWidget {
-  const HelpCenter({Key? key}) : super(key: key);
+  const HelpCenter({super.key});
 
   @override
   _HelpCenterState createState() => _HelpCenterState();
@@ -26,19 +30,23 @@ class _HelpCenterState extends State<HelpCenter> {
                 .textTheme
                 .headlineMedium!
                 .copyWith(height: 1.7, color: AppColors.primeryColor)),
-        leading: const Padding(
+        leading:  Padding(
           padding: EdgeInsets.all(8.0),
-          child: CustomPngImage(
-            imageName: "assets/images/arrow_back.png",
-            height: 30,
-            width: 30,
+          child: InkWell(
+             onTap: () {
+              Get.back();
+            },
+            child: CustomPngImage(
+              imageName: "assets/images/arrow_back.png",
+              height: 30,
+              width: 30,
+            ),
           ),
         ),
       ),
       body: SafeArea(
         child: Padding(
-          // padding: EdgeInsets.symmetric(horizontal: 20),
-           padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
+           padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,10 +54,10 @@ class _HelpCenterState extends State<HelpCenter> {
                 CustomTextField(
                   controller: controller.helpController,
                   hint: "Search",
-                  suffixIcon: Icon(Icons.search, color: Colors.black),
+                  suffixIcon: const Icon(Icons.search, color: Colors.black),
                 ),
-                SizedBox(height: 30),
-                Text(
+                const SizedBox(height: 30),
+                const Text(
                   "FAQ",
                   style: TextStyle(
                     fontSize: 16,
@@ -57,9 +65,9 @@ class _HelpCenterState extends State<HelpCenter> {
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -86,7 +94,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                     color: AppColors.black,
                                   ),
                             ),
-                            Icon(
+                            const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.black,
                             ),
@@ -96,9 +104,9 @@ class _HelpCenterState extends State<HelpCenter> {
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -145,9 +153,9 @@ class _HelpCenterState extends State<HelpCenter> {
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -174,7 +182,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                     color: AppColors.black,
                                   ),
                             ),
-                            Icon(
+                            const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.black,
                             ),
@@ -184,9 +192,9 @@ class _HelpCenterState extends State<HelpCenter> {
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -213,7 +221,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                     color: AppColors.black,
                                   ),
                             ),
-                            Icon(
+                            const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.black,
                             ),
@@ -223,9 +231,9 @@ class _HelpCenterState extends State<HelpCenter> {
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -252,7 +260,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                     color: AppColors.black,
                                   ),
                             ),
-                            Icon(
+                            const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.black,
                             ),
@@ -277,7 +285,7 @@ class _HelpCenterState extends State<HelpCenter> {
       decoration: BoxDecoration(
         border: Border.all(width: 1, color: AppColors.grey),
       ),
-      child: Text(
+      child: const Text(
         "(+234) 8946788",
         style: TextStyle(
           fontSize: 14,

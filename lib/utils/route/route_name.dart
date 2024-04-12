@@ -8,15 +8,21 @@ class AppRoute {
   static String helpcenter = '/HelpCenter';
   static String privacy = '/PrivacyScreen';
   static String updatedocument = '/UpdateDocument';
+  static String settings = '/Settings';
+  static String cars_screen = '/CarScreen';
   static String registrationScreen = '/Registration';
   static String profilrePictureScreen = '/ProfilePictureScreen';
   static String rating = '/RatingScreen';
   static String collectcash = '/CollectCash';
   static String chatscreen = '/ChatScreen';
   static String notification = '/NotificationScreen';
+  static String enablelocation = '/EnableLocationScreen';
+  static String earnings = '/EarningScreen';
   static String bookingcompletescreen = '/BookingComplete';
   static String prebookingcompletescreen = '/PrebookingComplete';
   static String home = '/Home';
   static String bottom_nav = '/BottomNavigation';
   static String ride_request = '/RideRequest';
+  static String navigate_userLocation = '/NavigateUserLocation';
 }
+
