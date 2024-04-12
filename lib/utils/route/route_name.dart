@@ -25,4 +25,7 @@ class AppRoute {
   static String navigate_userLocation = '/NavigateUserLocation';
   static String arrived_userLocation = '/ArrivedUserLocation';
   static String askForOtp = '/AskForOtpScreen';
+  static String otp = '/OTPVerification ';
+  static String navigateYourRide = '/NavigationYourRide';
+  static String cancelRide = '/CancelRideScreen';
 }

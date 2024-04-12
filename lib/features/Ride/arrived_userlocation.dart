@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, camel_case_types, unnecessary_const
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
@@ -185,20 +186,25 @@ class Arrived_Userlocation extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Row(
+                      Row(
                         children: [
-                          CircleAvatar(
-                            radius: 20,
-                            backgroundColor: AppColors.primeryColor,
-                            child: Icon(
-                              Icons.mark_unread_chat_alt_outlined,
-                              color: AppColors.white,
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(AppRoute.chatscreen);
+                            },
+                            child: const CircleAvatar(
+                              radius: 20,
+                              backgroundColor: AppColors.primeryColor,
+                              child: Icon(
+                                Icons.mark_unread_chat_alt_outlined,
+                                color: AppColors.white,
+                              ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
-                          CircleAvatar(
+                          const CircleAvatar(
                             radius: 20,
                             backgroundColor: Colors.green,
                             child: Icon(
@@ -220,7 +226,7 @@ class Arrived_Userlocation extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                     child: CustomButton(
                       onPressed: () {
-                        Get.toNamed(AppRoute.askForOtp);
+                        Get.toNamed(AppRoute.navigateYourRide);
                       },
                       child: Text(
                         'Arrived',

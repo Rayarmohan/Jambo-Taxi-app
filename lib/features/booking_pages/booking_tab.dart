@@ -20,14 +20,31 @@ class BookingComplete extends StatelessWidget {
                     .textTheme
                     .headlineMedium!
                     .copyWith(height: 1.7, color: AppColors.primeryColor)),
-            leading: const Padding(
-              padding: EdgeInsets.only(left: 34),
-              child: CustomPngImage(
-                imageName: "assets/images/arrow_back.png",
-                height: 30,
-                width: 30,
-              ),
+            leading: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: AppColors.grey),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: const Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: AppColors.primeryColor,
+                      ),
+                    ),
+                  )),
             ),
+
+            // const CustomPngImage(
+            //   imageName: "assets/images/arrow_back.png",
+            //   height: 30,
+            //   width: 30,
+            // ),
           ),
           body: Column(children: <Widget>[
             const Material(
@@ -58,18 +75,21 @@ class BookingComplete extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(4.0),
                             child: Stack(
-                              alignment: Alignment.center, // Align the top image to the center of the map image
+                              alignment: Alignment
+                                  .center, // Align the top image to the center of the map image
                               children: [
                                 Image.asset(
                                   "assets/images/map.png",
                                   fit: BoxFit.cover,
-                                  width: double.infinity, // Ensure the map image fills the container
+                                  width: double
+                                      .infinity, // Ensure the map image fills the container
                                   height: double.infinity,
                                 ),
                                 Image.asset(
                                   "assets/images/Vector.png", // Replace with the path of your top image
                                   width: 100, // Set the width of the top image
-                                  height: 100, // Set the height of the top image
+                                  height:
+                                      100, // Set the height of the top image
                                 ),
                               ],
                             ),

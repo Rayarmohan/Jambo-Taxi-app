@@ -253,7 +253,9 @@ class Ride_Request extends StatelessWidget {
                       width: 160,
                       height: 44,
                       child: CustomButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(AppRoute.cancelRide);
+                        },
                         child: Text(
                           'Decline',
                           style: Theme.of(context)

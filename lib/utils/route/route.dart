@@ -2,10 +2,12 @@ import 'package:get/get.dart';
 import 'package:jambotaxi/features/Registration/registration_screen.dart';
 import 'package:jambotaxi/features/Ride/arrived_userlocation.dart';
 import 'package:jambotaxi/features/Ride/navigate_userlocation.dart';
+import 'package:jambotaxi/features/Ride/navigationyourride.dart';
 import 'package:jambotaxi/features/Ride/ride_request.dart';
 import 'package:jambotaxi/features/booking_pages/booking_tab.dart';
 import 'package:jambotaxi/features/booking_pages/prebooking_tab.dart';
 import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
+import 'package:jambotaxi/features/cancel_ride/cancel_ride_screen.dart';
 import 'package:jambotaxi/features/cars/cars_screen.dart';
 import 'package:jambotaxi/features/chat/chat_screen.dart';
 import 'package:jambotaxi/features/collect_cash/collect_cash.dart';
@@ -18,6 +20,7 @@ import 'package:jambotaxi/features/login/login_screen.dart';
 import 'package:jambotaxi/features/notification/notification_screen.dart';
 import 'package:jambotaxi/features/on_board/on_board_screen.dart';
 import 'package:jambotaxi/features/otp/ask_forotp.dart';
+import 'package:jambotaxi/features/otp_verification/otp_verification.dart';
 import 'package:jambotaxi/features/otp_verify/otp_verify_screen.dart';
 import 'package:jambotaxi/features/privacy_policy/privacy_screen.dart';
 import 'package:jambotaxi/features/profile/profile_screen.dart';
@@ -69,5 +72,11 @@ appRoutes() => [
       GetPage(
           name: AppRoute.arrived_userLocation,
           page: () => const Arrived_Userlocation()),
+      GetPage(
+          name: AppRoute.navigateYourRide,
+          page: () => const NavigationYourRide()),
       GetPage(name: AppRoute.askForOtp, page: () => const AskForOtp()),
+      GetPage(name: AppRoute.otp, page: () => const OTPVerification()),
+      GetPage(name: AppRoute.cancelRide, page: () => const CancelRideScreen()),
+      GetPage(name: AppRoute.cars_screen, page: () => const CarsScreen()),
     ];

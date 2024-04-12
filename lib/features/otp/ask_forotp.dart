@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jambotaxi/features/otp_verification/otp_verification.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
@@ -155,7 +156,7 @@ class AskForOtp extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                     child: CustomButton(
                       onPressed: () {
-                        Get.toNamed(AppRoute.otpscreen);
+                        Get.to(const OTPVerification());
                       },
                       child: Text(
                         'Ask For Otp',

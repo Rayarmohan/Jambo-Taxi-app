@@ -9,6 +9,7 @@ import 'package:jambotaxi/features/profile/widgets/update_photo.dart';
 import 'package:jambotaxi/features/profilesettings/profilesettings_screen.dart';
 
 import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
@@ -25,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
                 .textTheme
                 .headlineMedium!
                 .copyWith(height: 1.7, color: AppColors.primeryColor)),
-        leading:  Padding(
+        leading: Padding(
           padding: EdgeInsets.all(8.0),
           child: InkWell(
             onTap: () {
@@ -52,35 +53,32 @@ class ProfileScreen extends StatelessWidget {
                     print("clicked");
                     Get.to(ProfileEdit());
                     print("Navigated to edit profile");
-                    
                   }),
               SizedBox(
                 height: 5,
               ),
               Center(
-                  child: Text("Eric Selvick",
-                       style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.primeryColor,
-                                  ),)),
+                  child: Text(
+                "Eric Selvick",
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      height: 1.7,
+                      color: AppColors.primeryColor,
+                    ),
+              )),
               SizedBox(
                 height: 30,
               ),
               ListTile(
                 leading: CustomPngImage(
-              imageName: "assets/images/person.png",
-              height: 20,
-              width: 20,
-            ),
+                  imageName: "assets/images/person.png",
+                  height: 20,
+                  width: 20,
+                ),
                 title: Text("Your Profile",
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: AppColors.primeryColor
-                    )),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primeryColor)),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: AppColors.primeryColor,
@@ -92,17 +90,17 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.black,
               ),
               ListTile(
-                leading:  CustomPngImage(
-              imageName: "assets/images/sandtimer.png",
-              height: 20,
-              width: 20,
-            ),
+                onTap: () => Get.toNamed(AppRoute.bookingcompletescreen),
+                leading: CustomPngImage(
+                  imageName: "assets/images/sandtimer.png",
+                  height: 20,
+                  width: 20,
+                ),
                 title: Text("Your Rides",
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: AppColors.primeryColor
-                    )),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primeryColor)),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: AppColors.primeryColor,
@@ -114,17 +112,17 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.black,
               ),
               ListTile(
+                onTap: () => Get.toNamed(AppRoute.prebookingcompletescreen),
                 leading: CustomPngImage(
-              imageName: "assets/images/your ride.png",
-              height: 20,
-              width: 20,
-            ),
+                  imageName: "assets/images/your ride.png",
+                  height: 20,
+                  width: 20,
+                ),
                 title: Text("Pre-Booked Rides",
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: AppColors.primeryColor
-                    )),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primeryColor)),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: AppColors.primeryColor,
@@ -140,17 +138,16 @@ class ProfileScreen extends StatelessWidget {
                   Get.to(Settings());
                 },
                 child: ListTile(
-                  leading:  CustomPngImage(
-              imageName: "assets/images/settins2.png",
-              height: 20,
-              width: 20,
-            ),
+                  leading: CustomPngImage(
+                    imageName: "assets/images/settins2.png",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text("Settings",
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      )),
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.primeryColor)),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: AppColors.primeryColor,
@@ -163,17 +160,17 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.black,
               ),
               ListTile(
+                onTap: () => Get.toNamed(AppRoute.cars_screen),
                 leading: CustomPngImage(
-              imageName: "assets/images/car4.png",
-              height: 25,
-              width: 25,
-            ),
+                  imageName: "assets/images/car4.png",
+                  height: 25,
+                  width: 25,
+                ),
                 title: Text("Cars",
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: AppColors.primeryColor
-                    )),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primeryColor)),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: AppColors.primeryColor,
@@ -186,22 +183,19 @@ class ProfileScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                   Get.to(HelpCenter());
-
-                  
+                  Get.to(HelpCenter());
                 },
                 child: ListTile(
                   leading: CustomPngImage(
-              imageName: "assets/images/helpcenter.png",
-              height: 20,
-              width: 20,
-            ),
+                    imageName: "assets/images/helpcenter.png",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text("Help Center",
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      )),
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.primeryColor)),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: AppColors.primeryColor,
@@ -218,17 +212,16 @@ class ProfileScreen extends StatelessWidget {
                   Get.to(PrivacyScreen());
                 },
                 child: ListTile(
-                  leading:  CustomPngImage(
-              imageName: "assets/images/person2.png",
-              height: 20,
-              width: 20,
-            ),
+                  leading: CustomPngImage(
+                    imageName: "assets/images/person2.png",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text("Privacy Policy",
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      )),
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.primeryColor)),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: AppColors.primeryColor,
@@ -244,19 +237,17 @@ class ProfileScreen extends StatelessWidget {
                 onTap: () {
                   _showBottomSheet(context);
                 },
-                
                 child: ListTile(
-                  leading:  CustomPngImage(
-              imageName: "assets/images/signout.png",
-              height: 20,
-              width: 20,
-            ),
+                  leading: CustomPngImage(
+                    imageName: "assets/images/signout.png",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text("Log Out",
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      )),
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.primeryColor)),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: AppColors.primeryColor,
@@ -268,8 +259,6 @@ class ProfileScreen extends StatelessWidget {
           )),
         ),
       ),
-
-      
     );
   }
 
@@ -287,13 +276,10 @@ class ProfileScreen extends StatelessWidget {
                 title: Center(
                   child: Text(
                     'Log Out',
-                     style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.primeryColor,
-                                  ),
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          height: 1.7,
+                          color: AppColors.primeryColor,
+                        ),
                   ),
                 ),
               ),
@@ -349,7 +335,6 @@ class ProfileScreen extends StatelessWidget {
           ),
         );
       },
-      
     );
   }
 }

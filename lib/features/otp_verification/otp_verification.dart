@@ -15,7 +15,7 @@ class OTPVerification extends StatelessWidget {
   // final OtpVerificationController controller = Get.put(OtpVerificationController());
 
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
         title: Text('OTP Verification',
@@ -53,7 +53,8 @@ class OTPVerification extends StatelessWidget {
             const SizedBox(height: 70),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(4, (index) => _buildOTPBox(context, index)),
+              children:
+                  List.generate(4, (index) => _buildOTPBox(context, index)),
             ),
             const SizedBox(height: 40),
             Column(
@@ -91,7 +92,7 @@ class OTPVerification extends StatelessWidget {
               height: 60,
               width: 0.9.sw,
               onPressed: () {
-                print("clicked");
+                Get.toNamed(AppRoute.collectcash);
               },
               text: "Verify & Start ride",
               color: AppColors.primeryColor,

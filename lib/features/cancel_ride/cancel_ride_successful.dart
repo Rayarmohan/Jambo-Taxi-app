@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 
 class CancelSuccess extends StatelessWidget {
@@ -53,6 +55,7 @@ class CancelSuccess extends StatelessWidget {
             height: 60,
             width: 0.9.sw,
             onPressed: () {
+              Get.toNamed(AppRoute.bottom_nav);
             },
             text: "Got It",
             color: AppColors.primeryColor,

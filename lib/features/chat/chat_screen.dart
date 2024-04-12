@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/chat/chat_controller.dart';
 import 'package:jambotaxi/features/chat/widget/message_row.dart';
@@ -16,12 +17,17 @@ class ChatScreen extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: AppColors.primeryColor,
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CustomPngImage(
-            imageName: "assets/images/arrow_back.png",
-            height: 30,
-            width: 30,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: const CustomPngImage(
+              imageName: "assets/images/arrow_back.png",
+              height: 30,
+              width: 30,
+            ),
           ),
         ),
         title: ListTile(
@@ -62,11 +68,20 @@ class ChatScreen extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.all(12),
               children: const [
-                MessageRow(message: 'Hello', isMe :false,time:  '08:04 pm'),
-                MessageRow(message: 'Hello',isMe:  true,time:  '08:04 pm'),
-                MessageRow(message: 'Hello, are you nearby?',isMe:  false,time:  '08:04 pm'),
-                MessageRow(message: 'I\'ll be there in few min',isMe:  true,time:  '08:05 pm'),
-                MessageRow(message: 'I\'m in the location',isMe:  false,time:  '08:04 pm'),
+                MessageRow(message: 'Hello', isMe: false, time: '08:04 pm'),
+                MessageRow(message: 'Hello', isMe: true, time: '08:04 pm'),
+                MessageRow(
+                    message: 'Hello, are you nearby?',
+                    isMe: false,
+                    time: '08:04 pm'),
+                MessageRow(
+                    message: 'I\'ll be there in few min',
+                    isMe: true,
+                    time: '08:05 pm'),
+                MessageRow(
+                    message: 'I\'m in the location',
+                    isMe: false,
+                    time: '08:04 pm'),
               ],
             ),
           ),
@@ -79,20 +94,26 @@ class ChatScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 70,
                   child: CustomTextFieldInt(
                     keyboardType: TextInputType.multiline,
-                            controller: controller.chatController,
-                            hint: 'Type message',
-                          ),
+                    controller: controller.chatController,
+                    hint: 'Type message',
+                  ),
                 ),
               ),
-              const SizedBox(width: 5,),
+              const SizedBox(
+                width: 5,
+              ),
               CircleAvatar(
                 backgroundColor: AppColors.primeryColor,
                 child: IconButton(
-                  icon: const Icon(Icons.arrow_forward_ios, color: Colors.white),
+                  icon:
+                      const Icon(Icons.arrow_forward_ios, color: Colors.white),
                   onPressed: () {},
                 ),
               )
             ],
+          ),
+          const SizedBox(
+            height: 50,
           )
         ],
       ),
