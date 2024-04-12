@@ -58,20 +58,26 @@ class CollectCash extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(Icons.fiber_manual_record,
-                            size: 20.0), // Use an appropriate icon
-                        SizedBox(
-                          height: 40,
-                          child: VerticalDivider(width: 1),
-                        ),
-                        Icon(Icons.location_on,
-                            size:
-                                15.0), // Smaller icon for the destination point
-                      ],
-                    ),
+                     Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: <Widget>[
+    Icon(Icons.radio_button_checked, size: 20.0), // Use an appropriate icon
+    ...List.generate(
+      7, // Number of dots
+      (index) => Container(
+        width: 2, // Dot width
+        height: 2, // Dot height
+        margin: EdgeInsets.symmetric(vertical: 2), // Space between the dots
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.black,
+        ),
+      ),
+    ),
+    Icon(Icons.location_on, size: 15.0), // Smaller icon for the destination point
+  ],
+)
+,
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8.0),
@@ -108,15 +114,18 @@ class CollectCash extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 25.0),
+                      padding: const EdgeInsets.only(top: 20.0),
                       child: Container(
                         color: AppColors.primeryColor,
-                        child: Text(
-                          '10 min trip',
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(height: 1.7, color: AppColors.white),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            '10 min trip',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(height: 1.7, color: AppColors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -173,8 +182,7 @@ class CollectCash extends StatelessWidget {
                                   .textTheme
                                   .displayMedium!
                                   .copyWith(
-                                    color: AppColors.white,
-                                    fontSize: 18,
+                                    color: AppColors.white,fontWeight: FontWeight.w300
                                   ),
                             ),
                           ],
@@ -214,7 +222,7 @@ class CollectCash extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .displayMedium!
-                              .copyWith(height: 1.7, color: AppColors.white)),
+                              .copyWith(height: 1.7, color: AppColors.white,fontWeight: FontWeight.w300)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 10.0),
@@ -222,7 +230,7 @@ class CollectCash extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .displayMedium!
-                              .copyWith(height: 1.7, color: AppColors.white)),
+                              .copyWith(height: 1.7, color: AppColors.white,fontWeight: FontWeight.w300)),
                     ),
                   ],
                 ),
