@@ -6,6 +6,9 @@ class EditprofileCon extends GetxController {
   var citydropdownValue = 'Nairobi,Africa'.obs;
 
   TextEditingController editController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController enterdobController = TextEditingController();
 
    void setDropdownValue(String value) {
     dropdownValue.value = value;
