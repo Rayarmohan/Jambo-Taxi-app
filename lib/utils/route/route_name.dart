@@ -23,4 +23,6 @@ class AppRoute {
   static String bottom_nav = '/BottomNavigation';
   static String ride_request = '/RideRequest';
   static String navigate_userLocation = '/NavigateUserLocation';
+  static String arrived_userLocation = '/ArrivedUserLocation';
+  static String askForOtp = '/AskForOtpScreen';
 }

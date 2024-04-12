@@ -168,6 +168,7 @@ class WelcomeScreen extends StatelessWidget {
                 width: 1.sw,
                 onPressed: () {
                   Get.back();
+                  Get.toNamed(AppRoute.enablelocation);
                 },
                 text: "Got it",
                 color: AppColors.primeryColor,

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/Registration/registration_screen.dart';
+import 'package:jambotaxi/features/Ride/arrived_userlocation.dart';
+import 'package:jambotaxi/features/Ride/navigate_userlocation.dart';
 import 'package:jambotaxi/features/Ride/ride_request.dart';
 import 'package:jambotaxi/features/booking_pages/booking_tab.dart';
 import 'package:jambotaxi/features/booking_pages/prebooking_tab.dart';
@@ -15,6 +17,7 @@ import 'package:jambotaxi/features/home/home.dart';
 import 'package:jambotaxi/features/login/login_screen.dart';
 import 'package:jambotaxi/features/notification/notification_screen.dart';
 import 'package:jambotaxi/features/on_board/on_board_screen.dart';
+import 'package:jambotaxi/features/otp/ask_forotp.dart';
 import 'package:jambotaxi/features/otp_verify/otp_verify_screen.dart';
 import 'package:jambotaxi/features/privacy_policy/privacy_screen.dart';
 import 'package:jambotaxi/features/profile/profile_screen.dart';
@@ -47,11 +50,10 @@ appRoutes() => [
       GetPage(name: AppRoute.chatscreen, page: () => const ChatScreen()),
       GetPage(
           name: AppRoute.notification, page: () => const NotificationScreen()),
-          GetPage(
-          name: AppRoute.enablelocation, page: () => const EnableLocationScreen()),
-          GetPage(
-          name: AppRoute.earnings, page: () => const EarningScreen()),
-
+      GetPage(
+          name: AppRoute.enablelocation,
+          page: () => const EnableLocationScreen()),
+      GetPage(name: AppRoute.earnings, page: () => const EarningScreen()),
       GetPage(
           name: AppRoute.prebookingcompletescreen,
           page: () => const PrebookingComplete()),
@@ -61,5 +63,11 @@ appRoutes() => [
       GetPage(name: AppRoute.home, page: () => const Home()),
       GetPage(name: AppRoute.bottom_nav, page: () => const BottomNavigation()),
       GetPage(name: AppRoute.ride_request, page: () => const Ride_Request()),
-      
+      GetPage(
+          name: AppRoute.navigate_userLocation,
+          page: () => const NavigateUserLocation()),
+      GetPage(
+          name: AppRoute.arrived_userLocation,
+          page: () => const Arrived_Userlocation()),
+      GetPage(name: AppRoute.askForOtp, page: () => const AskForOtp()),
     ];
