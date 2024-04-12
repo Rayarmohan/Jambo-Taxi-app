@@ -61,5 +61,4 @@ appRoutes() => [
       GetPage(name: AppRoute.home, page: () => const Home()),
       GetPage(name: AppRoute.bottom_nav, page: () => const Bottom_Navigation()),
       GetPage(name: AppRoute.ride_request, page: () => const Ride_Request()),
-      GetPage(name: AppRoute.cars_screen, page: () => const CarsScreen()),
     ];

@@ -22,4 +22,5 @@ class AppRoute {
   static String home = '/Home';
   static String bottom_nav = '/BottomNavigation';
   static String ride_request = '/RideRequest';
+  static String navigate_userLocation = '/NavigateUserLocation';
 }
