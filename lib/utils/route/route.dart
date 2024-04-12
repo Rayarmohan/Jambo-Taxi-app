@@ -59,7 +59,7 @@ appRoutes() => [
           name: AppRoute.bookingcompletescreen,
           page: () => const BookingComplete()),
       GetPage(name: AppRoute.home, page: () => const Home()),
-      GetPage(name: AppRoute.bottom_nav, page: () => const Bottom_Navigation()),
+      GetPage(name: AppRoute.bottom_nav, page: () => const BottomNavigation()),
       GetPage(name: AppRoute.ride_request, page: () => const Ride_Request()),
       
     ];

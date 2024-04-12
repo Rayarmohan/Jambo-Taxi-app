@@ -132,7 +132,7 @@ class Ride_Request extends StatelessWidget {
             height: 8,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15.0),
+            padding: const EdgeInsets.only(left: 10.0),
             child: Column(
               children: [
                 ListTile(
@@ -241,8 +241,8 @@ class Ride_Request extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
-                      width: 140,
-                      height: 40,
+                      width: 160,
+                      height: 44,
                       child: CustomButton(
                         onPressed: () {},
                         child: Text(
@@ -255,8 +255,8 @@ class Ride_Request extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 140,
-                      height: 40,
+                      width: 160,
+                      height: 44,
                       child: CustomButton(
                         color: Colors.green,
                         onPressed: () {},

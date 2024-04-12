@@ -327,7 +327,7 @@ class ProfileEditUser extends StatelessWidget {
         ),
        
       )),
-      bottomNavigationBar: Bottom_Navigation(),
+      bottomNavigationBar: BottomNavigation(),
     );
   }
 }
