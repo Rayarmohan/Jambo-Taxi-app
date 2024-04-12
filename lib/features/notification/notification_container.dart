@@ -9,7 +9,7 @@ class NotificationContainer extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 140,
+          height: 125,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
             border: Border.all(
