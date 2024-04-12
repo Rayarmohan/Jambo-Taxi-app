@@ -1,4 +1,12 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/widgets/custom_app_bar.dart';
 
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
@@ -18,18 +26,23 @@ class UpdateDocument extends StatelessWidget {
                 .textTheme
                 .headlineMedium!
                 .copyWith(height: 1.7, color: AppColors.primeryColor)),
-        leading: const Padding(
+        leading:  Padding(
           padding: EdgeInsets.all(8.0),
-          child: CustomPngImage(
-            imageName: "assets/images/arrow_back.png",
-            height: 30,
-            width: 30,
+          child: InkWell(
+             onTap: () {
+              Get.back();
+            },
+            child: CustomPngImage(
+              imageName: "assets/images/arrow_back.png",
+              height: 30,
+              width: 30,
+            ),
           ),
         ),
       ),
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
+        padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +67,7 @@ class UpdateDocument extends StatelessWidget {
                             color: AppColors.black,
                           ),
                     ),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios,
                       color: Colors.black,
                     ),
@@ -84,14 +97,14 @@ class UpdateDocument extends StatelessWidget {
                             color: AppColors.black,
                           ),
                     ),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios,
                       color: Colors.black,
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
@@ -114,128 +127,47 @@ class UpdateDocument extends StatelessWidget {
                             color: AppColors.black,
                           ),
                     ),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios,
                       color: Colors.black,
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              GestureDetector(
-                onTap: () {
-                  _showBottomSheet(context);
-                },
-                child: Container(
-                  height: 50,
-                  width: 500,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 1,
-                      color: AppColors.grey,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Government ID",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              height: 1.7,
-                              color: AppColors.black,
-                            ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.black,
-                      ),
-                    ],
+              Container(
+                height: 50,
+                width: 500,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: AppColors.grey,
                   ),
                 ),
-              ),
-            ],
-          ),
-        ),
-      )),
-    );
-  }
-
-  void _showBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      useSafeArea: true,
-      context: context,
-      builder: (BuildContext context) {
-        return SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              ListTile(
-                title: Center(
-                  child: Text(
-                    'Log Out',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-              ),
-              Divider(
-                height: 2,
-                color: Colors.black,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Center(
-                  child: Text(
-                    'Are you sure you want to log out ?',
-                    style: TextStyle(fontSize: 16, color: Colors.grey),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(12),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
-                      width: 165,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Cancel'),
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
+                    Text(
+                      "Government ID",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            height: 1.7,
+                            color: AppColors.black,
                           ),
-                        ),
-                      ),
                     ),
-                    SizedBox(
-                      width: 165,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Yes, Logout'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                          ),
-                        ),
-                      ),
+                    const Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.black,
                     ),
                   ],
                 ),
               ),
             ],
           ),
-        );
-      },
+        ),
+      )),
     );
   }
 }
