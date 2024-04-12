@@ -7,6 +7,8 @@ import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
 import 'package:jambotaxi/features/cars/cars_screen.dart';
 import 'package:jambotaxi/features/chat/chat_screen.dart';
 import 'package:jambotaxi/features/collect_cash/collect_cash.dart';
+import 'package:jambotaxi/features/earnings/earnings.dart';
+import 'package:jambotaxi/features/enable_location/enable_location.dart';
 import 'package:jambotaxi/features/help_center/help_center_screen.dart';
 import 'package:jambotaxi/features/home/home.dart';
 
@@ -45,6 +47,11 @@ appRoutes() => [
       GetPage(name: AppRoute.chatscreen, page: () => const ChatScreen()),
       GetPage(
           name: AppRoute.notification, page: () => const NotificationScreen()),
+          GetPage(
+          name: AppRoute.enablelocation, page: () => const EnableLocationScreen()),
+          GetPage(
+          name: AppRoute.earnings, page: () => const EarningScreen()),
+
       GetPage(
           name: AppRoute.prebookingcompletescreen,
           page: () => const PrebookingComplete()),
