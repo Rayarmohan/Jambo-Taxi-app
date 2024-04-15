@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +27,7 @@ class BottomNavigation extends StatelessWidget {
         body: Obx(
           () => IndexedStack(
             index: bottomNavigationController.tabIndex.value,
-            children: [
+            children:const [
               Home(),
               Ride_Request(),
               Home(),
