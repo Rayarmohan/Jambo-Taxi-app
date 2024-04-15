@@ -6,7 +6,11 @@ class MessageRow extends StatelessWidget {
   final bool isMe;
   final String time;
 
-  const MessageRow({super.key, required this.message, required this.isMe, required this.time});
+  const MessageRow(
+      {super.key,
+      required this.message,
+      required this.isMe,
+      required this.time});
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +60,11 @@ class MessageRow extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: AssetImage(isMe ? "assets/images/Propic.png" : "assets/images/eric.png"),
-                    fit: BoxFit.fitHeight, // This will make the image fit properly
+                    image: AssetImage(isMe
+                        ? "assets/images/Propic.png"
+                        : "assets/images/eric.png"),
+                    fit: BoxFit
+                        .fitHeight, // This will make the image fit properly
                   ),
                 ),
               ),
@@ -66,7 +73,8 @@ class MessageRow extends StatelessWidget {
               width: 5,
             ),
             Text(isMe ? "Jessica" : "Eric",
-                style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+                style:
+                    const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
             const SizedBox(
               width: 5,
             ),

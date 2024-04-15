@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:jambotaxi/features/otp_verification/otp_verification.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
@@ -18,12 +21,12 @@ class AskForOtp extends StatelessWidget {
           child: Container(
               height: 20,
               width: 20,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: Center(
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: EdgeInsets.only(left: 8.0),
                   child: Icon(
                     Icons.arrow_back_ios,
                     color: AppColors.primeryColor,
@@ -53,7 +56,7 @@ class AskForOtp extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 125, right: 40.0),
+                  padding: EdgeInsets.only(top: 125, right: 40.0),
                   child: CustomPngImage(
                     height: 30,
                     width: 15,
@@ -62,7 +65,7 @@ class AskForOtp extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 80, right: 70.0),
+                  padding: EdgeInsets.only(bottom: 80, right: 70.0),
                   child: CustomPngImage(
                     height: 50,
                     width: 50,
@@ -78,26 +81,25 @@ class AskForOtp extends StatelessWidget {
             child: _PassangerRequest(context),
           ),
           Align(
-          alignment: Alignment.centerRight,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 150.0,right: 16),
-            child: Container(
-              height: 45,
-              width: 45,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                color: Colors.white
-              ),
-              child:  Center(
-                child: CustomPngImage(
-                  width: 20,
-                  height: 25,
-                  imageName: 'assets/images/target_icon2.png',
+            alignment: Alignment.centerRight,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 150.0, right: 16),
+              child: Container(
+                height: 45,
+                width: 45,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    color: Colors.white),
+                child: const Center(
+                  child: CustomPngImage(
+                    width: 20,
+                    height: 25,
+                    imageName: 'assets/images/target_icon2.png',
+                  ),
                 ),
               ),
             ),
-          ),
-        )
+          )
         ],
       ),
     );
@@ -127,18 +129,15 @@ class AskForOtp extends StatelessWidget {
                     color: AppColors.white,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text('Arrived at Customer Location',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.primeryColor)),
-                SizedBox(
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.primeryColor)),
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -148,7 +147,7 @@ class AskForOtp extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       color: AppColors.primeryColor),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 SizedBox(
@@ -156,9 +155,11 @@ class AskForOtp extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                     child: CustomButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(const OTPVerification());
+                      },
                       child: Text(
-                        'Arrived',
+                        'Ask For Otp',
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium!

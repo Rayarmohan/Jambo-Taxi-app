@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_const
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
@@ -34,7 +36,7 @@ class NavigateUserLocation extends StatelessWidget {
               )),
         ),
         centerTitle: true,
-        title: Text('Arrived at Destination',
+        title: Text('Customer Location',
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge!
@@ -137,7 +139,9 @@ class NavigateUserLocation extends StatelessWidget {
               height: 40,
               child: CustomButton(
                 color: AppColors.primeryColor,
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoute.arrived_userLocation);
+                },
                 child: Text(
                   'Navigate customer location',
                   style: Theme.of(context)

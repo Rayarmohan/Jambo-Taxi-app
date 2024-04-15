@@ -53,14 +53,14 @@ class ProfileEdit extends StatelessWidget {
                   
                   }),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Center(
-                  child: Text("Eric Selvic",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                      ))),
+                  child: Text("Eric Selvick",
+                       style: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(height: 1.7, color: AppColors.primeryColor))),
               SizedBox(
                 height: 10,
               ),
@@ -74,32 +74,33 @@ class ProfileEdit extends StatelessWidget {
                         color: AppColors.grey
                       )),
                       SizedBox(height: 10,),
-                       Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Eric Selvick",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.black,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      //  Container(
+                      //   height: 50,
+                      //   width: 500,
+                      //   padding: const EdgeInsets.all(10),
+                      //   decoration: BoxDecoration(
+                      //     border: Border.all(
+                      //       width: 1,
+                      //       color: AppColors.grey,
+                      //     ),
+                      //   ),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.start,
+                      //     children: [
+                      //       Text(
+                      //         "Eric Selvick",
+                      //         style: Theme.of(context)
+                      //             .textTheme
+                      //             .bodyMedium!
+                      //             .copyWith(
+                      //               height: 1.7,
+                      //               color: AppColors.black,
+                      //             ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      CustomTextField(controller: controller.nameController, hint: "Eric Selvick"),
                        SizedBox(height: 10,),
                       Text("Phone Number",
                       style: TextStyle(
@@ -170,32 +171,7 @@ class ProfileEdit extends StatelessWidget {
                         color: AppColors.grey
                       )),
                       SizedBox(height: 10,),
-                      Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Example@gmail.com",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.black,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      CustomTextField(controller: controller.emailController, hint: "Example@gmail.com"),
                     SizedBox(
                       height: 5.h,
                     ),Text("City You Drive In",
@@ -227,7 +203,7 @@ class ProfileEdit extends StatelessWidget {
                                   value,
                                   style: TextStyle(
                                     fontFamily: "SF Pro Display",
-                                    fontSize: 16,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     height: 1.275,
                                     color: Colors.black,
@@ -268,12 +244,13 @@ class ProfileEdit extends StatelessWidget {
                                   .bodyMedium!
                                   .copyWith(
                                     height: 1.7,
-                                    color: AppColors.black,
+                                    color: AppColors.primeryColor,
                                   ),
                             ),
                             const Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.black,
+                              size: 15,
                             ),
                           ],
                         ),
@@ -286,32 +263,7 @@ class ProfileEdit extends StatelessWidget {
                         color: AppColors.grey
                       )),
                       SizedBox(height: 10,),
-                      Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Enter DOB",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.black,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      CustomTextField(controller: controller.enterdobController, hint: "Enter DOB")
                 ],
               )
             ],

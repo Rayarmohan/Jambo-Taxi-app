@@ -40,34 +40,73 @@ class PrivacyScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text("Cancelation Policy", style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black,
-                  ),),
-                SizedBox(height: 20,),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled"),
+              children:  [
+                Text("Cancelation Policy", style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),),
                 SizedBox(height: 10,),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"),
-                SizedBox(height: 20,),
+                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled",style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),),
+                SizedBox(height: 10,),
+                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),),
+                SizedBox(height: 10,),
                 Divider(height: 2,color: Colors.black,),
-                SizedBox(height: 20,),
-                Text("Terms & Conditions", style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black,
-                  ),),
-                SizedBox(height: 20,),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled"),
                 SizedBox(height: 10,),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled"),
+                Text("Terms & Conditions", style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),),
                 SizedBox(height: 10,),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"),
+                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled",style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),),
                 SizedBox(height: 10,),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled"),
+                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled",style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),),
                 SizedBox(height: 10,),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled"),
+                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),),
+                SizedBox(height: 10,),
+                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled",style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),),
+               
 
               ],
             ),

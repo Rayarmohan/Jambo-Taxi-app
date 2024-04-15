@@ -36,7 +36,7 @@ class CustomTextField extends StatelessWidget {
     this.height = 1,
     this.validator,
     this.onchaged, 
-     this.suffixIcon,
+    this.suffixIcon,
   });
 
   @override

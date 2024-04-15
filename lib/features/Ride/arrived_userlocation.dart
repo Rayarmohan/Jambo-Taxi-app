@@ -1,7 +1,10 @@
 // ignore_for_file: non_constant_identifier_names, camel_case_types, unnecessary_const
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
@@ -22,12 +25,12 @@ class Arrived_Userlocation extends StatelessWidget {
           child: Container(
               height: 20,
               width: 20,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: Center(
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: EdgeInsets.only(left: 8.0),
                   child: Icon(
                     Icons.arrow_back_ios,
                     color: AppColors.primeryColor,
@@ -112,8 +115,9 @@ class Arrived_Userlocation extends StatelessWidget {
               Text(
                 "Customer Location",
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: 20,
-                    fontWeight: FontWeight.w400, color: AppColors.primeryColor),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.primeryColor),
               ),
               Text(
                 "5 min away",
@@ -152,7 +156,7 @@ class Arrived_Userlocation extends StatelessWidget {
                               imageName: 'assets/images/circleimage.png',
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 15,
                           ),
                           Column(
@@ -164,7 +168,7 @@ class Arrived_Userlocation extends StatelessWidget {
                                     .textTheme
                                     .bodyLarge!
                                     .copyWith(
-                                      fontSize: 17,
+                                        fontSize: 17,
                                         fontWeight: FontWeight.w600,
                                         color: AppColors.primeryColor),
                               ),
@@ -174,7 +178,7 @@ class Arrived_Userlocation extends StatelessWidget {
                                     .textTheme
                                     .bodyMedium!
                                     .copyWith(
-                                      fontSize: 14,
+                                        fontSize: 14,
                                         fontWeight: FontWeight.w400,
                                         color: AppColors.primeryColor),
                               ),
@@ -184,15 +188,20 @@ class Arrived_Userlocation extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          const CircleAvatar(
-                            radius: 20,
-                            backgroundColor: AppColors.primeryColor,
-                            child: Icon(
-                              Icons.mark_unread_chat_alt_outlined,
-                              color: AppColors.white,
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(AppRoute.chatscreen);
+                            },
+                            child: const CircleAvatar(
+                              radius: 20,
+                              backgroundColor: AppColors.primeryColor,
+                              child: Icon(
+                                Icons.mark_unread_chat_alt_outlined,
+                                color: AppColors.white,
+                              ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           const CircleAvatar(
@@ -208,7 +217,7 @@ class Arrived_Userlocation extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 SizedBox(
@@ -216,7 +225,9 @@ class Arrived_Userlocation extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                     child: CustomButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(AppRoute.navigateYourRide);
+                      },
                       child: Text(
                         'Arrived',
                         style: Theme.of(context)

@@ -1,7 +1,9 @@
 // ignore_for_file: non_constant_identifier_names, camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_Progress_Indicator.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
@@ -11,50 +13,51 @@ class Ride_Request extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: CustomPngImage(
-            imageName: 'assets/images/map.png',
-            boxFit: BoxFit.cover,
+    return Scaffold(
+      body: Stack(
+        children: [
+          const SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: CustomPngImage(
+              imageName: 'assets/images/map.png',
+              boxFit: BoxFit.cover,
+            ),
           ),
-        ),
-        _buildbar(context),
-        const Padding(
-          padding: const EdgeInsets.only(right: 160,bottom: 240),
-          child: Align(
-            alignment: Alignment.centerRight,
-            child:CustomPngImage(
-              height: 50,
-              width: 50,
-            imageName: 'assets/images/location.png',
-            boxFit: BoxFit.cover,
+          _buildbar(context),
+          const Padding(
+            padding: EdgeInsets.only(right: 160, bottom: 240),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: CustomPngImage(
+                height: 50,
+                width: 50,
+                imageName: 'assets/images/location.png',
+                boxFit: BoxFit.cover,
+              ),
+            ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0, bottom: 20),
+            child: Align(
+              alignment: Alignment.center,
+              child: _buildTimer(context),
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 15.0, bottom: 20),
-          child: Align(
-            alignment: Alignment.center,
-            child: _buildTimer(context),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: _PassangerRequest(context),
           ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: _PassangerRequest(context),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
   Widget _buildTimer(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(60)),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(60)),
         color: Colors.white,
-      
       ),
       height: 90,
       width: 90,
@@ -82,7 +85,7 @@ class Ride_Request extends StatelessWidget {
               ],
             ),
           ),
-          const   CustomCircularProgressIndicator(
+          const CustomCircularProgressIndicator(
             progress: 0.7, // Set progress to 70%
             backgroundColor: Colors.grey, // Background color
             progressColor: AppColors.primeryColor, // Progress color
@@ -110,8 +113,9 @@ class Ride_Request extends StatelessWidget {
               Text(
                 "Ride Request",
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: 20,
-                    fontWeight: FontWeight.w400, color: AppColors.primeryColor),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.primeryColor),
               ),
               Text(
                 "5 min away",
@@ -135,31 +139,34 @@ class Ride_Request extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10.0),
             child: Column(
               children: [
-                ListTile(
-                  leading: const CircleAvatar(
-                    radius: 25,
-                    child: CustomPngImage(
-                      height: 70,
-                      width: 70,
-                      imageName: 'assets/images/circleimage.png',
+                SizedBox(
+                  height: 90,
+                  child: ListTile(
+                    leading: const CircleAvatar(
+                      radius: 25,
+                      child: CustomPngImage(
+                        height: 50,
+                        width: 50,
+                        imageName: 'assets/images/circleimage.png',
+                      ),
+                    ),
+                    title: Text(
+                      "Jessica ",
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.primeryColor),
+                    ),
+                    subtitle: Text(
+                      "Cash payment ",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.primeryColor),
                     ),
                   ),
-                  title: Text(
-                    "Jessica ",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontSize: 17,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.primeryColor),
-                  ),
-                  subtitle: Text(
-                    "Cash payment ",
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.primeryColor),
-                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Row(
@@ -236,7 +243,9 @@ class Ride_Request extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -244,7 +253,9 @@ class Ride_Request extends StatelessWidget {
                       width: 160,
                       height: 44,
                       child: CustomButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(AppRoute.cancelRide);
+                        },
                         child: Text(
                           'Decline',
                           style: Theme.of(context)
@@ -259,7 +270,9 @@ class Ride_Request extends StatelessWidget {
                       height: 44,
                       child: CustomButton(
                         color: Colors.green,
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(AppRoute.navigate_userLocation);
+                        },
                         child: Text(
                           'Accept',
                           style: Theme.of(context)
@@ -280,49 +293,51 @@ class Ride_Request extends StatelessWidget {
   }
 
   Widget _buildbar(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            color: Colors.white,
-            width: 225,
-            height: 44,
-            child: const Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 10.0),
-                  child: Icon(
-                    size: 25,
-                    Icons.person,
-                    color: AppColors.primeryColor,
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              color: Colors.white,
+              width: 225,
+              height: 44,
+              child: const Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Icon(
+                      size: 25,
+                      Icons.person,
+                      color: AppColors.primeryColor,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-            width: 40,
-            height: 44,
-            color: Colors.grey,
-            child: Center(
-              child: Text("OFF",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontSize: 15, height: 1.7, color: AppColors.white)),
+            Container(
+              width: 40,
+              height: 44,
+              color: Colors.grey,
+              child: Center(
+                child: Text("OFF",
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontSize: 15, height: 1.7, color: AppColors.white)),
+              ),
             ),
-          ),
-          Container(
-            width: 40,
-            height: 44,
-            color: const Color.fromARGB(255, 92, 204, 94),
-            child: Center(
-              child: Text("ON",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontSize: 15, height: 1.7, color: AppColors.white)),
+            Container(
+              width: 40,
+              height: 44,
+              color: const Color.fromARGB(255, 92, 204, 94),
+              child: Center(
+                child: Text("ON",
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontSize: 15, height: 1.7, color: AppColors.white)),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
