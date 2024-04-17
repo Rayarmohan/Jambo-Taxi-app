@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jambotaxi/utils/color/app_colors.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
@@ -14,7 +15,8 @@ class CustomTextField extends StatelessWidget {
   final bool addBorder;
   final bool onlyEnglish;
   final double height;
-  final Icon? suffixIcon;
+  final Widget? suffixIcon;
+  final Color? hintcolor;
 
   final String? Function(String?)? validator;
   final void Function(String?)? onchaged;
@@ -37,6 +39,7 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.onchaged, 
     this.suffixIcon,
+    this.hintcolor
   });
 
   @override
@@ -62,7 +65,7 @@ class CustomTextField extends StatelessWidget {
         enabled: true,
         enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(2.0)),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: AppColors.grey),
         ),
         focusedBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(2.0)),
@@ -74,12 +77,12 @@ class CustomTextField extends StatelessWidget {
         ),
         hintText: hint,
         counterText: "",
-        hintStyle: const TextStyle(
+        hintStyle:  TextStyle(
           fontFamily: "SF Pro Display",
           fontSize: 16,
           fontWeight: FontWeight.w400,
           height: 1.275,
-          color: Colors.grey,
+          color: hintcolor ?? Colors.grey,
         ),
       ),
     );
