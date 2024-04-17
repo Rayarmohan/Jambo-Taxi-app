@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/Ride/ride_request.dart';
 import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
+import 'package:jambotaxi/features/earnings/earnings.dart';
 import 'package:jambotaxi/features/home/home.dart';
 import 'package:jambotaxi/features/otp/ask_forotp.dart';
 import 'package:jambotaxi/features/profile/editprofile_screen.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'jambotaxiapp',
-        home: AskForOtp(),
+        home: EarningScreen(),
         // initialRoute: AppRoute.onboard,
         getPages: appRoutes(),
       ),
