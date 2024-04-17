@@ -151,8 +151,8 @@ class Home extends StatelessWidget {
                 ),
                 if (index == 0)
                 Positioned(
-                  top: 4,
-                  right: 4,
+                  top: 8,
+                  right: 8,
                   child: Container(
                     decoration: const BoxDecoration(
                       color: Colors.white,
