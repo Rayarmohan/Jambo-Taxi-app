@@ -28,17 +28,18 @@ class EnableLocationScreen extends StatelessWidget {
                 child: Icon(
                   Icons.location_on,
                   size: 60,
+                  color: AppColors.white,
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              Text("Enable Location access",
+              Text("Enable Location Access",
                   style: Theme.of(context)
                       .textTheme
                       .headlineMedium!
                       .copyWith(height: 1.7, color: AppColors.primeryColor)),
-              Text("To ensure a seamiess and efficient experience,",
+              Text("To ensure a seamless and efficient experience,",
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       height: 1.7,
                       color: AppColors.primeryColor,

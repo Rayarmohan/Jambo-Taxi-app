@@ -8,8 +8,6 @@ import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
-import '../../widgets/custom_app_bar.dart';
-
 class Arrived_Userlocation extends StatelessWidget {
   const Arrived_Userlocation({super.key});
 
@@ -180,39 +178,37 @@ class Arrived_Userlocation extends StatelessWidget {
                                     .copyWith(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w400,
-                                        color: AppColors.primeryColor),
+                                        color: AppColors.grey),
                               ),
                             ],
                           ),
                         ],
                       ),
-                      Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Get.toNamed(AppRoute.chatscreen);
-                            },
-                            child: const CircleAvatar(
-                              radius: 20,
-                              backgroundColor: AppColors.primeryColor,
-                              child: Icon(
-                                Icons.mark_unread_chat_alt_outlined,
-                                color: AppColors.white,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 98.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.toNamed(AppRoute.chatscreen);
+                              },
+                              child: const CustomPngImage(
+                                imageName: "assets/images/circular_message.png",
+                                height: 41,
+                                width: 41,
                               ),
                             ),
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          const CircleAvatar(
-                            radius: 20,
-                            backgroundColor: Colors.green,
-                            child: Icon(
-                              Icons.call,
-                              color: AppColors.white,
+                            const SizedBox(
+                              width: 10,
                             ),
-                          ),
-                        ],
+                            const CustomPngImage(
+                              imageName: "assets/images/circular_phone.png",
+                              height: 41,
+                              width: 41,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -226,7 +222,7 @@ class Arrived_Userlocation extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                     child: CustomButton(
                       onPressed: () {
-                        Get.toNamed(AppRoute.navigateYourRide);
+                        Get.toNamed(AppRoute.askForOtp);
                       },
                       child: Text(
                         'Arrived',

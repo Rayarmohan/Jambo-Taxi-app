@@ -50,37 +50,40 @@ class MessageRow extends StatelessWidget {
             ],
           ),
         ),
-        Row(
-          mainAxisAlignment:
-              isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
-          children: [
-            CircleAvatar(
-              radius: 10,
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage(isMe
-                        ? "assets/images/Propic.png"
-                        : "assets/images/eric.png"),
-                    fit: BoxFit
-                        .fitHeight, // This will make the image fit properly
+        Padding(
+          padding: isMe? const EdgeInsets.only(right:8.0) :const EdgeInsets.only(left:8.0),
+          child: Row(
+            mainAxisAlignment:
+                isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
+            children: [
+              CircleAvatar(
+                radius: 10,
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(isMe
+                          ? "assets/images/eric.png"
+                          : "assets/images/Propic.png"),
+                      fit: BoxFit
+                          .fitHeight, // This will make the image fit properly
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            Text(isMe ? "Jessica" : "Eric",
-                style:
-                    const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
-            const SizedBox(
-              width: 5,
-            ),
-            Text(time,
-                style: const TextStyle(fontSize: 10), textAlign: textAlign),
-          ],
+              const SizedBox(
+                width: 5,
+              ),
+              Text(isMe ? "Eric" : "Jessica",
+                  style:
+                      const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+              const SizedBox(
+                width: 5,
+              ),
+              Text(time,
+                  style: const TextStyle(fontSize: 10), textAlign: textAlign),
+            ],
+          ),
         ),
       ],
     );

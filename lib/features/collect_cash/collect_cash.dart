@@ -42,10 +42,11 @@ class CollectCash extends StatelessWidget {
                 ),
                 const CircleAvatar(
                   backgroundColor: AppColors.primeryColor,
-                  radius: 60,
-                  child: Icon(
-                    Icons.wallet,
-                    size: 60,
+                  radius: 40,
+                  child:   CustomPngImage(
+                    imageName: "assets/images/wallet_white.png",
+                    height: 30,
+                    width: 30,
                   ),
                 ),
                 Text("Collect Cash",
@@ -64,24 +65,26 @@ class CollectCash extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.radio_button_checked,
+                          const Icon(Icons.radio_button_checked,
                               size: 20.0), // Use an appropriate icon
                           ...List.generate(
                             7, // Number of dots
                             (index) => Container(
                               width: 2, // Dot width
                               height: 2, // Dot height
-                              margin: EdgeInsets.symmetric(
+                              margin: const EdgeInsets.symmetric(
                                   vertical: 2), // Space between the dots
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.black,
                               ),
                             ),
                           ),
-                          Icon(Icons.location_on,
-                              size:
-                                  15.0), // Smaller icon for the destination point
+                          const CustomPngImage(
+                            imageName: "assets/images/location_icon.png",
+                            height: 15,
+                            width: 11.35,
+                          ), // Smaller icon for the destination point
                         ],
                       ),
                       Expanded(
@@ -102,7 +105,7 @@ class CollectCash extends StatelessWidget {
                               const SizedBox(
                                 height: 7,
                               ),
-                              const Divider(),
+                              const Divider(color: AppColors.primeryColor,),
                               const SizedBox(
                                 height: 7,
                               ),
@@ -217,7 +220,7 @@ class CollectCash extends StatelessWidget {
                   height: 15,
                 ),
                 Container(
-                  height: 60,
+                  height: 46,
                   width: 351,
                   color: AppColors.primeryColor,
                   child: Row(

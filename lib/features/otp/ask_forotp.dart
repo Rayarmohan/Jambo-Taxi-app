@@ -156,7 +156,7 @@ class AskForOtp extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                     child: CustomButton(
                       onPressed: () {
-                        Get.to(const OTPVerification());
+                        Get.toNamed(AppRoute.navigateYourRide);
                       },
                       child: Text(
                         'Ask For Otp',

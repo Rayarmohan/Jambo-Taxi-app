@@ -120,10 +120,13 @@ class NavigateUserLocation extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            leading: Icon(
-              Icons.location_on,
-              size: 30,
-              color: AppColors.primeryColor,
+            leading:  Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: const CustomPngImage(
+                imageName: "assets/images/location_icon.png",
+                height: 25,
+                width: 18.92,
+              ),
             ),
             title: Text(
               "KwaZulu-Natal, Cape Town ",
@@ -143,7 +146,7 @@ class NavigateUserLocation extends StatelessWidget {
                   Get.toNamed(AppRoute.arrived_userLocation);
                 },
                 child: Text(
-                  'Navigate customer location',
+                  'Navigate Customer Location',
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium!
