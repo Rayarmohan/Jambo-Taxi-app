@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jambotaxi/features/notification/notification_container.dart';
+import 'package:jambotaxi/features/notification/widgets/notification_container.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
@@ -77,7 +77,7 @@ class NotificationScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return const NotificationContainer();
+                  return NotificationContainer(index: index,);
                 },
               ),
               
@@ -107,7 +107,7 @@ class NotificationScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 2,
                 itemBuilder: (context, index) {
-                  return const NotificationContainer();
+                  return NotificationContainer(index: index);
                 },
               ),
             ],

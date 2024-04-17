@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:jambotaxi/features/help_center/help_center_controller.dart';
@@ -54,7 +55,12 @@ class _HelpCenterState extends State<HelpCenter> {
                 CustomTextField(
                   controller: controller.helpController,
                   hint: "Search",
-                  suffixIcon: const Icon(Icons.search, color: Colors.black,size: 25,),
+                  hintcolor: AppColors.primeryColor,
+                  suffixIcon: SizedBox(height: 25, width: 25, child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: SvgPicture.asset('assets/svgs/search-icon.svg'),
+                  )),
+                  
                 ),
                 const SizedBox(height: 30),
                 const Text(

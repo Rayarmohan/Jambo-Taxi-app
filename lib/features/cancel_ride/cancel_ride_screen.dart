@@ -15,6 +15,7 @@ class CancelRideScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
 
       appBar: CustomAppBar(
         title: Text('Cancel Ride',
@@ -37,7 +38,7 @@ class CancelRideScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Expanded(
-              flex: 3,
+              flex: 4,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(5, 0, 10, 10),
                 child: Column(
@@ -62,7 +63,7 @@ class CancelRideScreen extends StatelessWidget {
               color: Colors.grey.shade300,
             ),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 child: Column(
@@ -77,7 +78,7 @@ class CancelRideScreen extends StatelessWidget {
                         height:
                             10), // Add some space between the label and the text field
                     TextField(
-                      maxLines: 6,
+                      maxLines: 9,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(
