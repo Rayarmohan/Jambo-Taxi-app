@@ -12,6 +12,7 @@ import 'package:jambotaxi/features/login/login_screen.dart';
 import 'package:jambotaxi/features/notification/notification_screen.dart';
 import 'package:jambotaxi/features/profile/profile_screen.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
+import 'package:jambotaxi/widgets/custom_images.dart';
 
 class BottomNavigation extends StatelessWidget {
   final TextStyle selectedLabelStyle = const TextStyle(
@@ -48,15 +49,15 @@ class BottomNavigation extends StatelessWidget {
     return Obx(
       () => BottomNavigationBar(
         items: [
-          _buildBottomNavigationBarItem('Home', Icons.home,
+          _buildBottomNavigationBarItem('Home', 'bottomnav_home',
               bottomNavigationController.tabIndex.value == 0, context),
-          _buildBottomNavigationBarItem('Earnings', Icons.bar_chart_outlined,
+          _buildBottomNavigationBarItem('Earnings', 'bottomnav_earnings',
               bottomNavigationController.tabIndex.value == 1, context),
-          _buildBottomNavigationBarItem('History', Icons.history_outlined,
+          _buildBottomNavigationBarItem('History', 'bottomnav_history',
               bottomNavigationController.tabIndex.value == 2, context),
-          _buildBottomNavigationBarItem('Notification', Icons.notifications,
+          _buildBottomNavigationBarItem('Notification', 'bottomnav_notifications',
               bottomNavigationController.tabIndex.value == 3, context),
-          _buildBottomNavigationBarItem('Profile', Icons.person,
+          _buildBottomNavigationBarItem('Profile', 'bottomnav_profile',
               bottomNavigationController.tabIndex.value == 4, context),
         ],
         currentIndex: bottomNavigationController.tabIndex.value,
@@ -71,14 +72,16 @@ class BottomNavigation extends StatelessWidget {
   }
 
   BottomNavigationBarItem _buildBottomNavigationBarItem(
-      String label, IconData icon, bool isActive, BuildContext context) {
+      String label, String path , bool isActive, BuildContext context) {
     return BottomNavigationBarItem(
       icon: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            icon,
-            size: 20,
+          CustomSvgImage(
+            imageName: path,
+            height: 20,
+            width: 20,
+            color: Colors.grey,
           ),
           SizedBox(
             height: 5,
@@ -94,10 +97,11 @@ class BottomNavigation extends StatelessWidget {
       activeIcon: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            icon,
+          CustomSvgImage(
             color: AppColors.primeryColor,
-            size: 20,
+            imageName: path,
+            height: 20,
+            width: 20,
           ),
           SizedBox(
             height: 4,

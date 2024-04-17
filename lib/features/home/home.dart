@@ -47,126 +47,125 @@ class Home extends StatelessWidget {
 
   Widget _listview() {
     return Container(
-      height: 130,
+      height: 123,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 3,
           itemBuilder: ((context, index) {
-            return GestureDetector(
-              onTap: () => Get.toNamed(AppRoute.ride_request),
-              child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border:
-                                Border.all(width: 1.0, color: Colors.black)),
-                        height: 130,
-                        width: 180,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 20.0, top: 10, bottom: 10),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    child: const CustomPngImage(
-                                      height: 26,
-                                      width: 54.6,
-                                      imageName: 'assets/images/car.png',
-                                    ),
+            return Stack(
+              children: [
+                GestureDetector(
+                  onTap: () => Get.toNamed(AppRoute.ride_request),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(width: 1.0, color: Colors.black)),
+                      height: 123,
+                      width: 155,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 20.0, top: 10, bottom: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  child: const CustomPngImage(
+                                    height: 26,
+                                    width: 54.6,
+                                    imageName: 'assets/images/car.png',
                                   ),
-                                ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              border: Border(
+                                top: BorderSide(
+                                    width: 1.0,
+                                    color: Colors.black,
+                                    style: BorderStyle.solid),
                               ),
                             ),
-                            Container(
-                              decoration: const BoxDecoration(
-                                border: Border(
-                                  top: BorderSide(
-                                      width: 1.0,
-                                      color: Colors.black,
-                                      style: BorderStyle.solid),
-                                ),
-                              ),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 5.0, left: 20),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text("Swift",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyLarge!
-                                                .copyWith(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w500,
-                                                    color: AppColors
-                                                        .primeryColor)),
-                                        SizedBox(
-                                          width: 41,
-                                        ),
-                                        Text("Rs 104.0",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyLarge!
-                                                .copyWith(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w700,
-                                                    color: AppColors
-                                                        .primeryColor)),
-                                      ],
-                                    ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(top: 5.0, left: 20),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text("Swift",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge!
+                                              .copyWith(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w500,
+                                                  color:
+                                                      AppColors.primeryColor)),
+                                      SizedBox(
+                                        width: 35,
+                                      ),
+                                      Text("Rs 104.0",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge!
+                                              .copyWith(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w700,
+                                                  color:
+                                                      AppColors.primeryColor)),
+                                    ],
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 20.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text("4 Seats Capacity",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyMedium!
-                                                .copyWith(
-                                                    height: 1.7,
-                                                    fontSize: 12,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: AppColors
-                                                        .primeryColor)),
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text("4 Seats Capacity",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium!
+                                              .copyWith(
+                                                  height: 1.7,
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  color:
+                                                      AppColors.primeryColor)),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       ),
-                      Positioned(
-                        top: 1,
-                        right: 1,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                          child: const Icon(
-                            Icons.check_circle,
-                            color: AppColors.primeryColor,
-                            size: 24,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )),
+                    ),
+                  ),
+                ),
+                if (index == 0)
+                Positioned(
+                  top: 4,
+                  right: 4,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.check_circle,
+                      color: AppColors.primeryColor,
+                      size: 20,
+                    ),
+                  ),
+                ),
+              ],
             );
           })),
     );
@@ -258,7 +257,7 @@ class Home extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Pre Booked",
+                                Text("Pre-Booked",
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyLarge!
