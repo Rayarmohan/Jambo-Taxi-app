@@ -6,7 +6,7 @@ class CustomListItem extends StatelessWidget {
   final String title;
   final double distance;
   final int time;
-  final double earnings;
+  final String earnings;
 
   const CustomListItem({
     super.key,
@@ -14,7 +14,7 @@ class CustomListItem extends StatelessWidget {
     this.title = "Jessica",
     this.distance = 4.5,
     this.time = 10,
-    this.earnings = 58.00,
+    this.earnings =" Rs 58.00",
   });
 
   @override
@@ -32,8 +32,8 @@ class CustomListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 SizedBox(
-                  width: 80, // Set this to the size you need
-                  height: 80, // Set this to the size you need
+                  width: 70, // Set this to the size you need
+                  height: 70, // Set this to the size you need
                   child: CircleAvatar(
                     radius: 40, // This will be half the size of the SizedBox
                     backgroundImage: AssetImage(imagePath),
