@@ -105,23 +105,33 @@ class RegistartionScreen extends StatelessWidget {
                       height: 5.h,
                     ),
                     Obx(
-                      () => Container(
+                          () => Container(
                         height: 48.h,
                         width: 500.h,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border:
-                                Border.all(width: 1, color: AppColors.grey)),
+                          border: Border.all(width: 1, color: AppColors.grey),
+                        ),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton<String>(
-                            value: controller.genderdropdownValue.value,
+                            // Ensure the value is null if it's empty or hasn't been selected yet
+                            value: controller.genderdropdownValue.value.isEmpty ? null : controller.genderdropdownValue.value,
+                            // This will show "Select" when no value is selected (value is null)
+                            hint: Text("Select", style: TextStyle(
+                              fontFamily: "SF Pro Display",
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey,  // Use a grey color to indicate placeholder text
+                            )),
                             onChanged: (String? newValue) {
-                              controller.setGenderDropdownValue(newValue!);
+                              // Only update the value if it's not null
+                              if (newValue != null) {
+                                controller.setGenderDropdownValue(newValue);
+                              }
                             },
-                            items:
-                                <String>['Male', 'Female'].map((String value) {
+                            items: <String>['Male', 'Female']
+                                .map((String value) {
                               return DropdownMenuItem<String>(
-                                alignment: AlignmentDirectional.center,
                                 value: value,
                                 child: Text(
                                   value,
@@ -129,7 +139,6 @@ class RegistartionScreen extends StatelessWidget {
                                     fontFamily: "SF Pro Display",
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400,
-                                    height: 1.275,
                                     color: Colors.black,
                                   ),
                                 ),
@@ -139,6 +148,8 @@ class RegistartionScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+
+
                     SizedBox(
                       height: 15.h,
                     ),

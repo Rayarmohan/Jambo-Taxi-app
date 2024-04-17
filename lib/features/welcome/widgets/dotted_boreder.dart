@@ -12,7 +12,7 @@ class DottedBorderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return DottedBorder(
       borderType: BorderType.RRect,
-      radius: const Radius.circular(12),
+      
       dashPattern: [8, 4],
       strokeWidth: 2,
       color: Colors.grey,
@@ -26,14 +26,15 @@ class DottedBorderContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.file_upload_rounded,
-                    color: AppColors.grey,
-                    size: 40,
-                  ),
-                  onPressed: onUploadPressed,
-                ),
+                // IconButton(
+                //   icon: const Icon(
+                //     Icons.file_upload_rounded,
+                //     color: AppColors.grey,
+                //     size: 40,
+                //   ),
+                //   onPressed: onUploadPressed,
+                // ),
+                Image.asset("assets/images/uploadicon.png"),
                 Text("Upload Documents",
                     style: Theme.of(context)
                         .textTheme

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/cars/cars_controller.dart';
@@ -43,158 +45,171 @@ class CarsScreen extends StatelessWidget {
                       children: [
                         Card(
                           child: SizedBox(
-                            width: 325.h,
-                            height: 197.h,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            width: 335.h,
+                            height: 200.h, // Adjusted height slightly
+                            child: Stack(
                               children: [
-                                Row(
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Align(
-                                      alignment: Alignment.topLeft,
-                                      child: Container(
-                                        child: Image.asset(
-                                            "assets/images/car copy.png"),
-                                        width: 110.h,
-                                        height: 131.h,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 17,
-                                      height: 32,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 32),
-                                      child: Container(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text('Maruti Suzuki Swift',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .titleLarge!
-                                                    .copyWith(
-                                                        height: 1.7,
-                                                        color: AppColors
-                                                            .primeryColor)),
-                                            Text('Mini',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelMedium!
-                                                    .copyWith(
-                                                        height: 1.7,
-                                                        color: AppColors.grey)),
-                                            Row(
+                                    Row(
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Container(
+                                            child: Image.asset("assets/images/car copy.png"),
+                                            width: 110.h,
+                                            height: 131.h,
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 17,
+                                          height: 32,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 32),
+                                          child: Container(
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                const Icon(
-                                                  Icons.person,
-                                                  color: AppColors.primeryColor,
+                                                Text(
+                                                  'Maruti Suzuki Swift',
+                                                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                                                    height: 1.7,
+                                                    color: AppColors.primeryColor,
+                                                  ),
                                                 ),
-                                                SizedBox(
-                                                  width: 9.06.h,
+                                                Text(
+                                                  'Mini',
+                                                  style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                                                    height: 1.7,
+                                                    color: AppColors.grey,
+                                                  ),
                                                 ),
-                                                Text('4',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium!
-                                                        .copyWith(
-                                                            height: 1.7,
-                                                            color: AppColors
-                                                                .primeryColor)),
-                                                const SizedBox(
-                                                  width: 17.93,
+                                                Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.person,
+                                                      color: AppColors.primeryColor,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 9.06.h,
+                                                    ),
+                                                    Text(
+                                                      '4',
+                                                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                                                        height: 1.7,
+                                                        color: AppColors.primeryColor,
+                                                      ),
+                                                    ),
+                                                    const SizedBox(
+                                                      width: 17.93,
+                                                    ),
+                                                    const CustomPngImage(
+                                                      imageName: "assets/images/Vector.png",
+                                                      color: AppColors.primeryColor,
+                                                      height: 17,
+                                                      width: 14,
+                                                    ),
+                                                    const SizedBox(
+                                                      width: 9.06,
+                                                    ),
+                                                    Text(
+                                                      'Petrol',
+                                                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                                                        height: 1.7,
+                                                        color: AppColors.primeryColor,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
-                                                const CustomPngImage(
-                                                  imageName:
-                                                      "assets/images/Vector.png",
-                                                  color: AppColors.primeryColor,
-                                                  height: 17,
-                                                  width: 14,
+                                                Text(
+                                                  'Last updated 6 Jun 2023',
+                                                  style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                                                    height: 1.7,
+                                                    color: AppColors.grey,
+                                                  ),
                                                 ),
-                                                const SizedBox(
-                                                  width: 9.06,
-                                                ),
-                                                Text('Petrol',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium!
-                                                        .copyWith(
-                                                            height: 1.7,
-                                                            color: AppColors
-                                                                .primeryColor)),
+                                                SizedBox(height: 6),
                                               ],
                                             ),
-                                            Text('Last updated 6 Jun 2023',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelMedium!
-                                                    .copyWith(
-                                                        height: 1.7,
-                                                        color: AppColors.grey)),
-                                          ],
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
                                   ],
                                 ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: CustomButton(
-                                        height: 44.h,
-                                        onPressed: () {
-                                          print("Edit clicked");
-                                        },
-                                        text: "Edit",
-                                        color: AppColors.primeryColor,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 5.4.h,
-                                    ),
-                                    Expanded(
-                                      child: CustomButton(
-                                        height: 44.h,
-                                        onPressed: () {
-                                          print("Delete clicked");
-                                        },
-                                        text: "Delete",
-                                        color: AppColors.primeryColor,
-                                      ),
-                                    ),
-                                  ],
-                                )
+
                               ],
                             ),
                           ),
                         ),
+
+
                         Positioned(
                           top: 0,
-                          right: 0,
+                          right: 4,
                           child: Container(
-                           
                             height: 16,
                             width: 85,
                             decoration: const BoxDecoration(
                               color: AppColors.primeryColor,
                             ),
                             child: Center(
-                              child: Text(
-                                "Under Verification",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headlineMedium!
-                                    .copyWith(
-                                        height: 1.7,
-                                        fontSize: 10,
-                                        color: Colors.white),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  "Under Verification",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium!
+                                      .copyWith(
+                                      height: 1.7,
+                                      fontSize: 10,
+                                      color: Colors.white),
+                                ),
                               ),
                             ),
                           ),
                         ),
+                        Positioned(
+                          bottom: 1,
+                          right: 0,
+                          left: 0,
+                          child: Padding(
+
+                            padding: const EdgeInsets.only(left:4.5,right: 4.5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Expanded(
+                                  child: CustomButton(
+                                    height: 44.h,
+                                    onPressed: () {
+                                      print("Edit clicked");
+                                    },
+                                    text: "Edit",
+                                    color: AppColors.primeryColor,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5.0.h,
+                                ),
+                                Expanded(
+                                  child: CustomButton(
+                                    height: 44.h,
+                                    onPressed: () {
+                                      print("Delete clicked");
+                                    },
+                                    text: "Delete",
+                                    color: AppColors.primeryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+
                       ],
                     ),
                   )
@@ -207,3 +222,4 @@ class CarsScreen extends StatelessWidget {
     );
   }
 }
+

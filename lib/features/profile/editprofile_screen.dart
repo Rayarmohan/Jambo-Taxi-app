@@ -10,6 +10,10 @@ import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 import 'package:jambotaxi/widgets/custom_text_field.dart';
+import 'dart:math' as math;
+
+import '../Registration/registration_screen.dart';
+
 
 class ProfileEdit extends StatelessWidget {
   const ProfileEdit({super.key});
@@ -100,7 +104,7 @@ class ProfileEdit extends StatelessWidget {
                       //     ],
                       //   ),
                       // ),
-                      CustomTextField(controller: controller.nameController, hint: "Eric Selvick"),
+                      CustomTextField(controller: controller.nameController, hint: "Eric Selvick", ),
                        SizedBox(height: 10,),
                       Text("Phone Number",
                       style: TextStyle(
@@ -109,58 +113,88 @@ class ProfileEdit extends StatelessWidget {
                         color: AppColors.grey
                       )),
                       SizedBox(height: 10,),
-                      Row(
+          Row(
+            children: [
+              Obx(
+                    () => Container(
+                  height: 48.h,
+                  width: 80.h,
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+
+                    borderRadius: BorderRadius.all(Radius.circular(1)),
+                  ),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      value: controller.dropdownValue.value,
+                      onChanged: (String? newValue) {
+                        controller.setDropdownValue(newValue!);
+                      },
+                      items: <String>['+91', '+1', '+44',]
+                          .map((String value) {
+                        return DropdownMenuItem<String>(
+                          alignment: AlignmentDirectional.centerEnd,
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      icon: Padding(
+                        padding: const EdgeInsets.only(bottom: 5.0),
+                        child: Transform.rotate(
+                          angle: -math.pi / 2,
+                          child: Icon(Icons.arrow_back_ios, color: Colors.grey, size: 15,),
+                        ),
+                      ),
+                      alignment: Alignment.centerRight,
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  height: 48.h,
+                  width: 200.h,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      right: BorderSide( //                   <--- right side
+                        color: Colors.grey,
+                        width: 1.0,
+                      ),
+                      bottom:  BorderSide( //                   <--- right side
+                      color: Colors.grey,
+                      width: 1.0,
+                    ),
+                      top: BorderSide( //                   <--- right side
+                      color: Colors.grey,
+                      width: 1.0,
+                    ),
+                    ),
+
+                    borderRadius: BorderRadius.all(Radius.circular(1)),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Obx(
-                          () => Container(
-                            height: 48.h,
-                            width: 80.h,
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 1, color: AppColors.grey)),
-                            child: DropdownButtonHideUnderline(
-                              child: DropdownButton<String>(
-                                value: controller.dropdownValue.value,
-                                onChanged: (String? newValue) {
-                                  controller.setDropdownValue(newValue!);
-                                },
-                                items: <String>['+91', '+1', '+44',]
-                                    .map((String value) {
-                                  return DropdownMenuItem<String>(
-                                    alignment: AlignmentDirectional.centerEnd,
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                             height: 48.h,
-                             width: 200.h,
-                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey),
-                            
-                              borderRadius: BorderRadius.all(Radius.circular(1)),
-                             ),
-                             child: Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text("87987656788"),
-                                  Text("Change")
-                                ],
-                               ),
-                             ),
-                          ),
-                      
-                        ),
+                        Text("87987656788"),
+                        Text("Change",
+                        // style: TextStyle(
+                        //     fontSize: 14,
+                        //     fontWeight: FontWeight.normal,
+                        //     color: AppColors.grey
+                        // ),
+                        )
                       ],
                     ),
+                  ),
+                ),
+
+              ),
+            ],
+          ),
+
                     SizedBox(
                       height: 15.h,
                     ),
@@ -185,9 +219,11 @@ class ProfileEdit extends StatelessWidget {
                         height: 48.h,
                         width: 500.h,
                         padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            border:
-                                Border.all(width: 1, color: AppColors.grey)),
+                        decoration:BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+
+                          borderRadius: BorderRadius.all(Radius.circular(1)),
+                        ),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton<String>(
                             value: controller.citydropdownValue.value,
@@ -211,11 +247,15 @@ class ProfileEdit extends StatelessWidget {
                                 ),
                               );
                             }).toList(),
+                            icon: Transform.rotate(
+                              angle: -math.pi / 2,
+                              child: Icon(Icons.arrow_back_ios, color: Colors.black, size: 15,),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                      
+
                       SizedBox(height: 10,),
                       Text("Documents",
                       style: TextStyle(
@@ -229,10 +269,9 @@ class ProfileEdit extends StatelessWidget {
                         width: 500,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
+                          border: Border.all(color: Colors.grey),
+
+                          borderRadius: BorderRadius.all(Radius.circular(1)),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
