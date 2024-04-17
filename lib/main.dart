@@ -7,6 +7,7 @@ import 'package:jambotaxi/features/earnings/earnings.dart';
 import 'package:jambotaxi/features/home/home.dart';
 import 'package:jambotaxi/features/otp/ask_forotp.dart';
 import 'package:jambotaxi/features/profile/editprofile_screen.dart';
+import 'package:jambotaxi/features/registration/registration_screen.dart';
 import 'package:jambotaxi/utils/core/theme/app_theme.dart';
 import 'package:jambotaxi/utils/route/route.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
