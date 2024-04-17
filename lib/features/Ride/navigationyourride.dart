@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jambotaxi/features/otp_verification/otp_verification.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
@@ -120,10 +121,13 @@ class NavigationYourRide extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            leading: Icon(
-              Icons.location_on,
-              size: 30,
-              color: AppColors.primeryColor,
+            leading: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: const CustomPngImage(
+                imageName: "assets/images/location_icon.png",
+                height: 25,
+                width: 18.92,
+              ),
             ),
             title: Text(
               "KwaZulu-Natal, Cape Town ",
@@ -140,7 +144,7 @@ class NavigationYourRide extends StatelessWidget {
               child: CustomButton(
                 color: AppColors.primeryColor,
                 onPressed: () {
-                  Get.toNamed(AppRoute.askForOtp);
+                  Get.to(OTPVerification());
                 },
                 child: Text(
                   'Navigate Your Ride',

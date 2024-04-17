@@ -68,48 +68,54 @@ class ChatScreen extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.all(12),
               children: const [
-                MessageRow(message: 'Hello', isMe: false, time: '08:04 pm'),
                 MessageRow(message: 'Hello', isMe: true, time: '08:04 pm'),
+                MessageRow(message: 'Hello', isMe: false, time: '08:04 pm'),
                 MessageRow(
                     message: 'Hello, are you nearby?',
-                    isMe: false,
+                    isMe: true,
                     time: '08:04 pm'),
                 MessageRow(
                     message: 'I\'ll be there in few min',
-                    isMe: true,
+                    isMe: false,
                     time: '08:05 pm'),
                 MessageRow(
                     message: 'I\'m in the location',
-                    isMe: false,
+                    isMe: true,
                     time: '08:04 pm'),
               ],
             ),
           ),
-          Row(
+          Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: SizedBox(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width - 70,
-                  child: CustomTextFieldInt(
-                    keyboardType: TextInputType.multiline,
-                    controller: controller.chatController,
-                    hint: 'Type message',
+              const Divider(),
+              const SizedBox(height: 10,),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0),
+                    child: SizedBox(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width - 70,
+                      child: CustomTextFieldInt(
+                        keyboardType: TextInputType.multiline,
+                        controller: controller.chatController,
+                        hint: 'Type message',
+                      ),
+                    ),
                   ),
-                ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  CircleAvatar(
+                    backgroundColor: AppColors.primeryColor,
+                    child: IconButton(
+                      icon:
+                          const Icon(Icons.arrow_forward_ios, color: Colors.white),
+                      onPressed: () {},
+                    ),
+                  )
+                ],
               ),
-              const SizedBox(
-                width: 5,
-              ),
-              CircleAvatar(
-                backgroundColor: AppColors.primeryColor,
-                child: IconButton(
-                  icon:
-                      const Icon(Icons.arrow_forward_ios, color: Colors.white),
-                  onPressed: () {},
-                ),
-              )
             ],
           ),
           const SizedBox(
