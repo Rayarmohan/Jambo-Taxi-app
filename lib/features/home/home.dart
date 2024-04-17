@@ -183,7 +183,7 @@ class Home extends StatelessWidget {
                 children: [
                   Container(
                     color: Colors.white,
-                    width: 225,
+                    width: 245,
                     height: 44,
                     child: const Row(
                       children: [
@@ -238,7 +238,7 @@ class Home extends StatelessWidget {
                 children: [
                   Container(
                       height: 75,
-                      width: 150,
+                      width: 155,
                       color: AppColors.white,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -282,11 +282,11 @@ class Home extends StatelessWidget {
                         ],
                       )),
                   const SizedBox(
-                    width: 6,
+                    width: 10,
                   ),
                   Container(
                       height: 75,
-                      width: 150,
+                      width: 155,
                       color: AppColors.white,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

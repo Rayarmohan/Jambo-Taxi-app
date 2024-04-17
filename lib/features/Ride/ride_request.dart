@@ -317,7 +317,7 @@ class Ride_Request extends StatelessWidget {
           children: [
             Container(
               color: Colors.white,
-              width: 225,
+              width: 245,
               height: 44,
               child: const Row(
                 children: [
