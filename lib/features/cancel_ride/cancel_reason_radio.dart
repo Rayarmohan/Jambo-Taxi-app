@@ -24,7 +24,6 @@ class _CancelReasonState extends State<CancelReason> {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: reasons.length,
-      physics: NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return Container(
           alignment: Alignment.centerLeft,
