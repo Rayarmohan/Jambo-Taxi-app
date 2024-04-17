@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, camel_case_types
 
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
@@ -25,20 +26,24 @@ class Ride_Request extends StatelessWidget {
             ),
           ),
           _buildbar(context),
-          const Padding(
-            padding: EdgeInsets.only(right: 160, bottom: 240),
+           Padding(
+            padding: EdgeInsets.only(right: 160, bottom: 360),
             child: Align(
               alignment: Alignment.centerRight,
-              child: CustomPngImage(
-                height: 50,
-                width: 50,
-                imageName: 'assets/images/location.png',
-                boxFit: BoxFit.cover,
+              child: Transform.rotate(
+                angle: 45 * 3.141592653 / 180,
+                child: CustomPngImage(
+                  height: 63,
+                  width: 63,
+                  imageName: 'assets/images/location.png',
+                  boxFit: BoxFit.cover,
+                ),
               ),
+
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15.0, bottom: 20),
+            padding: const EdgeInsets.only(left: 15.0, top: 50),
             child: Align(
               alignment: Alignment.center,
               child: _buildTimer(context),
@@ -59,8 +64,8 @@ class Ride_Request extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(60)),
         color: Colors.white,
       ),
-      height: 90,
-      width: 90,
+      height: 74,
+      width: 74,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -73,23 +78,23 @@ class Ride_Request extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge!
-                      .copyWith(fontSize: 30, color: AppColors.primeryColor),
+                      .copyWith(fontSize: 23,fontWeight: FontWeight.w700, color: AppColors.primeryColor),
                 ),
                 Text(
                   "Seconds",
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall!
-                      .copyWith(fontSize: 10, color: AppColors.primeryColor),
+                      .copyWith(fontSize: 11,fontWeight: FontWeight.w400, color: AppColors.primeryColor),
                 ),
               ],
             ),
           ),
-          const CustomCircularProgressIndicator(
-            progress: 0.7, // Set progress to 70%
-            backgroundColor: Colors.grey, // Background color
+           CustomCircularProgressIndicator(
+            progress: 0.5, // Set progress to 70%
+            backgroundColor: Colors.grey.withOpacity(0.3), // Background color
             progressColor: AppColors.primeryColor, // Progress color
-            strokeWidth: 4.0, // Thickness of the progress indicator
+            strokeWidth: 5.0, // Thickness of the progress indicator
           ),
         ],
       ),
@@ -101,7 +106,7 @@ class Ride_Request extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
       ),
-      height: 290,
+      height: 330,
       child: Column(
         children: [
           const SizedBox(
@@ -143,10 +148,10 @@ class Ride_Request extends StatelessWidget {
                   height: 90,
                   child: ListTile(
                     leading: const CircleAvatar(
-                      radius: 25,
+                      radius: 30,
                       child: CustomPngImage(
-                        height: 50,
-                        width: 50,
+                        height: 59,
+                        width: 59,
                         imageName: 'assets/images/circleimage.png',
                       ),
                     ),
@@ -176,17 +181,28 @@ class Ride_Request extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.radio_button_checked_rounded,
-                          size: 16,
+                          size: 15,
+                          color: AppColors.primeryColor,
                         ),
                         SizedBox(
-                            height: 25,
-                            child: VerticalDivider(
-                              thickness: 0.5,
-                              color: Colors.black,
-                            )),
+                          height: 22,
+                          child: DottedLine(
+                            direction: Axis.vertical,
+                            lineLength: double.infinity,
+                            lineThickness: 0.5,
+
+                            dashLength: 4.0,
+                            dashColor: Colors.black,
+                            dashRadius: 0.0,
+                            dashGapLength: 4.0,
+                            dashGapColor: Colors.transparent,
+                            dashGapRadius: 0.0,
+                          ),
+                        ),
                         Icon(
                           Icons.location_on,
-                          size: 16,
+                          size: 15,
+                          color: AppColors.primeryColor,
                         )
                       ],
                     ),
