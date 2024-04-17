@@ -49,15 +49,15 @@ class BottomNavigation extends StatelessWidget {
     return Obx(
       () => BottomNavigationBar(
         items: [
-          _buildBottomNavigationBarItem('Home', 'bottomnav_home',
+          _buildBottomNavigationBarItem('Home', 'bottomnav_home',20,20,
               bottomNavigationController.tabIndex.value == 0, context),
-          _buildBottomNavigationBarItem('Earnings', 'bottomnav_earnings',
+          _buildBottomNavigationBarItem('Earnings', 'bottomnav_earnings',20,20,
               bottomNavigationController.tabIndex.value == 1, context),
-          _buildBottomNavigationBarItem('History', 'bottomnav_history',
+          _buildBottomNavigationBarItem('History', 'bottomnav_history',20,20,
               bottomNavigationController.tabIndex.value == 2, context),
-          _buildBottomNavigationBarItem('Notification', 'bottomnav_notifications',
+          _buildBottomNavigationBarItem('Notification', 'bottomnav_notifications',20,16,
               bottomNavigationController.tabIndex.value == 3, context),
-          _buildBottomNavigationBarItem('Profile', 'bottomnav_profile',
+          _buildBottomNavigationBarItem('Profile', 'bottomnav_profile',20,18,
               bottomNavigationController.tabIndex.value == 4, context),
         ],
         currentIndex: bottomNavigationController.tabIndex.value,
@@ -72,15 +72,15 @@ class BottomNavigation extends StatelessWidget {
   }
 
   BottomNavigationBarItem _buildBottomNavigationBarItem(
-      String label, String path , bool isActive, BuildContext context) {
+      String label, String path,double height,double width , bool isActive, BuildContext context) {
     return BottomNavigationBarItem(
       icon: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           CustomSvgImage(
             imageName: path,
-            height: 20,
-            width: 20,
+            height: height,
+            width: width,
             color: Colors.grey,
           ),
           SizedBox(
@@ -100,8 +100,8 @@ class BottomNavigation extends StatelessWidget {
           CustomSvgImage(
             color: AppColors.primeryColor,
             imageName: path,
-            height: 20,
-            width: 20,
+            height: height,
+            width: width,
           ),
           SizedBox(
             height: 4,
