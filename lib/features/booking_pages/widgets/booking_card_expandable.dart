@@ -195,7 +195,7 @@ class _BookingCardState extends State<BookingCardexpandable> {
                           height: 3.h,
                         ),
                         CustomPngImage(
-                          imageName: "assets/images/location_icon.png",
+                          imageName: "assets/images/newlocation_icon.png",
                           height: 15,
                           width: 11,
                         ),

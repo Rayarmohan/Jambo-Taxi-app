@@ -81,7 +81,7 @@ class BookingCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomPngImage(
-                        imageName: "assets/images/location_icon.png",
+                        imageName: "assets/images/newlocation_icon.png",
                         height: 20,
                         width: 15,
                       ),
@@ -181,7 +181,7 @@ class BookingCard extends StatelessWidget {
                       height: 3.h,
                     ),
                     CustomPngImage(
-                      imageName: "assets/images/location_icon.png",
+                      imageName: "assets/images/newlocation_icon.png",
                       height: 15,
                       width: 11,
                     ),
