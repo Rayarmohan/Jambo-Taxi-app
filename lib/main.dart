@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jambotaxi/features/home/home.dart';
 import 'package:jambotaxi/features/profile/editprofile_screen.dart';
 import 'package:jambotaxi/utils/core/theme/app_theme.dart';
 import 'package:jambotaxi/utils/route/route.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'jambotaxiapp',
+
         initialRoute: AppRoute.onboard,
         getPages: appRoutes(),
       ),
