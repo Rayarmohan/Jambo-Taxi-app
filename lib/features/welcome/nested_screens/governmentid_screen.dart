@@ -30,12 +30,17 @@ class GovernmentIDScreen extends StatelessWidget {
               .displayMedium!
               .copyWith(height: 1.7, color: AppColors.primeryColor),
         ),
-        leading: const Padding(
+        leading: Padding(
           padding: EdgeInsets.all(8.0),
-          child: CustomPngImage(
-            imageName: "assets/images/arrow_back.png",
-            height: 30,
-            width: 30,
+          child: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: CustomPngImage(
+              imageName: "assets/images/arrow_back.png",
+              height: 30,
+              width: 30,
+            ),
           ),
         ),
       ),
