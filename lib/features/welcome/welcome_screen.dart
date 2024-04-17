@@ -134,44 +134,47 @@ class WelcomeScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return Container(
-          padding: EdgeInsets.all(20),
-          height: 300, // Adjust the height as needed
+          padding: EdgeInsets.all(10),
+          height: 320, // Adjust the height as needed
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Icon(
-                Icons.check_circle,
-                size: 60, // Adjust the size as needed
+                Icons.check_circle_rounded,
+                size: 80, // Adjust the size as needed
                 color: AppColors.primeryColor, // Adjust the color as needed
               ),
-              SizedBox(height: 20), // Provides spacing between icon and text
+              SizedBox(height: 10), // Provides spacing between icon and text
               Text(
                 'Application Submitted For Verification',
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge!
-                    .copyWith(height: 1.7, color: AppColors.primeryColor),
+                    .copyWith(height: 1.7, color: AppColors.primeryColor, fontSize: 19),
               ),
-              SizedBox(height: 10), // Provides spacing between text items
+              SizedBox(height: 15), // Provides spacing between text items
               Text(
-                'We will get in touch in 48 working hours.\nBe ready to for your ride!',
+                'We will get in touch in 48 working hours.\nBe ready for your ride!',
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!
                     .copyWith(height: 1.7, color: AppColors.primeryColor),
               ),
-              SizedBox(height: 20.h), // Provides spacing before the button
-              CustomButton(
-                height: 44,
-                width: 1.sw,
-                onPressed: () {
-                  Get.back();
-                  Get.toNamed(AppRoute.enablelocation);
-                },
-                text: "Got it",
-                color: AppColors.primeryColor,
+              SizedBox(height: 30.h), // Provides spacing before the button
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: CustomButton(
+                  height: 44,
+                  width: 1.sw,
+                  onPressed: () {
+                    Get.back();
+                    Get.toNamed(AppRoute.enablelocation);
+                  },
+                  text: "Got it",
+                  color: AppColors.primeryColor,
+                ),
               )
             ],
           ),
