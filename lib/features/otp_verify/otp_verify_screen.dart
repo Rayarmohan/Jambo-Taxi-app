@@ -103,7 +103,7 @@ class OTPScreen extends StatelessWidget {
         decoration: InputDecoration(
           counterText: "", // to hide the counter text below the TextField
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 2, color: Colors.grey.shade300),
+            borderSide: BorderSide(width: 2, color: Colors.grey.shade100),
             borderRadius: BorderRadius.circular(2),
           ),
           focusedBorder: OutlineInputBorder(

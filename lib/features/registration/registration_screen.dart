@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:jambotaxi/features/login/login.dart';
 import 'package:jambotaxi/features/registration/registration_controller.dart';
 import 'package:jambotaxi/features/welcome/welcome_screen.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
@@ -21,7 +22,8 @@ class RegistartionScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.only(top: 20.h, left: 20.h, right: 20.h, bottom: 20.h),
+        padding:
+            EdgeInsets.only(top: 20.h, left: 20.h, right: 20.h, bottom: 20.h),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -40,7 +42,7 @@ class RegistartionScreen extends StatelessWidget {
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  "Don’t worry, only you can see your personal\ndata.No one eise will be able to see it",
+                  "Don’t worry, only you can see your personal\ndata. No one else will be able to see it",
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall!
@@ -76,7 +78,7 @@ class RegistartionScreen extends StatelessWidget {
                       height: 5.h,
                     ),
                     CustomTextField(
-                      controller: controller.nameController,
+                      controller: controller.emailController,
                       hint: 'example@gmail.com',
                     ),
                     SizedBox(
@@ -90,41 +92,7 @@ class RegistartionScreen extends StatelessWidget {
                     SizedBox(
                       height: 5.h,
                     ),
-                    Row(
-                      children: [
-                        Obx(
-                          () => Container(
-                            height: 48.h,
-                            width: 80.h,
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 1, color: AppColors.grey)),
-                            child: DropdownButtonHideUnderline(
-                              child: DropdownButton<String>(
-                                value: controller.dropdownValue.value,
-                                onChanged: (String? newValue) {
-                                  controller.setDropdownValue(newValue!);
-                                },
-                                items: <String>['+91', '+1', '+44',]
-                                    .map((String value) {
-                                  return DropdownMenuItem<String>(
-                                    alignment: AlignmentDirectional.centerEnd,
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                            child: CustomTextFieldInt(
-                          controller: controller.phoneController,
-                          hint: 'Enter phone number',
-                        )),
-                      ],
-                    ),
+                    PhoneNumberField(controller: controller),
                     SizedBox(
                       height: 15.h,
                     ),
@@ -174,7 +142,7 @@ class RegistartionScreen extends StatelessWidget {
                     SizedBox(
                       height: 15.h,
                     ),
-                    Text("City you drive in",
+                    Text("City You Drive In",
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium!
@@ -197,10 +165,10 @@ class RegistartionScreen extends StatelessWidget {
                               controller.setCityDropdownValue(newValue!);
                             },
                             items: <String>[
-                              'Kochi',
-                              'Kollam',
-                              'Kottayam',
-                              'Alappuzha'
+                              'Kochi, India',
+                              'Kollam, India',
+                              'Kottayam, India',
+                              'Alappuzha, India'
                             ].map((String value) {
                               return DropdownMenuItem<String>(
                                 alignment: AlignmentDirectional.center,
@@ -236,32 +204,39 @@ class RegistartionScreen extends StatelessWidget {
                       controller: controller.nameController,
                       hint: 'Enter DOB',
                     ),
-
-                     SizedBox(
+                    SizedBox(
                       height: 15.h,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Obx(
-                          () => Checkbox(
-                            checkColor: AppColors.white,
-                            
-                            value: controller.isChecked.value,
-                            onChanged: (bool? value) {
-                              controller.setIsChecked(value!);
-                            },
-                            activeColor: AppColors.primeryColor,
+                          () => Container(
+                            width:
+                                24, // Control the container width that wraps the checkbox
+                            height: 24, // Control the container height
+                            child: Checkbox(
+                              materialTapTargetSize: MaterialTapTargetSize
+                                  .shrinkWrap, // Reduces the tap target size to the size of the checkbox
+                              checkColor: AppColors.white,
+                              value: controller.isChecked.value,
+                              onChanged: (bool? value) {
+                                controller.setIsChecked(value!);
+                              },
+                              activeColor: AppColors.primeryColor,
+                            ),
                           ),
                         ),
+                        SizedBox(width: 7,),
                         Expanded(
                           child: RichText(
                             text: TextSpan(
                               text: 'By Accept, you agree to Company ',
-                              style: TextStyle(color: Colors.black),
+                              style: TextStyle(color: AppColors.grey, decoration: TextDecoration.underline, decorationColor: AppColors.grey),
                               children: <TextSpan>[
                                 TextSpan(
                                   text: 'Terms & Conditions',
-                                  style: TextStyle(color: Colors.blue),
+                                  style: TextStyle(color: AppColors.primeryColor, decoration: TextDecoration.underline, decorationColor: AppColors.primeryColor, ),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
                                       // Open terms and conditions link
@@ -273,7 +248,7 @@ class RegistartionScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                     SizedBox(
+                    SizedBox(
                       height: 35.h,
                     ),
                     CustomButton(
@@ -293,6 +268,77 @@ class RegistartionScreen extends StatelessWidget {
           ),
         ),
       )),
+    );
+  }
+}
+
+class PhoneNumberField extends StatefulWidget {
+  final RegistarationController controller;
+
+  const PhoneNumberField({Key? key, required this.controller})
+      : super(key: key);
+
+  @override
+  _PhoneNumberFieldState createState() => _PhoneNumberFieldState();
+}
+
+class _PhoneNumberFieldState extends State<PhoneNumberField> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 48,
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColors.grey),
+      ),
+      child: Row(
+        children: <Widget>[
+          Obx(
+            () => Padding(
+              padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  value: widget.controller.dropdownValue.value,
+                  onChanged: (String? newValue) {
+                    widget.controller.setDropdownValue(newValue!);
+                  },
+                  items: <String>['+91', '+1', '+44'].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+          ),
+          VerticalDivider(
+            color: AppColors.grey,
+            thickness: 1,
+          ),
+          Expanded(
+            child: TextField(
+              controller: widget.controller.phoneController,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                enabledBorder: InputBorder
+                    .none, // Ensures no border when enabled and not focused
+                focusedBorder: InputBorder.none,
+                disabledBorder: InputBorder.none,
+
+                hintText: 'Enter Phone Number',
+                hintStyle: const TextStyle(
+                  fontFamily: "SF Pro Display",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  height: 1.275,
+                  color: Colors.grey,
+                ),
+              ),
+              keyboardType: TextInputType.phone,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
