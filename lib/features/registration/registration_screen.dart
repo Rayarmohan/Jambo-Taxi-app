@@ -4,8 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:jambotaxi/features/login/login.dart';
+
 import 'package:jambotaxi/features/registration/registration_controller.dart';
 import 'package:jambotaxi/features/welcome/welcome_screen.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
@@ -92,7 +91,7 @@ class RegistartionScreen extends StatelessWidget {
                     SizedBox(
                       height: 5.h,
                     ),
-                    PhoneNumberField(controller: controller),
+                    PhoneNumberField(),
                     SizedBox(
                       height: 15.h,
                     ),
@@ -227,16 +226,25 @@ class RegistartionScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(width: 7,),
+                        SizedBox(
+                          width: 7,
+                        ),
                         Expanded(
                           child: RichText(
                             text: TextSpan(
                               text: 'By Accept, you agree to Company ',
-                              style: TextStyle(color: AppColors.grey, decoration: TextDecoration.underline, decorationColor: AppColors.grey),
+                              style: TextStyle(
+                                  color: AppColors.grey,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: AppColors.grey),
                               children: <TextSpan>[
                                 TextSpan(
                                   text: 'Terms & Conditions',
-                                  style: TextStyle(color: AppColors.primeryColor, decoration: TextDecoration.underline, decorationColor: AppColors.primeryColor, ),
+                                  style: TextStyle(
+                                    color: AppColors.primeryColor,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: AppColors.primeryColor,
+                                  ),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
                                       // Open terms and conditions link
@@ -272,19 +280,14 @@ class RegistartionScreen extends StatelessWidget {
   }
 }
 
-class PhoneNumberField extends StatefulWidget {
-  final RegistarationController controller;
+class PhoneNumberField extends StatelessWidget {
+  const PhoneNumberField({
+    Key? key,
+  }) : super(key: key);
 
-  const PhoneNumberField({Key? key, required this.controller})
-      : super(key: key);
-
-  @override
-  _PhoneNumberFieldState createState() => _PhoneNumberFieldState();
-}
-
-class _PhoneNumberFieldState extends State<PhoneNumberField> {
   @override
   Widget build(BuildContext context) {
+    final RegistarationController controller = Get.find();
     return Container(
       height: 48,
       decoration: BoxDecoration(
@@ -297,9 +300,9 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
               padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
-                  value: widget.controller.dropdownValue.value,
+                  value: controller.dropdownValue.value,
                   onChanged: (String? newValue) {
-                    widget.controller.setDropdownValue(newValue!);
+                    controller.setDropdownValue(newValue!);
                   },
                   items: <String>['+91', '+1', '+44'].map((String value) {
                     return DropdownMenuItem<String>(
@@ -317,7 +320,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
           ),
           Expanded(
             child: TextField(
-              controller: widget.controller.phoneController,
+              controller: controller.phoneController,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 enabledBorder: InputBorder

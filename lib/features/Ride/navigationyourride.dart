@@ -144,7 +144,7 @@ class NavigationYourRide extends StatelessWidget {
               child: CustomButton(
                 color: AppColors.primeryColor,
                 onPressed: () {
-                  Get.to(OTPVerification());
+                  Get.toNamed(AppRoute.collectcash);
                 },
                 child: Text(
                   'Navigate Your Ride',

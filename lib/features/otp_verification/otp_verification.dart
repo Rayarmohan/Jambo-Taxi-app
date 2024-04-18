@@ -89,10 +89,10 @@ class OTPVerification extends StatelessWidget {
             ),
             const SizedBox(height: 60),
             CustomButton(
-              height: 60,
+              height: 44,
               width: 0.9.sw,
               onPressed: () {
-                Get.toNamed(AppRoute.collectcash);
+                Get.toNamed(AppRoute.navigateYourRide);
               },
               text: "Verify & Start ride",
               color: AppColors.primeryColor,

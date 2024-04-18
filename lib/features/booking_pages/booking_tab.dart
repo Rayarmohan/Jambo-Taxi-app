@@ -35,6 +35,7 @@ class BookingComplete extends StatelessWidget {
                       child: Icon(
                         Icons.arrow_back_ios,
                         color: AppColors.primeryColor,
+                        size: 20,
                       ),
                     ),
                   )),

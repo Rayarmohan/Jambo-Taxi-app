@@ -16,7 +16,6 @@ class CancelRideScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-
       appBar: CustomAppBar(
         title: Text('Cancel Ride',
             style: Theme.of(context)
@@ -45,7 +44,8 @@ class CancelRideScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 10),
                       child: Text(
                         'Please select the reason for cancellation:',
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -65,58 +65,71 @@ class CancelRideScreen extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Other',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(color: AppColors.grey)),
-                    const SizedBox(
-                        height:
-                            10), // Add some space between the label and the text field
-                    TextField(
-                      maxLines: 9,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color:
-                                    Colors.grey.shade300), // Light grey border
-                            borderRadius: BorderRadius.zero, // Sharp edges
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.grey
-                                    .shade300), // Light grey border for enabled state
-                            borderRadius: BorderRadius.zero,
-                          ),
-                          contentPadding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 20),
-                          hintText: 'Enter your reason',
-                          hintStyle: Theme.of(context)
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Other',
+                          style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
-                              .copyWith(color: AppColors.primeryColor)),
-                    ),
-                  ],
+                              .copyWith(color: AppColors.grey)),
+                      const SizedBox(
+                          height:
+                              10), // Add some space between the label and the text field
+                      TextField(
+                        maxLines: 6,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors
+                                      .grey.shade300), // Light grey border
+                              borderRadius: BorderRadius.zero, // Sharp edges
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.grey
+                                      .shade300), // Light grey border for enabled state
+                              borderRadius: BorderRadius.zero,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.grey
+                                      .shade300), // Light grey border for enabled state
+                              borderRadius: BorderRadius.zero,
+                            ),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 20),
+                            hintText: 'Enter your reason',
+                            hintStyle: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(color: AppColors.primeryColor)),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+
+                      CustomButton(
+                        height: 44,
+                        width: 0.9.sw,
+                        onPressed: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return CancelSuccess();
+                              });
+                        },
+                        text: "Cancel Ride",
+                        color: AppColors.primeryColor,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-            CustomButton(
-              height: 60,
-              width: 0.9.sw,
-              onPressed: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return CancelSuccess();
-                    });
-              },
-              text: "Cancel Ride",
-              color: AppColors.primeryColor,
-            )
           ],
         ),
       ),

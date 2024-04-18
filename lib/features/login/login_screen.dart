@@ -31,56 +31,66 @@ class LoginScreen extends StatelessWidget {
                       .copyWith(height: 1.7),
                 ),
                 Text("Hi! Welcome back, you’ve been missed",
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        height: 1.7, color: AppColors.primeryColor)),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(height: 1.7, color: AppColors.primeryColor)),
                 SizedBox(
                   height: 80.h,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Phone Number",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(height: 1.7, color: AppColors.grey)),
-                            SizedBox(height: 10,),
-                    PhoneNumberField(controller: controller),
-                  ]
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text("Phone Number",
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .copyWith(height: 1.7, color: AppColors.grey)),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const PhoneNumberField(),
+                ]),
+                SizedBox(
+                  height: 80.h,
                 ),
-                    SizedBox(
-                      height: 80.h,
-                    ),
-                    CustomButton(
-                      height: 44,
-                      width: 1.sw,
-                      onPressed: () {
-                        print("clicked");
-                        Get.toNamed(AppRoute.otpscreen);
-                      },
-                      text: "Sign In",
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      child: RichText(
-                          text: TextSpan(children: [
-                        TextSpan(
-                            text: "Don’t have an account? ",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(height: 1.7, color: AppColors.grey, decoration: TextDecoration.underline, decorationColor: AppColors.grey), ),
-                        TextSpan(
-                            text: "Sign Up",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(
-                                    height: 1.7, color: AppColors.primeryColor, decoration: TextDecoration.underline, decorationColor: AppColors.primeryColor)),
-                      ])),
-                    )
-                  ],
-              
+                CustomButton(
+                  height: 44,
+                  width: 1.sw,
+                  onPressed: () {
+                    print("clicked");
+                    Get.toNamed(
+                      AppRoute.otpscreen,
+                    );
+                  },
+                  text: "Sign In",
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: GestureDetector(
+                    onTap: () => Get.toNamed(AppRoute.registrationScreen),
+                    child: RichText(
+                        text: TextSpan(children: [
+                      TextSpan(
+                        text: "Don’t have an account? ",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            height: 1.7,
+                            color: AppColors.grey,
+                            decoration: TextDecoration.underline,
+                            decorationColor: AppColors.grey),
+                      ),
+                      TextSpan(
+                          text: "Sign Up",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.primeryColor,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: AppColors.primeryColor)),
+                    ])),
+                  ),
+                )
+              ],
             ),
           ),
         ),
@@ -89,18 +99,14 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class PhoneNumberField extends StatefulWidget {
-  final LoginController controller;
+class PhoneNumberField extends StatelessWidget {
+  const PhoneNumberField({
+    Key? key,
+  }) : super(key: key);
 
-  const PhoneNumberField({Key? key, required this.controller}) : super(key: key);
-
-  @override
-  _PhoneNumberFieldState createState() => _PhoneNumberFieldState();
-}
-
-class _PhoneNumberFieldState extends State<PhoneNumberField> {
   @override
   Widget build(BuildContext context) {
+    final LoginController controller = Get.find();
     return Container(
       height: 48,
       decoration: BoxDecoration(
@@ -113,9 +119,9 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
               padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
-                  value: widget.controller.dropdownValue.value,
+                  value: controller.dropdownValue.value,
                   onChanged: (String? newValue) {
-                    widget.controller.setDropdownValue(newValue!);
+                    controller.setDropdownValue(newValue!);
                   },
                   items: <String>['+91', '+1', '+44'].map((String value) {
                     return DropdownMenuItem<String>(
@@ -127,16 +133,17 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
               ),
             ),
           ),
-          VerticalDivider(
+          const VerticalDivider(
             color: AppColors.grey,
             thickness: 1,
           ),
           Expanded(
             child: TextField(
-              controller: widget.controller.phoneController,
-              decoration: InputDecoration(
+              controller: controller.phoneController,
+              decoration: const InputDecoration(
                 border: InputBorder.none,
-                enabledBorder: InputBorder.none, // Ensures no border when enabled and not focused
+                enabledBorder: InputBorder
+                    .none, // Ensures no border when enabled and not focused
                 focusedBorder: InputBorder.none,
                 disabledBorder: InputBorder.none,
 

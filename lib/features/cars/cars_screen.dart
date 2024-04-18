@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jambotaxi/features/cars/car_nested_screens/add_new_car_screen.dart';
 import 'package:jambotaxi/features/cars/cars_controller.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
@@ -22,14 +24,40 @@ class CarsScreen extends StatelessWidget {
               .displayMedium!
               .copyWith(height: 1.7, color: AppColors.primeryColor),
         ),
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CustomPngImage(
-            imageName: "assets/images/arrow_back.png",
-            height: 30,
-            width: 30,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: const CustomPngImage(
+              imageName: "assets/images/arrow_back.png",
+              height: 30,
+              width: 30,
+            ),
           ),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                Get.to(const AddNewCar());
+              },
+              child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: AppColors.grey)),
+                  child: const Icon(
+                    Icons.add,
+                    size: 20,
+                    color: AppColors.black,
+                  )),
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(30),
@@ -175,7 +203,6 @@ class CarsScreen extends StatelessWidget {
                           top: 0,
                           right: 0,
                           child: Container(
-                           
                             height: 16,
                             width: 85,
                             decoration: const BoxDecoration(

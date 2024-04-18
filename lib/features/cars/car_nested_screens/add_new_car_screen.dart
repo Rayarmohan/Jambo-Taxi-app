@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:jambotaxi/features/cars/car_nested_screens/car_images_screen.dart';
+import 'package:jambotaxi/features/cars/car_nested_screens/cardocument_screens.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
@@ -20,7 +22,7 @@ class AddNewCar extends StatelessWidget {
                 .headlineMedium!
                 .copyWith(height: 1.7, color: AppColors.primeryColor)),
         leading: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: InkWell(
             onTap: () {
               Get.back();
@@ -35,7 +37,7 @@ class AddNewCar extends StatelessWidget {
       ),
       body: SafeArea(
           child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
+              padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
               child: SingleChildScrollView(
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -249,34 +251,39 @@ class AddNewCar extends StatelessWidget {
                       const SizedBox(
                         height: 9,
                       ),
-                      Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(const CarDocuments());
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 500,
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 1,
+                              color: AppColors.grey,
+                            ),
                           ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Add Document Details",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.black,
-                                  ),
-                            ),
-                            const Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.black,
-                            ),
-                          ],
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Add Document Details",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                      height: 1.7,
+                                      color: AppColors.black,
+                                    ),
+                              ),
+                              const Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.black,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -290,38 +297,43 @@ class AddNewCar extends StatelessWidget {
                       const SizedBox(
                         height: 9,
                       ),
-                      Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(const CarImages());
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 500,
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 1,
+                              color: AppColors.grey,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Add Car Images",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                      height: 1.7,
+                                      color: AppColors.black,
+                                    ),
+                              ),
+                              const Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.black,
+                              ),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Add Car Images",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.black,
-                                  ),
-                            ),
-                            const Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.black,
-                            ),
-                          ],
-                        ),
                       ),
-                      SizedBox(
-                        height: 95,
+                      const SizedBox(
+                        height: 60,
                       ),
                       CustomButton(
                         height: 44,

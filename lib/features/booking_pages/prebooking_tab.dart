@@ -18,19 +18,32 @@ class PrebookingComplete extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: CustomAppBar(
-            title: Text('Pre-Booked',
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium!
-                    .copyWith(height: 1.7, color: AppColors.primeryColor)),
-            leading: const Padding(
-              padding: EdgeInsets.only(left: 34),
-              child: CustomPngImage(
-                imageName: "assets/images/arrow_back.png",
-                height: 30,
-                width: 30,
-              ),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const CustomPngImage(
+                  imageName: "assets/images/arrow_back.png",
+                  height: 30,
+                  width: 30,
+                ),
+                const SizedBox(
+                  width: 60,
+                ),
+                Text('Pre-Booked',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineMedium!
+                        .copyWith(height: 1.7, color: AppColors.primeryColor)),
+              ],
             ),
+            // leading: const Padding(
+            //   padding: EdgeInsets.only(left: 34),
+            //   child: CustomPngImage(
+            //     imageName: "assets/images/arrow_back.png",
+            //     height: 30,
+            //     width: 30,
+            //   ),
+            // ),
           ),
           body: Padding(
             padding: const EdgeInsets.only(bottom: 20),

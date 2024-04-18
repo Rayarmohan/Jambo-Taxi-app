@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/cars/cars_controller.dart';
@@ -25,12 +26,17 @@ class CarBackSide extends StatelessWidget {
               .displayMedium!
               .copyWith(height: 1.7, color: AppColors.primeryColor),
         ),
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CustomPngImage(
-            imageName: "assets/images/arrow_back.png",
-            height: 30,
-            width: 30,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: const CustomPngImage(
+              imageName: "assets/images/arrow_back.png",
+              height: 30,
+              width: 30,
+            ),
           ),
         ),
       ),
