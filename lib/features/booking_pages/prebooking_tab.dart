@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:jambotaxi/features/booking_pages/widgets/booking_card.dart';
 import 'package:jambotaxi/features/booking_pages/widgets/booking_card_expandable.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
-import 'package:jambotaxi/widgets/custom_button.dart';
 
 import '../../utils/color/app_colors.dart';
 import '../../widgets/custom_images.dart';

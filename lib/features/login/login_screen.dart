@@ -12,6 +12,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LoginController controller = Get.put(LoginController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
