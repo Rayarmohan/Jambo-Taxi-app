@@ -108,7 +108,7 @@ class Home extends StatelessWidget {
                                                   fontWeight: FontWeight.w500,
                                                   color:
                                                       AppColors.primeryColor)),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 35,
                                       ),
                                       Text("Rs 104.0",

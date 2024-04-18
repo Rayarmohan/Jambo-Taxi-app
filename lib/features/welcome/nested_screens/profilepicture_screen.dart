@@ -136,7 +136,6 @@ class ProfilePictureScreen extends StatelessWidget {
                       height: 44,
                       width: 1.sw,
                       onPressed: () {
-                        print("clicked");
                       },
                       text: "Done",
                       color: AppColors.primeryColor,

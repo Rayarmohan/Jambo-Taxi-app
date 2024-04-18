@@ -51,9 +51,7 @@ class ProfileScreen extends StatelessWidget {
               ProfileUpdate(
                   imagePath: 'assets/images/profile_pic.png',
                   onUpdate: () {
-                    print("clicked");
                     Get.to(ProfileEdit());
-                    print("Navigated to edit profile");
                   }),
               SizedBox(
                 height: 5,

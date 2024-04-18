@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/cars/cars_controller.dart';
@@ -134,7 +133,6 @@ class CarBackSide extends StatelessWidget {
                 height: 44,
                 width: 1.sw,
                 onPressed: () {
-                  print("clicked");
                 },
                 text: "Done",
                 color: AppColors.primeryColor,

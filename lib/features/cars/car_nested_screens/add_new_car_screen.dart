@@ -339,7 +339,6 @@ class AddNewCar extends StatelessWidget {
                         height: 44,
                         width: 1.sw,
                         onPressed: () {
-                          print("clicked");
                           showVerificationPopup(context);
                         },
                         text: "Add New Car",
@@ -355,7 +354,7 @@ class AddNewCar extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           height: 300,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -365,7 +364,7 @@ class AddNewCar extends StatelessWidget {
                 size: 60,
                 color: AppColors.primeryColor,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 'Request sent Successfully!',
                 textAlign: TextAlign.center,
@@ -374,7 +373,7 @@ class AddNewCar extends StatelessWidget {
                     .bodyLarge!
                     .copyWith(height: 1.7, color: AppColors.primeryColor),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'We will get in touch in 48 working hours.\nBe ready to for your ride!',
                 textAlign: TextAlign.center,

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jambotaxi/features/cancel_ride/cancel_reason_radio.dart';
 import 'package:jambotaxi/features/cancel_ride/cancel_ride_successful.dart';
@@ -100,7 +98,7 @@ class CancelRideScreen extends StatelessWidget {
                                       .shade300), // Light grey border for enabled state
                               borderRadius: BorderRadius.zero,
                             ),
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 20),
                             hintText: 'Enter your reason',
                             hintStyle: Theme.of(context)
@@ -108,7 +106,7 @@ class CancelRideScreen extends StatelessWidget {
                                 .bodyMedium!
                                 .copyWith(color: AppColors.primeryColor)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
 
@@ -119,7 +117,7 @@ class CancelRideScreen extends StatelessWidget {
                           showModalBottomSheet(
                               context: context,
                               builder: (context) {
-                                return CancelSuccess();
+                                return const CancelSuccess();
                               });
                         },
                         text: "Cancel Ride",

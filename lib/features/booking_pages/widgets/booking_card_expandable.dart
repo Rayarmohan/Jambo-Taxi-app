@@ -10,6 +10,7 @@ import 'package:jambotaxi/widgets/custom_images.dart';
 
 class BookingCardexpandable extends StatefulWidget {
   final String statusText;
+  // ignore: use_super_parameters
   const BookingCardexpandable({
     Key? key,
     required this.statusText,

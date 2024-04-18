@@ -142,7 +142,6 @@ class RatingScreen extends StatelessWidget {
                           itemPadding:
                               const EdgeInsets.symmetric(horizontal: 4.0),
                           onRatingUpdate: (rating) {
-                            print(rating);
                           },
                         )
                       ],

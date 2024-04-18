@@ -242,7 +242,6 @@ class CarsScreen extends StatelessWidget {
                                   child: CustomButton(
                                     height: 44.h,
                                     onPressed: () {
-                                      print("Delete clicked");
                                     },
                                     text: "Delete",
                                     color: AppColors.primeryColor,

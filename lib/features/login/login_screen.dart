@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -100,6 +102,7 @@ class LoginScreen extends StatelessWidget {
 }
 
 class PhoneNumberField extends StatelessWidget {
+  // ignore: use_super_parameters
   const PhoneNumberField({
     Key? key,
   }) : super(key: key);

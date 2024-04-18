@@ -223,7 +223,7 @@ class RegistartionScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Obx(
-                          () => Container(
+                          () => SizedBox(
                             width:
                                 24, // Control the container width that wraps the checkbox
                             height: 24, // Control the container height
@@ -276,7 +276,6 @@ class RegistartionScreen extends StatelessWidget {
                       height: 44.h,
                       width: 1.sw,
                       onPressed: () {
-                        print("clicked");
 
                         Get.to(WelcomeScreen());
                       },
@@ -295,8 +294,8 @@ class RegistartionScreen extends StatelessWidget {
 
 class PhoneNumberField extends StatelessWidget {
   const PhoneNumberField({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

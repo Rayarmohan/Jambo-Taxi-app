@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/cars/car_nested_screens/car_back_side_screen.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';

@@ -6,7 +6,7 @@ class ProfileUpdate extends StatelessWidget {
   final String imagePath;
   final VoidCallback? onUpdate;
 
-  const ProfileUpdate({
+  const ProfileUpdate({super.key, 
     required this.imagePath,
     required this.onUpdate,
   });
