@@ -11,6 +11,9 @@ import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 import 'package:jambotaxi/widgets/custom_text_field.dart';
+import 'dart:math' as math;
+
+import '../Registration/registration_screen.dart';
 
 class ProfileEdit extends StatelessWidget {
   const ProfileEdit({super.key});
@@ -119,9 +122,8 @@ class ProfileEdit extends StatelessWidget {
                           width: 80.h,
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              border: Border.all(
-                                  width: 1,
-                                  color: AppColors.grey.withOpacity(0.5))),
+                              border:
+                                  Border.all(width: 1, color: AppColors.grey)),
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton<String>(
                               value: controller.dropdownValue.value,
@@ -148,8 +150,7 @@ class ProfileEdit extends StatelessWidget {
                           height: 48.h,
                           width: 200.h,
                           decoration: BoxDecoration(
-                            border: Border.all(
-                                color: AppColors.grey.withOpacity(0.5)),
+                            border: Border.all(color: Colors.grey),
                             borderRadius: BorderRadius.all(Radius.circular(1)),
                           ),
                           child: Padding(
@@ -234,38 +235,33 @@ class ProfileEdit extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      height: 50,
-                      width: 500,
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 1,
-                          color: AppColors.grey,
+                  Container(
+                    height: 50,
+                    width: 500,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: AppColors.grey,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Update Documents Details",
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    height: 1.7,
+                                    color: AppColors.primeryColor,
+                                  ),
                         ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Update Documents Details",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(
-                                  height: 1.7,
-                                  color: AppColors.primeryColor,
-                                ),
-                          ),
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.black,
-                            size: 15,
-                          ),
-                        ],
-                      ),
+                        const Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                          size: 15,
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(

@@ -40,16 +40,17 @@ class WelcomeScreen extends StatelessWidget {
                   "Welcome,",
                   style: Theme.of(context)
                       .textTheme
-                      .bodyMedium!
-                      .copyWith(height: 1.7, color: AppColors.grey),
+                      .bodyLarge!
+                      .copyWith(height: 1.1, color: AppColors.grey, ),
                 ),
+
                 Text(
                   textAlign: TextAlign.center,
                   "Jenny Wilson",
                   style: Theme.of(context)
                       .textTheme
                       .headlineMedium!
-                      .copyWith(height: 1.7, color: AppColors.primeryColor),
+                      .copyWith(height: 1.1, color: AppColors.primeryColor),
                 ),
                 SizedBox(
                   height: 30.h,
@@ -131,11 +132,16 @@ class WelcomeScreen extends StatelessWidget {
 
   void showVerificationPopup(BuildContext context) {
     showModalBottomSheet(
+
       context: context,
       builder: (BuildContext context) {
         return Container(
-          padding: EdgeInsets.all(10),
-          height: 320, // Adjust the height as needed
+
+          padding: EdgeInsets.all(20),
+          height: 350, // Adjust the height as needed
+
+          // Adjust the height as needed
+
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
