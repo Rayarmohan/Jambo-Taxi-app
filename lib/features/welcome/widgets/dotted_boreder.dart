@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
 class DottedBorderContainer extends StatelessWidget {
@@ -16,12 +15,12 @@ class DottedBorderContainer extends StatelessWidget {
 
       radius: const Radius.circular(0),
 
-      dashPattern: [8, 4],
+      dashPattern: const [8, 4],
       strokeWidth: 2,
-      color: Color(0xFFC8C8C8),
+      color: const Color(0xFFC8C8C8),
       child: InkWell(
         onTap: onUploadPressed,
-        child: Container(
+        child: SizedBox(
           width: 323.h,
           height: 138.h,
           child: Center(
@@ -40,7 +39,7 @@ class DottedBorderContainer extends StatelessWidget {
                 // ),
                 Image.asset("assets/images/uploadicon.png"),
 
-               CustomPngImage(
+               const CustomPngImage(
             imageName: "assets/images/upload_arrow.png",
             height: 31,
             width: 27,
@@ -53,7 +52,7 @@ class DottedBorderContainer extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .labelMedium!
-                        .copyWith(height: 1.7, color: Color(0xFFC8C8C8), fontSize: 15))
+                        .copyWith(height: 1.7, color: const Color(0xFFC8C8C8), fontSize: 15))
               ],
             ),
           ),

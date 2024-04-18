@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 
 class NotificationContainer extends StatelessWidget {
@@ -26,7 +25,7 @@ class NotificationContainer extends StatelessWidget {
                 child: Column(
                   children: [
                     ListTile(
-                      leading: Icon(
+                      leading: const Icon(
                         Icons.check_circle_rounded,
                         color: AppColors.primeryColor,
                         size: 60,
@@ -36,9 +35,9 @@ class NotificationContainer extends StatelessWidget {
                               .textTheme
                               .titleLarge!
                               .copyWith(height: 1.7, color: AppColors.black)),
-                      subtitle: Wrap(
+                      subtitle: const Wrap(
                         children: [
-                          const Text(
+                          Text(
                         "Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed",
                         style: TextStyle(
                           color: AppColors.primeryColor,

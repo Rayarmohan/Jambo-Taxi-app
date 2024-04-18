@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
-import 'package:jambotaxi/widgets/custom_Progress_Indicator.dart';
+import 'package:jambotaxi/widgets/custom_progress_Indicator.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
@@ -27,12 +27,12 @@ class Ride_Request extends StatelessWidget {
           ),
           _buildbar(context),
            Padding(
-            padding: EdgeInsets.only(right: 160, bottom: 360),
+            padding: const EdgeInsets.only(right: 160, bottom: 360),
             child: Align(
               alignment: Alignment.centerRight,
               child: Transform.rotate(
                 angle: 45 * 3.141592653 / 180,
-                child: CustomPngImage(
+                child: const CustomPngImage(
                   height: 63,
                   width: 63,
                   imageName: 'assets/images/location.png',

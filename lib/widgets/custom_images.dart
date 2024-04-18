@@ -84,6 +84,7 @@ class CustomSvgImage extends StatelessWidget {
         height: height ?? 30,
         width: width ?? 30,
         fit: boxFit ?? BoxFit.contain,
+        // ignore: deprecated_member_use
         color: color,
       ),
     );

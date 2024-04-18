@@ -1,10 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:jambotaxi/features/welcome/welcome_controller.dart';
 import 'package:jambotaxi/features/welcome/widgets/custom_checkbox.dart';
 import 'package:jambotaxi/features/welcome/widgets/dotted_boreder.dart';
@@ -139,7 +137,6 @@ class BankDetailsScreen extends StatelessWidget {
                 height: 44,
                 width: 1.sw,
                 onPressed: () {
-                  print("clicked");
                 },
                 text: "Done",
                 color: AppColors.primeryColor,

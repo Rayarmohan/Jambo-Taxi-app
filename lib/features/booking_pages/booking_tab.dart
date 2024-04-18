@@ -4,7 +4,6 @@ import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
 
 import '../../utils/color/app_colors.dart';
-import '../../widgets/custom_images.dart';
 
 class BookingComplete extends StatelessWidget {
   const BookingComplete({super.key});
@@ -28,13 +27,15 @@ class BookingComplete extends StatelessWidget {
                   decoration: BoxDecoration(
                       border: Border.all(color: AppColors.grey),
                       color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(30))),
                   child: const Center(
                     child: Padding(
                       padding: EdgeInsets.only(left: 8.0),
                       child: Icon(
                         Icons.arrow_back_ios,
                         color: AppColors.primeryColor,
+                        size: 20,
                       ),
                     ),
                   )),
@@ -67,11 +68,11 @@ class BookingComplete extends StatelessWidget {
                   SingleChildScrollView(
                     child: Column(
                       children: [
-                        BookingCard(statusText: 'Ongoing'),
+                        const BookingCard(statusText: 'Ongoing'),
                         Container(
                           width: 400,
                           height: 300,
-                          padding: EdgeInsets.all(20),
+                          padding: const EdgeInsets.all(20),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(4.0),
                             child: Stack(
@@ -124,7 +125,6 @@ class BookingComplete extends StatelessWidget {
                                 onPressed: () {
                                   // Handle button 2 press
                                 },
-                                child: Text('Track Ride'),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.green,
                                   shape: const RoundedRectangleBorder(
@@ -132,6 +132,7 @@ class BookingComplete extends StatelessWidget {
                                         BorderRadius.zero, // No border radius
                                   ),
                                 ),
+                                child: const Text('Track Ride'),
                               ),
                             ),
                           ],

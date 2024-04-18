@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
@@ -22,12 +21,12 @@ class AddMoneyToWallet extends StatelessWidget {
               .copyWith(height: 1.7, color: AppColors.primeryColor),
         ),
         leading: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: InkWell(
             onTap: () {
               Get.back();
             },
-            child: CustomPngImage(
+            child: const CustomPngImage(
               imageName: "assets/images/arrow_back.png",
               height: 30,
               width: 30,
@@ -37,12 +36,12 @@ class AddMoneyToWallet extends StatelessWidget {
       ),
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(30),
+        padding: const EdgeInsets.all(30),
         child: Column(
           children: [
             Container(
               height: 200,
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey.shade300),
                 borderRadius: BorderRadius.circular(0),
@@ -74,7 +73,7 @@ class AddMoneyToWallet extends StatelessWidget {
                           ),
                         ],
                       ),
-                      CustomPngImage(
+                      const CustomPngImage(
                         imageName: "assets/images/wallet.png",
                         height: 25,
                         width: 25,
@@ -95,9 +94,9 @@ class AddMoneyToWallet extends StatelessWidget {
                             width: 60,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
-                            child: Center(child: Text("100")),
+                            child: const Center(child: Text("100")),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Container(
@@ -105,9 +104,9 @@ class AddMoneyToWallet extends StatelessWidget {
                             width: 60,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
-                            child: Center(child: Text("200")),
+                            child: const Center(child: Text("200")),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Container(
@@ -115,9 +114,9 @@ class AddMoneyToWallet extends StatelessWidget {
                             width: 60,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
-                            child: Center(child: Text("300")),
+                            child: const Center(child: Text("300")),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Container(
@@ -125,7 +124,7 @@ class AddMoneyToWallet extends StatelessWidget {
                             width: 60,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
-                            child: Center(child: Text("400")),
+                            child: const Center(child: Text("400")),
                           ),
                         ],
                       ),
@@ -140,9 +139,9 @@ class AddMoneyToWallet extends StatelessWidget {
                             width: 60,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
-                            child: Center(child: Text("400")),
+                            child: const Center(child: Text("400")),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Container(
@@ -150,9 +149,9 @@ class AddMoneyToWallet extends StatelessWidget {
                             width: 60,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
-                            child: Center(child: Text("500")),
+                            child: const Center(child: Text("500")),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Container(
@@ -160,9 +159,9 @@ class AddMoneyToWallet extends StatelessWidget {
                             width: 60,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
-                            child: Center(child: Text("600")),
+                            child: const Center(child: Text("600")),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Container(
@@ -170,7 +169,7 @@ class AddMoneyToWallet extends StatelessWidget {
                             width: 60,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey)),
-                            child: Center(child: Text("700")),
+                            child: const Center(child: Text("700")),
                           ),
                         ],
                       )
@@ -183,7 +182,6 @@ class AddMoneyToWallet extends StatelessWidget {
               height: 44,
               width: 1.sw,
               onPressed: () {
-                print("clicked");
               },
               text: "Rs.    Enter Amount",
               color: AppColors.primeryColor,
@@ -195,7 +193,6 @@ class AddMoneyToWallet extends StatelessWidget {
               height: 44,
               width: 1.sw,
               onPressed: () {
-                print("clicked");
               },
               text: "Add Money",
               color: AppColors.green,

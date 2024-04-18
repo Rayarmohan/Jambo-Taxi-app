@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:jambotaxi/features/earnings/widget/custom_list_item.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
@@ -52,8 +51,8 @@ class EarningScreen extends StatelessWidget {
                 .textTheme
                 .headlineMedium!
                 .copyWith(height: 1.7, color: AppColors.primeryColor)),
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+        leading: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: CustomPngImage(
             imageName: "assets/images/arrow_back.png",
             height: 30,
@@ -62,16 +61,16 @@ class EarningScreen extends StatelessWidget {
         ),
         actions:  [
           Padding(
-            padding: EdgeInsets.only(right: 22.0),
+            padding: const EdgeInsets.only(right: 22.0),
             child: Container(
               height: 37,
               width: 37,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.primeryColor,
               ),
 
-              child: Icon(
+              child: const Icon(
                 Icons.calendar_month,
                 size: 18,
                 color: Colors.white,
@@ -168,7 +167,7 @@ class EarningScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 24,),
+            const SizedBox(height: 24,),
             Expanded(
                 child: ListView.builder(
               itemCount: items.length,

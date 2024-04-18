@@ -23,7 +23,6 @@ import 'package:jambotaxi/features/otp/ask_forotp.dart';
 import 'package:jambotaxi/features/otp_verification/otp_verification.dart';
 import 'package:jambotaxi/features/otp_verify/otp_verify_screen.dart';
 import 'package:jambotaxi/features/privacy_policy/privacy_screen.dart';
-import 'package:jambotaxi/features/profile/profile_screen.dart';
 import 'package:jambotaxi/features/profilesettings/profilesettings_screen.dart';
 import 'package:jambotaxi/features/rating/rating_screen.dart';
 import 'package:jambotaxi/features/update_document/update_document_screen.dart';

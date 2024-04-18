@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:jambotaxi/features/welcome/nested_screens/bankdetails_screen.dart';
 import 'package:jambotaxi/features/welcome/nested_screens/drivinglicense_screen.dart';
 import 'package:jambotaxi/features/welcome/nested_screens/governmentid_screen.dart';
-import 'package:jambotaxi/features/welcome/nested_screens/profilepicture_screen.dart';
+
 import 'package:jambotaxi/features/welcome/widgets/custom_welcome_screen_button.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
@@ -30,7 +30,7 @@ class WelcomeScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -38,12 +38,11 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 Text(
                   "Welcome,",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(height: 1.1, color: AppColors.grey, ),
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        height: 1.1,
+                        color: AppColors.grey,
+                      ),
                 ),
-
                 Text(
                   textAlign: TextAlign.center,
                   "Jenny Wilson",
@@ -78,7 +77,7 @@ class WelcomeScreen extends StatelessWidget {
                     CustomWelcomeScreenButton(
                       title: "Bank Account Details",
                       onTap: () {
-                        Get.to(BankDetailsScreen());
+                        Get.to(const BankDetailsScreen());
                       },
                     ),
                     SizedBox(
@@ -87,7 +86,7 @@ class WelcomeScreen extends StatelessWidget {
                     CustomWelcomeScreenButton(
                       title: "Driving Details",
                       onTap: () {
-                        Get.to(DrivingLicenseScreen());
+                        Get.to(const DrivingLicenseScreen());
                       },
                     ),
                     SizedBox(
@@ -114,7 +113,6 @@ class WelcomeScreen extends StatelessWidget {
                       height: 44,
                       width: 1.sw,
                       onPressed: () {
-                        print("clicked");
                         showVerificationPopup(context);
                       },
                       text: "Continue",
@@ -132,12 +130,10 @@ class WelcomeScreen extends StatelessWidget {
 
   void showVerificationPopup(BuildContext context) {
     showModalBottomSheet(
-
       context: context,
       builder: (BuildContext context) {
         return Container(
-
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           height: 350, // Adjust the height as needed
 
           // Adjust the height as needed
@@ -145,21 +141,19 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Icon(
+              const Icon(
                 Icons.check_circle_rounded,
                 size: 80, // Adjust the size as needed
                 color: AppColors.primeryColor, // Adjust the color as needed
               ),
-              SizedBox(height: 10), // Provides spacing between icon and text
+              const SizedBox(height: 10), // Provides spacing between icon and text
               Text(
                 'Application Submitted For Verification',
                 textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(height: 1.7, color: AppColors.primeryColor, fontSize: 19),
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    height: 1.7, color: AppColors.primeryColor, fontSize: 19),
               ),
-              SizedBox(height: 15), // Provides spacing between text items
+              const SizedBox(height: 15), // Provides spacing between text items
               Text(
                 'We will get in touch in 48 working hours.\nBe ready for your ride!',
                 textAlign: TextAlign.center,

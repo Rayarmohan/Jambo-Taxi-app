@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:jambotaxi/features/cars/cars_controller.dart';
+import 'package:jambotaxi/features/cars/car_nested_screens/add_new_car_screen.dart';
+
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
@@ -14,7 +14,6 @@ class CarsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CarController controller = Get.put(CarController());
     return Scaffold(
       appBar: CustomAppBar(
         title: Text(
@@ -24,14 +23,40 @@ class CarsScreen extends StatelessWidget {
               .displayMedium!
               .copyWith(height: 1.7, color: AppColors.primeryColor),
         ),
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CustomPngImage(
-            imageName: "assets/images/arrow_back.png",
-            height: 30,
-            width: 30,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: const CustomPngImage(
+              imageName: "assets/images/arrow_back.png",
+              height: 30,
+              width: 30,
+            ),
           ),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                Get.to(const AddNewCar());
+              },
+              child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: AppColors.grey)),
+                  child: const Icon(
+                    Icons.add,
+                    size: 20,
+                    color: AppColors.black,
+                  )),
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(30),
@@ -50,16 +75,18 @@ class CarsScreen extends StatelessWidget {
                             child: Stack(
                               children: [
                                 Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       children: [
                                         Align(
                                           alignment: Alignment.topLeft,
-                                          child: Container(
-                                            child: Image.asset("assets/images/car copy.png"),
+                                          child: SizedBox(
                                             width: 110.h,
                                             height: 131.h,
+                                            child: Image.asset(
+                                                "assets/images/car copy.png"),
                                           ),
                                         ),
                                         const SizedBox(
@@ -67,85 +94,103 @@ class CarsScreen extends StatelessWidget {
                                           height: 32,
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.only(top: 32),
-                                          child: Container(
-                                            child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Maruti Suzuki Swift',
-                                                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                                                    height: 1.7,
-                                                    color: AppColors.primeryColor,
+                                          padding:
+                                              const EdgeInsets.only(top: 32),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Maruti Suzuki Swift',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .titleLarge!
+                                                    .copyWith(
+                                                      height: 1.7,
+                                                      color: AppColors
+                                                          .primeryColor,
+                                                    ),
+                                              ),
+                                              Text(
+                                                'Mini',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelMedium!
+                                                    .copyWith(
+                                                      height: 1.7,
+                                                      color: AppColors.grey,
+                                                    ),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  const Icon(
+                                                    Icons.person,
+                                                    color:
+                                                        AppColors.primeryColor,
                                                   ),
-                                                ),
-                                                Text(
-                                                  'Mini',
-                                                  style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                                                    height: 1.7,
-                                                    color: AppColors.grey,
+                                                  SizedBox(
+                                                    width: 9.06.h,
                                                   ),
-                                                ),
-                                                Row(
-                                                  children: [
-                                                    const Icon(
-                                                      Icons.person,
-                                                      color: AppColors.primeryColor,
-                                                    ),
-                                                    SizedBox(
-                                                      width: 9.06.h,
-                                                    ),
-                                                    Text(
-                                                      '4',
-                                                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                                                        height: 1.7,
-                                                        color: AppColors.primeryColor,
-                                                      ),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 17.93,
-                                                    ),
-                                                    const CustomPngImage(
-                                                      imageName: "assets/images/Vector.png",
-                                                      color: AppColors.primeryColor,
-                                                      height: 17,
-                                                      width: 14,
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 9.06,
-                                                    ),
-                                                    Text(
-                                                      'Petrol',
-                                                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                                                        height: 1.7,
-                                                        color: AppColors.primeryColor,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Text(
-                                                  'Last updated 6 Jun 2023',
-                                                  style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                                                    height: 1.7,
-                                                    color: AppColors.grey,
+                                                  Text(
+                                                    '4',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .labelMedium!
+                                                        .copyWith(
+                                                          height: 1.7,
+                                                          color: AppColors
+                                                              .primeryColor,
+                                                        ),
                                                   ),
-                                                ),
-                                                SizedBox(height: 6),
-                                              ],
-                                            ),
+                                                  const SizedBox(
+                                                    width: 17.93,
+                                                  ),
+                                                  const CustomPngImage(
+                                                    imageName:
+                                                        "assets/images/Vector.png",
+                                                    color:
+                                                        AppColors.primeryColor,
+                                                    height: 17,
+                                                    width: 14,
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 9.06,
+                                                  ),
+                                                  Text(
+                                                    'Petrol',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .labelMedium!
+                                                        .copyWith(
+                                                          height: 1.7,
+                                                          color: AppColors
+                                                              .primeryColor,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Text(
+                                                'Last updated 6 Jun 2023',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelMedium!
+                                                    .copyWith(
+                                                      height: 1.7,
+                                                      color: AppColors.grey,
+                                                    ),
+                                              ),
+                                              const SizedBox(height: 6),
+                                            ],
                                           ),
                                         ),
                                       ],
                                     ),
                                   ],
                                 ),
-
                               ],
                             ),
                           ),
                         ),
-
-
                         Positioned(
                           top: 0,
                           right: 4,
@@ -164,9 +209,9 @@ class CarsScreen extends StatelessWidget {
                                       .textTheme
                                       .headlineMedium!
                                       .copyWith(
-                                      height: 1.7,
-                                      fontSize: 10,
-                                      color: Colors.white),
+                                          height: 1.7,
+                                          fontSize: 10,
+                                          color: Colors.white),
                                 ),
                               ),
                             ),
@@ -177,17 +222,15 @@ class CarsScreen extends StatelessWidget {
                           right: 0,
                           left: 0,
                           child: Padding(
-
-                            padding: const EdgeInsets.only(left:4.5,right: 4.5),
+                            padding:
+                                const EdgeInsets.only(left: 4.5, right: 4.5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Expanded(
                                   child: CustomButton(
                                     height: 44.h,
-                                    onPressed: () {
-                                      print("Edit clicked");
-                                    },
+                                    onPressed: () {},
                                     text: "Edit",
                                     color: AppColors.primeryColor,
                                   ),
@@ -199,7 +242,6 @@ class CarsScreen extends StatelessWidget {
                                   child: CustomButton(
                                     height: 44.h,
                                     onPressed: () {
-                                      print("Delete clicked");
                                     },
                                     text: "Delete",
                                     color: AppColors.primeryColor,
@@ -209,7 +251,6 @@ class CarsScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   )
@@ -222,4 +263,3 @@ class CarsScreen extends StatelessWidget {
     );
   }
 }
-

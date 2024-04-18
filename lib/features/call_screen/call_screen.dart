@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
@@ -129,14 +130,16 @@ class CallScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     color: AppColors.primeryColor),
                 child: Center(
-                  child: Container(
+                  child: SizedBox(
                     height: 60,
                     width: 60,
                     child: FloatingActionButton(
-                      child: Icon(Icons.call_end, size: 40),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.back();
+                      },
                       backgroundColor: Colors.red, // Custom color for the FAB
-                      elevation: 4.0, // Shadow for the button
+                      elevation: 4.0,
+                      child: const Icon(Icons.call_end, size: 40), // Shadow for the button
                     ),
                   ),
                 ),

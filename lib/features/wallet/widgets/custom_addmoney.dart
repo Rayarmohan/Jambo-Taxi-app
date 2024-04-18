@@ -9,11 +9,11 @@ class CustomListTile extends StatelessWidget {
   final Color trailcolor;
 
   const CustomListTile({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.trailingText, required this.trailcolor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,12 @@ class CustomListTile extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(
+          const Icon(
             Icons.check_circle,
             color: AppColors.primeryColor,
             size: 48,
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class CustomListTile extends StatelessWidget {
                 ),
                 Text(
                   subtitle,
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: AppColors.grey,
                       ),
                   maxLines: 2,

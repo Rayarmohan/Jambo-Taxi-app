@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jambotaxi/features/booking_pages/widgets/vertical_line_painter.dart';
+
 import 'package:jambotaxi/widgets/custom_images.dart';
 import '../../../utils/color/app_colors.dart';
 
@@ -18,7 +18,7 @@ class BookingCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20.0),
       child: Card(
-         shape: RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(0),
           side: BorderSide(color: Color(0xFFEDEDED), width: 1.0),
         ),
@@ -260,5 +260,3 @@ class BookingCard extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,3 +1,5 @@
+// ignore_for_file: use_super_parameters
+
 import 'package:flutter/material.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
@@ -19,6 +21,7 @@ class ExpandableBookingCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ExpandableBookingCardState createState() => _ExpandableBookingCardState();
 }
 
@@ -67,7 +70,7 @@ class _ExpandableBookingCardState extends State<ExpandableBookingCard> {
               child: Column(
                 children: [
                   const SizedBox(height: 10),
-                  CustomPngImage(
+                  const CustomPngImage(
                     imageName: "assets/images/prebook_map.png",
                     height: 220,
                     width: 330,

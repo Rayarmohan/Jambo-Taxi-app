@@ -1,10 +1,9 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:jambotaxi/features/booking_pages/widgets/booking_card.dart';
 import 'package:jambotaxi/features/booking_pages/widgets/booking_card_expandable.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
-import 'package:jambotaxi/widgets/custom_button.dart';
 
 import '../../utils/color/app_colors.dart';
 import '../../widgets/custom_images.dart';
@@ -18,19 +17,32 @@ class PrebookingComplete extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: CustomAppBar(
-            title: Text('Pre-Booked',
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium!
-                    .copyWith(height: 1.7, color: AppColors.primeryColor)),
-            leading: const Padding(
-              padding: EdgeInsets.only(left: 34),
-              child: CustomPngImage(
-                imageName: "assets/images/arrow_back.png",
-                height: 30,
-                width: 30,
-              ),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const CustomPngImage(
+                  imageName: "assets/images/arrow_back.png",
+                  height: 30,
+                  width: 30,
+                ),
+                const SizedBox(
+                  width: 60,
+                ),
+                Text('Pre-Booked',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineMedium!
+                        .copyWith(height: 1.7, color: AppColors.primeryColor)),
+              ],
             ),
+            // leading: const Padding(
+            //   padding: EdgeInsets.only(left: 34),
+            //   child: CustomPngImage(
+            //     imageName: "assets/images/arrow_back.png",
+            //     height: 30,
+            //     width: 30,
+            //   ),
+            // ),
           ),
           body: Padding(
             padding: const EdgeInsets.only(bottom: 20),
