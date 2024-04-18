@@ -122,8 +122,9 @@ class ProfileEdit extends StatelessWidget {
                           width: 80.h,
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              border:
-                                  Border.all(width: 1, color: AppColors.grey)),
+                              border: Border.all(
+                                  width: 1,
+                                  color: AppColors.grey.withOpacity(0.5))),
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton<String>(
                               value: controller.dropdownValue.value,
@@ -150,7 +151,8 @@ class ProfileEdit extends StatelessWidget {
                           height: 48.h,
                           width: 200.h,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                            border:
+                                Border.all(color: Colors.grey.withOpacity(0.2)),
                             borderRadius: BorderRadius.all(Radius.circular(1)),
                           ),
                           child: Padding(
