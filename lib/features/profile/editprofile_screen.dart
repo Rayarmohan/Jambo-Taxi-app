@@ -1,19 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
+
 import 'package:jambotaxi/features/profile/widgets/editProfile_controller.dart';
 import 'package:jambotaxi/features/profile/widgets/update_photo.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 import 'package:jambotaxi/widgets/custom_text_field.dart';
-import 'dart:math' as math;
-
-import '../Registration/registration_screen.dart';
 
 class ProfileEdit extends StatelessWidget {
   const ProfileEdit({super.key});

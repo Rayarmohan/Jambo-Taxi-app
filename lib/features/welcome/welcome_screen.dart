@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:jambotaxi/features/welcome/nested_screens/bankdetails_screen.dart';
 import 'package:jambotaxi/features/welcome/nested_screens/drivinglicense_screen.dart';
 import 'package:jambotaxi/features/welcome/nested_screens/governmentid_screen.dart';
-import 'package:jambotaxi/features/welcome/nested_screens/profilepicture_screen.dart';
+
 import 'package:jambotaxi/features/welcome/widgets/custom_welcome_screen_button.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
@@ -38,12 +38,11 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 Text(
                   "Welcome,",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(height: 1.1, color: AppColors.grey, ),
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        height: 1.1,
+                        color: AppColors.grey,
+                      ),
                 ),
-
                 Text(
                   textAlign: TextAlign.center,
                   "Jenny Wilson",
@@ -132,11 +131,9 @@ class WelcomeScreen extends StatelessWidget {
 
   void showVerificationPopup(BuildContext context) {
     showModalBottomSheet(
-
       context: context,
       builder: (BuildContext context) {
         return Container(
-
           padding: EdgeInsets.all(20),
           height: 350, // Adjust the height as needed
 
@@ -154,10 +151,8 @@ class WelcomeScreen extends StatelessWidget {
               Text(
                 'Application Submitted For Verification',
                 textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(height: 1.7, color: AppColors.primeryColor, fontSize: 19),
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    height: 1.7, color: AppColors.primeryColor, fontSize: 19),
               ),
               SizedBox(height: 15), // Provides spacing between text items
               Text(

@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:jambotaxi/utils/color/app_colors.dart';
-import 'package:jambotaxi/widgets/custom_app_bar.dart';
 
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
@@ -26,10 +23,10 @@ class UpdateDocument extends StatelessWidget {
                 .textTheme
                 .headlineMedium!
                 .copyWith(height: 1.7, color: AppColors.primeryColor)),
-        leading:  Padding(
+        leading: Padding(
           padding: EdgeInsets.all(8.0),
           child: InkWell(
-             onTap: () {
+            onTap: () {
               Get.back();
             },
             child: CustomPngImage(

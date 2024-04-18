@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_button.dart';
-import 'package:jambotaxi/widgets/custom_text_field.dart';
+
 import 'login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -12,7 +12,6 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final LoginController controller = Get.put(LoginController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(

@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:jambotaxi/features/Ride/ride_request.dart';
-import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
-import 'package:jambotaxi/features/earnings/earnings.dart';
-import 'package:jambotaxi/features/home/home.dart';
-import 'package:jambotaxi/features/otp/ask_forotp.dart';
-import 'package:jambotaxi/features/profile/editprofile_screen.dart';
-import 'package:jambotaxi/features/registration/registration_screen.dart';
+
 import 'package:jambotaxi/utils/core/theme/app_theme.dart';
 import 'package:jambotaxi/utils/route/route.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
@@ -31,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'jambotaxiapp',
-         initialRoute: AppRoute.onboard,
+        initialRoute: AppRoute.onboard,
         getPages: appRoutes(),
       ),
     );

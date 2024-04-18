@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:jambotaxi/features/rating/rating_controller.dart';
+
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
@@ -14,14 +14,14 @@ class RatingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RatingController ratingController = Get.put(RatingController());
     return Scaffold(
       appBar: CustomAppBar(
         title: Text("Rate Rider",
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium!
-                .copyWith(height: 1.7, color: AppColors.primeryColor, fontSize: 20, )),
+            style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                  height: 1.7,
+                  color: AppColors.primeryColor,
+                  fontSize: 20,
+                )),
         leading: const Padding(
           padding: EdgeInsets.all(8.0),
           child: CustomPngImage(
@@ -55,19 +55,22 @@ class RatingScreen extends StatelessWidget {
                   ),
                 ),
                 Text("Jessica",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineLarge!
-                        .copyWith(height: 1.7, color: AppColors.primeryColor, fontSize: 22, fontWeight: FontWeight.w700, )),
+                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                          height: 1.7,
+                          color: AppColors.primeryColor,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                        )),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Rs.15.00  ",
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(
-                                height: 1.7, color: AppColors.primeryColor, fontSize: 15,)),
+                        style:
+                            Theme.of(context).textTheme.titleMedium!.copyWith(
+                                  height: 1.7,
+                                  color: AppColors.primeryColor,
+                                  fontSize: 15,
+                                )),
                     const CircleAvatar(
                       backgroundColor: AppColors.primeryColor,
                       radius: 5,
@@ -77,22 +80,27 @@ class RatingScreen extends StatelessWidget {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                height: 1.7, color: AppColors.primeryColor, fontSize: 15)),
+                                height: 1.7,
+                                color: AppColors.primeryColor,
+                                fontSize: 15)),
                   ],
                 ),
                 const SizedBox(
                   height: 60,
                 ),
                 Text("How was your trip with",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleSmall!
-                        .copyWith(height: 1.1, color: AppColors.grey, fontSize: 20,)),
+                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                          height: 1.1,
+                          color: AppColors.grey,
+                          fontSize: 20,
+                        )),
                 Text("Jessica",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineLarge!
-                        .copyWith(height: 1.7, color: AppColors.primeryColor, fontSize: 20, fontWeight: FontWeight.w400,)),
+                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                          height: 1.7,
+                          color: AppColors.primeryColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                        )),
                 const SizedBox(
                   height: 60,
                 ),
@@ -108,7 +116,9 @@ class RatingScreen extends StatelessWidget {
                   child: Center(
                     child: Column(
                       children: [
-                        SizedBox(height: 15,),
+                        const SizedBox(
+                          height: 15,
+                        ),
                         Text('Your Overall Rating',
                             style: Theme.of(context)
                                 .textTheme
@@ -119,7 +129,7 @@ class RatingScreen extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                       RatingBar(
+                        RatingBar(
                           initialRating: 0,
                           direction: Axis.horizontal,
                           allowHalfRating: false,
@@ -129,7 +139,8 @@ class RatingScreen extends StatelessWidget {
                             empty: Image.asset('assets/images/ratehalf.png'),
                             full: Image.asset('assets/images/ratefull.png'),
                           ),
-                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                          itemPadding:
+                              const EdgeInsets.symmetric(horizontal: 4.0),
                           onRatingUpdate: (rating) {
                             print(rating);
                           },
@@ -148,16 +159,15 @@ class RatingScreen extends StatelessWidget {
                     Get.toNamed(AppRoute.bottom_nav);
                   },
                   color: AppColors.primeryColor,
-                  child: Text(
+                  child: const Text(
                     "Submit",
                     style: TextStyle(
-                      color: Colors.white,  // Assuming you want white text
-                      fontSize: 18,  // Adjust the font size as needed
-                        // Optional: if you want bold text
+                      color: Colors.white, // Assuming you want white text
+                      fontSize: 18, // Adjust the font size as needed
+                      // Optional: if you want bold text
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
