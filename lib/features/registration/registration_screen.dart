@@ -104,7 +104,7 @@ class RegistartionScreen extends StatelessWidget {
                       height: 5.h,
                     ),
                     Obx(
-                          () => Container(
+                      () => Container(
                         height: 48.h,
                         width: 500.h,
                         padding: const EdgeInsets.all(10),
@@ -114,22 +114,26 @@ class RegistartionScreen extends StatelessWidget {
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton<String>(
                             // Ensure the value is null if it's empty or hasn't been selected yet
-                            value: controller.genderdropdownValue.value.isEmpty ? null : controller.genderdropdownValue.value,
+                            value: controller.genderdropdownValue.value.isEmpty
+                                ? null
+                                : controller.genderdropdownValue.value,
                             // This will show "Select" when no value is selected (value is null)
-                            hint: Text("Select", style: TextStyle(
-                              fontFamily: "SF Pro Display",
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey,  // Use a grey color to indicate placeholder text
-                            )),
+                            hint: Text("Select",
+                                style: TextStyle(
+                                  fontFamily: "SF Pro Display",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors
+                                      .black, // Use a grey color to indicate placeholder text
+                                )),
                             onChanged: (String? newValue) {
                               // Only update the value if it's not null
                               if (newValue != null) {
                                 controller.setGenderDropdownValue(newValue);
                               }
                             },
-                            items: <String>['Male', 'Female']
-                                .map((String value) {
+                            items:
+                                <String>['Male', 'Female'].map((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
                                 child: Text(
@@ -147,8 +151,6 @@ class RegistartionScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-
-
                     SizedBox(
                       height: 15.h,
                     ),
@@ -345,7 +347,7 @@ class PhoneNumberField extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   height: 1.275,
-                  color: Colors.grey,
+                  color: Colors.black,
                 ),
               ),
               keyboardType: TextInputType.phone,

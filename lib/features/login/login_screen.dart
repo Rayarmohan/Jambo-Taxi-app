@@ -141,14 +141,19 @@ class PhoneNumberField extends StatelessWidget {
             child: TextField(
               controller: controller.phoneController,
               decoration: const InputDecoration(
-                border: InputBorder.none,
-                enabledBorder: InputBorder
-                    .none, // Ensures no border when enabled and not focused
-                focusedBorder: InputBorder.none,
-                disabledBorder: InputBorder.none,
-
-                hintText: 'Enter Phone Number',
-              ),
+                  border: InputBorder.none,
+                  enabledBorder: InputBorder
+                      .none, // Ensures no border when enabled and not focused
+                  focusedBorder: InputBorder.none,
+                  disabledBorder: InputBorder.none,
+                  hintText: 'Enter Phone Number',
+                  hintStyle: TextStyle(
+                    fontFamily: "SF Pro Display",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    height: 1.275,
+                    color: Colors.black,
+                  )),
               keyboardType: TextInputType.phone,
             ),
           ),
