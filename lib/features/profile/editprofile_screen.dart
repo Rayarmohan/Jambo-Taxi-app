@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
@@ -233,33 +234,38 @@ class ProfileEdit extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    height: 50,
-                    width: 500,
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 1,
-                        color: AppColors.grey,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: 50,
+                      width: 500,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 1,
+                          color: AppColors.grey,
+                        ),
                       ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Update Documents Details",
-                          style:
-                              Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                    height: 1.7,
-                                    color: AppColors.primeryColor,
-                                  ),
-                        ),
-                        const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.black,
-                          size: 15,
-                        ),
-                      ],
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Update Documents Details",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.primeryColor,
+                                ),
+                          ),
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.black,
+                            size: 15,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
