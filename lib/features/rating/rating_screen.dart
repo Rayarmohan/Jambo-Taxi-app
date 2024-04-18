@@ -135,9 +135,9 @@ class RatingScreen extends StatelessWidget {
                           allowHalfRating: false,
                           itemCount: 5,
                           ratingWidget: RatingWidget(
-                            half: Image.asset('assets/images/ratehalf.png'),
-                            empty: Image.asset('assets/images/ratehalf.png'),
-                            full: Image.asset('assets/images/ratefull.png'),
+                            half: Image.asset('assets/images/rateempty.png'),
+                            empty: Image.asset('assets/images/rateempty.png'),
+                            full: Image.asset('assets/images/ratefull (2).png'),
                           ),
                           itemPadding:
                               const EdgeInsets.symmetric(horizontal: 4.0),
