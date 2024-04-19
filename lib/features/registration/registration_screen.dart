@@ -4,8 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:jambotaxi/features/login/login.dart';
+
 import 'package:jambotaxi/features/registration/registration_controller.dart';
 import 'package:jambotaxi/features/welcome/welcome_screen.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
@@ -92,7 +91,7 @@ class RegistartionScreen extends StatelessWidget {
                     SizedBox(
                       height: 5.h,
                     ),
-                    PhoneNumberField(controller: controller),
+                    PhoneNumberField(),
                     SizedBox(
                       height: 15.h,
                     ),
@@ -110,18 +109,32 @@ class RegistartionScreen extends StatelessWidget {
                         width: 500.h,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border:
-                                Border.all(width: 1, color: AppColors.grey)),
+                          border: Border.all(width: 1, color: AppColors.grey),
+                        ),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton<String>(
-                            value: controller.genderdropdownValue.value,
+                            // Ensure the value is null if it's empty or hasn't been selected yet
+                            value: controller.genderdropdownValue.value.isEmpty
+                                ? null
+                                : controller.genderdropdownValue.value,
+                            // This will show "Select" when no value is selected (value is null)
+                            hint: Text("Select",
+                                style: TextStyle(
+                                  fontFamily: "SF Pro Display",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors
+                                      .black, // Use a grey color to indicate placeholder text
+                                )),
                             onChanged: (String? newValue) {
-                              controller.setGenderDropdownValue(newValue!);
+                              // Only update the value if it's not null
+                              if (newValue != null) {
+                                controller.setGenderDropdownValue(newValue);
+                              }
                             },
                             items:
                                 <String>['Male', 'Female'].map((String value) {
                               return DropdownMenuItem<String>(
-                                alignment: AlignmentDirectional.center,
                                 value: value,
                                 child: Text(
                                   value,
@@ -129,7 +142,6 @@ class RegistartionScreen extends StatelessWidget {
                                     fontFamily: "SF Pro Display",
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400,
-                                    height: 1.275,
                                     color: Colors.black,
                                   ),
                                 ),
@@ -211,7 +223,7 @@ class RegistartionScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Obx(
-                          () => Container(
+                          () => SizedBox(
                             width:
                                 24, // Control the container width that wraps the checkbox
                             height: 24, // Control the container height
@@ -227,16 +239,25 @@ class RegistartionScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(width: 7,),
+                        SizedBox(
+                          width: 7,
+                        ),
                         Expanded(
                           child: RichText(
                             text: TextSpan(
                               text: 'By Accept, you agree to Company ',
-                              style: TextStyle(color: AppColors.grey, decoration: TextDecoration.underline, decorationColor: AppColors.grey),
+                              style: TextStyle(
+                                  color: AppColors.grey,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: AppColors.grey),
                               children: <TextSpan>[
                                 TextSpan(
                                   text: 'Terms & Conditions',
-                                  style: TextStyle(color: AppColors.primeryColor, decoration: TextDecoration.underline, decorationColor: AppColors.primeryColor, ),
+                                  style: TextStyle(
+                                    color: AppColors.primeryColor,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: AppColors.primeryColor,
+                                  ),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
                                       // Open terms and conditions link
@@ -255,7 +276,6 @@ class RegistartionScreen extends StatelessWidget {
                       height: 44.h,
                       width: 1.sw,
                       onPressed: () {
-                        print("clicked");
 
                         Get.to(WelcomeScreen());
                       },
@@ -272,19 +292,14 @@ class RegistartionScreen extends StatelessWidget {
   }
 }
 
-class PhoneNumberField extends StatefulWidget {
-  final RegistarationController controller;
+class PhoneNumberField extends StatelessWidget {
+  const PhoneNumberField({
+    super.key,
+  });
 
-  const PhoneNumberField({Key? key, required this.controller})
-      : super(key: key);
-
-  @override
-  _PhoneNumberFieldState createState() => _PhoneNumberFieldState();
-}
-
-class _PhoneNumberFieldState extends State<PhoneNumberField> {
   @override
   Widget build(BuildContext context) {
+    final RegistarationController controller = Get.find();
     return Container(
       height: 48,
       decoration: BoxDecoration(
@@ -297,9 +312,9 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
               padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
-                  value: widget.controller.dropdownValue.value,
+                  value: controller.dropdownValue.value,
                   onChanged: (String? newValue) {
-                    widget.controller.setDropdownValue(newValue!);
+                    controller.setDropdownValue(newValue!);
                   },
                   items: <String>['+91', '+1', '+44'].map((String value) {
                     return DropdownMenuItem<String>(
@@ -317,7 +332,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
           ),
           Expanded(
             child: TextField(
-              controller: widget.controller.phoneController,
+              controller: controller.phoneController,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 enabledBorder: InputBorder
@@ -331,7 +346,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   height: 1.275,
-                  color: Colors.grey,
+                  color: Colors.black,
                 ),
               ),
               keyboardType: TextInputType.phone,

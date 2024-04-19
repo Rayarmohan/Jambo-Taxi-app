@@ -23,24 +23,23 @@ class CustomTextField extends StatelessWidget {
 
   bool hasBeenUsed = false;
 
-  CustomTextField({
-    super.key,
-    this.keyboardType = TextInputType.text,
-    required this.controller,
-    this.obscureText = false,
-    this.maxLength = 30,
-    this.maxLines = 1,
-    this.enabled = true,
-    this.hint2 = '',
-    this.onlyEnglish = false,
-    required this.hint,
-    this.addBorder = true,
-    this.height = 1,
-    this.validator,
-    this.onchaged, 
-    this.suffixIcon,
-    this.hintcolor
-  });
+  CustomTextField(
+      {super.key,
+      this.keyboardType = TextInputType.text,
+      required this.controller,
+      this.obscureText = false,
+      this.maxLength = 30,
+      this.maxLines = 1,
+      this.enabled = true,
+      this.hint2 = '',
+      this.onlyEnglish = false,
+      required this.hint,
+      this.addBorder = true,
+      this.height = 1,
+      this.validator,
+      this.onchaged,
+      this.suffixIcon,
+      this.hintcolor});
 
   @override
   Widget build(BuildContext context) {
@@ -77,12 +76,12 @@ class CustomTextField extends StatelessWidget {
         ),
         hintText: hint,
         counterText: "",
-        hintStyle:  TextStyle(
+        hintStyle: TextStyle(
           fontFamily: "SF Pro Display",
           fontSize: 16,
           fontWeight: FontWeight.w400,
           height: 1.275,
-          color: hintcolor ?? Colors.grey,
+          color: hintcolor ?? AppColors.black,
         ),
       ),
     );

@@ -80,9 +80,8 @@ class OTPScreen extends StatelessWidget {
               height: 44,
               width: 1.sw,
               onPressed: () {
-                print("clicked");
 
-                Get.toNamed(AppRoute.registrationScreen);
+                Get.toNamed(AppRoute.bottom_nav);
               },
               text: "Sign In",
               color: AppColors.primeryColor,

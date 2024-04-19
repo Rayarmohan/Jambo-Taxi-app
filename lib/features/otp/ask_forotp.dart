@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/otp_verification/otp_verification.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
-import 'package:jambotaxi/utils/route/route_name.dart';
+
 import 'package:jambotaxi/widgets/custom_button.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
 
@@ -95,6 +95,7 @@ class AskForOtp extends StatelessWidget {
     );
   }
 
+  // ignore: non_constant_identifier_names
   Widget _PassangerRequest(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(

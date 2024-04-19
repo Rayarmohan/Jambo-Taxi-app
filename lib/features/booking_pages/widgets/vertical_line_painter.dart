@@ -12,7 +12,7 @@ class VerticalLinePainter extends CustomPainter {
       ..color = color
       ..strokeWidth = thickness
       ..style = PaintingStyle.stroke;
-    canvas.drawLine(Offset(0, 0), Offset(0, size.height), paint);
+    canvas.drawLine(const Offset(0, 0), Offset(0, size.height), paint);
   }
 
   @override

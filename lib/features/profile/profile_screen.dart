@@ -7,6 +7,7 @@ import 'package:jambotaxi/features/privacy_policy/privacy_screen.dart';
 import 'package:jambotaxi/features/profile/editprofile_screen.dart';
 import 'package:jambotaxi/features/profile/widgets/update_photo.dart';
 import 'package:jambotaxi/features/profilesettings/profilesettings_screen.dart';
+import 'package:jambotaxi/features/wallet/wallet_screen.dart';
 
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/utils/route/route_name.dart';
@@ -50,9 +51,7 @@ class ProfileScreen extends StatelessWidget {
               ProfileUpdate(
                   imagePath: 'assets/images/profile_pic.png',
                   onUpdate: () {
-                    print("clicked");
                     Get.to(ProfileEdit());
-                    print("Navigated to edit profile");
                   }),
               SizedBox(
                 height: 5,
@@ -67,6 +66,30 @@ class ProfileScreen extends StatelessWidget {
               )),
               SizedBox(
                 height: 30,
+              ),
+              ListTile(
+                onTap: () {
+                  Get.to(WalletScreen());
+                },
+                leading: CustomPngImage(
+                  imageName: "assets/images/wallet.png",
+                  height: 20,
+                  width: 20,
+                ),
+                title: Text("Wallet",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primeryColor)),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  color: AppColors.primeryColor,
+                  size: 15,
+                ),
+              ),
+              Divider(
+                height: 2,
+                color: Colors.grey,
               ),
               ListTile(
                 leading: CustomPngImage(
@@ -87,7 +110,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Divider(
                 height: 2,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               ListTile(
                 onTap: () => Get.toNamed(AppRoute.bookingcompletescreen),
@@ -109,7 +132,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Divider(
                 height: 2,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               ListTile(
                 onTap: () => Get.toNamed(AppRoute.prebookingcompletescreen),
@@ -131,7 +154,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Divider(
                 height: 2,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               InkWell(
                 onTap: () {
@@ -157,7 +180,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Divider(
                 height: 2,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               ListTile(
                 onTap: () => Get.toNamed(AppRoute.cars_screen),
@@ -179,7 +202,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Divider(
                 height: 2,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               InkWell(
                 onTap: () {
@@ -205,7 +228,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Divider(
                 height: 2,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               InkWell(
                 onTap: () {
@@ -231,7 +254,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Divider(
                 height: 2,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               InkWell(
                 onTap: () {

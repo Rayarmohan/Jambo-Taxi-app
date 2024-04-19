@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class CustomCircularProgressIndicator extends StatelessWidget {
@@ -7,16 +9,16 @@ class CustomCircularProgressIndicator extends StatelessWidget {
   final double strokeWidth;
 
   const CustomCircularProgressIndicator({
-    Key? key,
+    super.key,
     required this.progress,
     required this.backgroundColor,
     required this.progressColor,
     required this.strokeWidth,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 100.0,
       height: 100.0,
       child: CustomPaint(

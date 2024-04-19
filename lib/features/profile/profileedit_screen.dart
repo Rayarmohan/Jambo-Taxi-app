@@ -4,12 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:jambotaxi/features/bottom_navigation/bottom_navigation.dart';
-import 'package:jambotaxi/features/profile/widgets/editProfile_controller.dart';
+import 'package:jambotaxi/features/profile/widgets/editprofile_controller.dart';
 import 'package:jambotaxi/features/profile/widgets/update_photo.dart';
 import 'package:jambotaxi/utils/color/app_colors.dart';
 import 'package:jambotaxi/widgets/custom_app_bar.dart';
 import 'package:jambotaxi/widgets/custom_images.dart';
-import 'package:jambotaxi/widgets/custom_text_field.dart';
 
 class ProfileEditUser extends StatelessWidget {
   const ProfileEditUser({super.key});
@@ -48,10 +47,7 @@ class ProfileEditUser extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ProfileUpdate(
-                  imagePath: "assets/images/profile_pic.png",
-                  onUpdate: () {
-                  
-                  }),
+                  imagePath: "assets/images/profile_pic.png", onUpdate: () {}),
               SizedBox(
                 height: 10,
               ),
@@ -69,263 +65,266 @@ class ProfileEditUser extends StatelessWidget {
                 children: [
                   Text("Name",
                       style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.grey
-                      )),
-                      SizedBox(height: 10,),
-                       Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Eric Selvick",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.primeryColor
-                                  ),
-                            ),
-                          ],
-                        ),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.grey)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 500,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: AppColors.grey,
                       ),
-                       SizedBox(height: 10,),
-                      Text("Phone Number",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      )),
-                      SizedBox(height: 10,),
-                      Row(
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Obx(
-                          () => Container(
-                            height: 48.h,
-                            width: 80.h,
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 1, color: AppColors.grey)),
-                            child: DropdownButtonHideUnderline(
-                              child: DropdownButton<String>(
-                                value: controller.dropdownValue.value,
-                                onChanged: (String? newValue) {
-                                  controller.setDropdownValue(newValue!);
-                                },
-                                items: <String>['+91', '+1', '+44',]
-                                    .map((String value) {
-                                  return DropdownMenuItem<String>(
-                                    alignment: AlignmentDirectional.centerEnd,
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                             height: 48.h,
-                             width: 200.h,
-                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey),
-                            
-                              borderRadius: BorderRadius.all(Radius.circular(1)),
-                             ),
-                             child: Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text("87987656788",style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      )),
-                                  Text("Change",style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      ))
-                                ],
-                               ),
-                             ),
-                          ),
-                      
+                        Text(
+                          "Eric Selvick",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  height: 1.7, color: AppColors.primeryColor),
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 15.h,
-                    ),
-                      Text("Email",
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("Phone Number",
                       style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      )),
-                      SizedBox(height: 10,),
-                      Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.primeryColor)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Obx(
+                        () => Container(
+                          height: 48.h,
+                          width: 80.h,
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              border:
+                                  Border.all(width: 1, color: AppColors.grey)),
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton<String>(
+                              value: controller.dropdownValue.value,
+                              onChanged: (String? newValue) {
+                                controller.setDropdownValue(newValue!);
+                              },
+                              items: <String>[
+                                '+91',
+                                '+1',
+                                '+44',
+                              ].map((String value) {
+                                return DropdownMenuItem<String>(
+                                  alignment: AlignmentDirectional.centerEnd,
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
                           ),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Example@gmail.com",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.primeryColor
-                                  ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 48.h,
+                          width: 200.h,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.all(Radius.circular(1)),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("87987656788",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                        color: AppColors.primeryColor)),
+                                Text("Change",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                        color: AppColors.primeryColor))
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
-                    SizedBox(
-                      height: 5.h,
-                    ),Text("City You Drive In",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(height: 1.7, color: AppColors.primeryColor)),
-                            SizedBox(height: 10,),
-                    Obx(
-                      () => Container(
-                        height: 48.h,
-                        width: 500.h,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            border:
-                                Border.all(width: 1, color: AppColors.primeryColor)),
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton<String>(
-                            value: controller.citydropdownValue.value,
-                            onChanged: (String? newValue) {
-                              controller.setCityDropdownValue(newValue!);
-                            },
-                            items:
-                                <String>['Nairobi,Africa', 'Cape Town, Africa'].map((String value) {
-                              return DropdownMenuItem<String>(
-                                alignment: AlignmentDirectional.center,
-                                value: value,
-                                child: Text(
-                                  value,
-                                  style: TextStyle(
-                                    fontFamily: "SF Pro Display",
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.275,
-                                    color: Colors.black,
-                                  ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  Text("Email",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.primeryColor)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 500,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: AppColors.grey,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Example@gmail.com",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  height: 1.7, color: AppColors.primeryColor),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Text("City You Drive In",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          height: 1.7, color: AppColors.primeryColor)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Obx(
+                    () => Container(
+                      height: 48.h,
+                      width: 500.h,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              width: 1, color: AppColors.primeryColor)),
+                      child: DropdownButtonHideUnderline(
+                        child: DropdownButton<String>(
+                          value: controller.citydropdownValue.value,
+                          onChanged: (String? newValue) {
+                            controller.setCityDropdownValue(newValue!);
+                          },
+                          items: <String>['Nairobi,Africa', 'Cape Town, Africa']
+                              .map((String value) {
+                            return DropdownMenuItem<String>(
+                              alignment: AlignmentDirectional.center,
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(
+                                  fontFamily: "SF Pro Display",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  height: 1.275,
+                                  color: Colors.black,
                                 ),
-                              );
-                            }).toList(),
-                          ),
+                              ),
+                            );
+                          }).toList(),
                         ),
                       ),
                     ),
-                      
-                      SizedBox(height: 10,),
-                      Text("Documents",
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("Documents",
                       style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.primeryColor
-                      )),
-                      SizedBox(height: 10,),
-                       Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Update Documents Details",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.primeryColor
-                                  ),
-                            ),
-                            const Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.black,
-                            ),
-                          ],
-                        ),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.primeryColor)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 500,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: AppColors.grey,
                       ),
-                      SizedBox(height: 10,),
-                      Text("Date Of Birth",
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Update Documents Details",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  height: 1.7, color: AppColors.primeryColor),
+                        ),
+                        const Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("Date Of Birth",
                       style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.grey
-                      )),
-                      SizedBox(height: 10,),
-                      Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Enter DOB",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.primeryColor
-                                  ),
-                            ),
-                          ],
-                        ),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.grey)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 500,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: AppColors.grey,
                       ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Enter DOB",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  height: 1.7, color: AppColors.primeryColor),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               )
             ],
           ),
         ),
-       
       )),
       bottomNavigationBar: BottomNavigation(),
     );
