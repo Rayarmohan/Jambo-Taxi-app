@@ -87,7 +87,7 @@ class RatingScreen extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
-                        .copyWith(height: 1.7, color: AppColors.grey)),
+                        .copyWith(height: 1.7, color: AppColors.grey,fontSize: 20,fontWeight: FontWeight.w400)),
                 Text("Jessica",
                     style: Theme.of(context)
                         .textTheme

@@ -99,7 +99,7 @@ class ChatScreen extends StatelessWidget {
                       child: CustomTextFieldInt(
                         keyboardType: TextInputType.multiline,
                         controller: controller.chatController,
-                        hint: 'Type message',
+                        hint: 'Ok...',
                       ),
                     ),
                   ),
